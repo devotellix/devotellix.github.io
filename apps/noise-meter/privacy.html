@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | NoisePro</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { 500: '#10b981' },
+                        dark: { 900: '#09090b', 800: '#18181b' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #a1a1aa; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #a1a1aa; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-dark-900 text-zinc-300 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-800 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-500/20 transition-colors">
+                        <svg class="w-5 h-5 text-zinc-400 group-hover:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                    Legal Document
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-zinc-500">Effective Date: May 15, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-8 border-l-4 border-l-brand-500">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> NoisePro operates with zero-data-collection principles. We do not record, store, transmit, or share your audio data. All decibel processing occurs strictly on-device in real time.</p>
+                </div>
+
+                <h2>1. On-Device Processing Architecture</h2>
+                <p>NoisePro utilizes the microphone on your iOS device exclusively to calculate sound pressure levels (decibels). The application uses Apple's AVAudioEngine to stream short buffers of audio into memory, calculates the Root Mean Square (RMS) and decibel values, and immediately discards the audio buffer. <strong>At no point is audio data saved to a file, database, or cloud server.</strong></p>
+
+                <h2>2. Permissions</h2>
+                <p>The application requires the following permissions to function:</p>
+                <ul>
+                    <li><strong>Microphone:</strong> Strictly required to sample the ambient environment and calculate noise levels. Without this permission, the core functionality of the application cannot operate.</li>
+                </ul>
+
+                <h2>3. PDF Reports and Local Storage</h2>
+                <p>If you choose to generate HSE inspection reports, these PDF files are generated locally and stored exclusively in your device's sandbox. We do not have access to these files. You control their distribution via the standard iOS Share Sheet.</p>
+
+                <h2>4. Analytics and Crash Reporting</h2>
+                <p>To improve app stability, we may collect anonymous, non-identifying crash logs via standard Apple SDKs. These logs contain no personal information or audio data.</p>
+
+                <h2>5. Changes to this Policy</h2>
+                <p>We may update our Privacy Policy periodically. Any modifications will be reflected on this page. For significant changes, we will notify you via an in-app prompt.</p>
+
+                <h2>Contact Us</h2>
+                <p>If you have questions regarding our privacy practices, please contact our compliance team at <a href="mailto:contact.devotellix@gmail.com" class="text-brand-400 hover:text-brand-300">contact.devotellix@gmail.com</a> or visit our <a href="support.html" class="text-brand-400 hover:text-brand-300">Support Page</a>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-zinc-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>
