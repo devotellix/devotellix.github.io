@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football 2026: Live Scores | The Ultimate Sports Expert App</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Take control with Football Hub and become the ultimate sports expert right in the heart of the action. Offline-first, zero ads, zero data collection.">
+    <meta name="keywords" content="Football 2026, World Cup App, Live Scores, Predictions, Trivia, No Ads, Offline Football App">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/world-cup-hub/index.html">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/world-cup-hub/index.html">
+    <meta property="og:title" content="Football 2026: Live Scores">
+    <meta property="og:description" content="Take control with Football Hub and become the ultimate sports expert right in the heart of the action.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/world-cup-hub/app-icon.jpeg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Football 2026: Live Scores">
+    <meta name="twitter:description" content="Take control with Football Hub and become the ultimate sports expert right in the heart of the action.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/world-cup-hub/app-icon.jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="app-icon.jpeg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: { 400: '#34d399', 500: '#10b981', 600: '#059669' },
+                        dark: { 900: '#09090b', 800: '#18181b', 700: '#27272a' }
+                    },
+                    animation: { 'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #34d399 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark-900 text-zinc-300 min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.jpeg" alt="Football 2026 App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-500/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">Football 2026</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#features" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                        <a href="support.html" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                The Ultimate <br class="hidden md:block" />
+                <span class="text-gradient">Sports Expert App</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-zinc-400 mx-auto mb-10 leading-relaxed">
+                Passionate about sports? Take control with Football Hub and become the ultimate sports expert right in the heart of the action. Follow 104 matches, predict outcomes, and prove your knowledge.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300 opacity-80 cursor-not-allowed">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+                <span class="text-sm text-zinc-500">Coming soon to the App Store</span>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-dark-800 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">104 Matches</h3>
+                    <p class="text-zinc-400 leading-relaxed">Follow every game of the massive global tournament across North America. Check kickoff times, stadiums, and compare players.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 border-brand-500/20 shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Make Predictions</h3>
+                    <p class="text-zinc-400 leading-relaxed">Anticipate outcomes, decode tactics, and predict the results of major duels to prove your unmatched knowledge.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 flex items-center justify-center text-amber-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">100% Offline & Private</h3>
+                    <p class="text-zinc-400 leading-relaxed">Zero ads, zero hidden purchases, zero data collection. Fully works offline without any network. Built for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.jpeg" alt="App Icon" class="w-8 h-8 rounded-lg shadow-lg object-cover">
+                        <span class="text-white font-bold text-lg">Football 2026</span>
+                    </div>
+                    <p class="text-zinc-500 max-w-sm">
+                        The ultimate companion app for the massive global football tournament.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-zinc-500 hover:text-white transition-colors">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal & Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contact.devotellix@gmail.com" class="text-zinc-500 hover:text-brand-400 transition-colors">contact.devotellix@gmail.com</a></li>
+                        <li><a href="support.html" class="text-zinc-500 hover:text-white transition-colors">Support Center</a></li>
+                        <li><a href="privacy.html" class="text-zinc-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-zinc-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Designed for Football fans.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
