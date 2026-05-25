@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassPrep | Premium US Passport Renewal Companion</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Prepare your US passport renewal with confidence. Never miss a deadline, test your eligibility for online renewal, write checks correctly, and snap compliant photos.">
+    <meta name="keywords" content="PassPrep, Passport Renewal, DS-82, Passport Fees, Check Simulator, Photo Requirements, Family Expiration Tracker, Passport Checklist, iOS App">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/passprep/index.html">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/passprep/index.html">
+    <meta property="og:title" content="PassPrep | Premium US Passport Renewal Companion">
+    <meta property="og:description" content="Track expirations, verify eligibility, avoid check-writing errors, and assemble your application package correctly. Zero mistakes. Zero rejections.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/passprep/app-icon.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PassPrep | Premium US Passport Renewal Companion">
+    <meta name="twitter:description" content="Track expirations, verify eligibility, avoid check-writing errors, and assemble your application package correctly. Zero mistakes. Zero rejections.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/passprep/app-icon.png">
+
+    <!-- JSON-LD Schema for Software Application -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PassPrep",
+      "operatingSystem": "iOS",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "USD"
+      },
+      "description": "Premium U.S. passport renewal companion for iOS. Track expirations, simulate check-writing, take compliant photos, and verify eligibility.",
+      "image": "https://devotellix.github.io/apps/passprep/app-icon.png",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Devotellix"
+      }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: { 400: '#DAB46E', 500: '#AE8B4A', 600: '#8A6D35' },
+                        dark: { 900: '#071612', 800: '#123026', 700: '#1B4739' }
+                    },
+                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(18, 48, 38, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #FFF 0%, #DAB46E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .check-glow { box-shadow: 0 0 20px rgba(174, 139, 74, 0.15); }
+        .check-glow-active { box-shadow: 0 0 30px rgba(174, 139, 74, 0.4); }
+    </style>
+</head>
+<body class="bg-dark-900 text-zinc-300 min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.png" alt="PassPrep App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-500/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">PassPrep</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#features" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                        <a href="#simulator" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Interactive Guide</a>
+                        <a href="support.html" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                        <a href="#download" class="bg-brand-500 text-white hover:bg-brand-400 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(174,139,74,0.3)] hover:shadow-[0_0_25px_rgba(174,139,74,0.5)]">
+                            Get App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">
+        <!-- Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-700/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                U.S. Passport Renewal Companion
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                Zero Mistakes. Zero Rejections.<br class="hidden md:block" />
+                <span class="text-gradient">Renew Your Passport Confidently</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-zinc-400 mx-auto mb-10 leading-relaxed">
+                Take control of your application details. Determine your official renewal pathway, verify U.S. photo guidelines, compile the envelope correctly, and write checks without errors.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://apps.apple.com/app/id6475143329" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+            </div>
+
+            <!-- Preview/Visual Anchor -->
+            <div class="mt-20 relative max-w-4xl mx-auto perspective-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div class="glass rounded-3xl p-6 md:p-8 border border-white/10 shadow-2xl transform rotate-x-12 translate-y-8 text-left">
+                    <div class="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
+                        <div>
+                            <div class="text-xs text-brand-400 font-semibold tracking-widest uppercase mb-1">Onboarding Roadmap</div>
+                            <div class="text-2xl font-bold text-white">Renovate stress-free</div>
+                        </div>
+                        <div class="bg-brand-500/20 px-3 py-1.5 rounded-xl border border-brand-500/30 text-xs font-semibold text-brand-400">
+                            Milestone Alerts
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-dark-800/80 p-4 rounded-2xl border border-white/5">
+                            <div class="text-xs text-zinc-400 mb-1">RENEWAL CHECKLIST</div>
+                            <div class="text-lg font-bold text-white font-mono">100% Prepared</div>
+                        </div>
+                        <div class="bg-dark-800/80 p-4 rounded-2xl border border-white/5">
+                            <div class="text-xs text-zinc-400 mb-1">ELIGIBILITY STATUS</div>
+                            <div class="text-lg font-bold text-white font-mono text-emerald-400">DS-82 Mail-in Qualified</div>
+                        </div>
+                        <div class="bg-dark-800/80 p-4 rounded-2xl border border-white/5">
+                            <div class="text-xs text-zinc-400 mb-1">FEE CALCULATION</div>
+                            <div class="text-lg font-bold text-brand-400 font-mono">$130.00 <span class="text-sm font-sans font-medium text-brand-500">Book Fee</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-dark-800 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Renew Correctly, the First Time</h2>
+                <p class="text-zinc-400 mt-2">Everything you need to successfully package your passport application.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Eligibility Quiz</h3>
+                    <p class="text-zinc-400 leading-relaxed">Take a 2-minute questionnaire to determine whether you're qualified for Mail-in renewal (DS-82), online submission (OPR), or if you must apply in person (DS-11).</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 border-brand-500/20 shadow-[0_0_30px_rgba(174,139,74,0.05)]">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Fee & Check Guide</h3>
+                    <p class="text-zinc-400 leading-relaxed">Calculate exact government fees depending on your delivery choice (expedited vs routine), and simulate writing your personal check to ensure correct payee and memo formatting.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Family Expiry Alerts</h3>
+                    <p class="text-zinc-400 leading-relaxed">Create individual profiles for your household. Receive local notification alerts 12, 9, 6, and 3 months prior to passport expiration to schedule international trips securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Check Simulator Section -->
+    <section id="simulator" class="py-24 bg-dark-900 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Interactive Check-Writing Simulator</h2>
+                <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+                    Incorrect checks are the #1 cause of passport service rejection. Click on the highlighted fields of the check below to learn what to write and avoid delays.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Check mockup (left) -->
+                <div class="lg:col-span-8 bg-zinc-100 rounded-2xl p-4 md:p-8 check-glow border border-zinc-300 relative text-zinc-900 font-serif flex flex-col justify-between overflow-x-auto min-h-[320px]">
+                    <div class="min-w-[600px] flex flex-col justify-between flex-grow">
+                        <!-- Top Row: Address, Check No, Date -->
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="text-xs leading-tight">
+                                <p class="font-bold uppercase tracking-wider">John Doe</p>
+                                <p>123 Main Street</p>
+                                <p>Anytown, NY 10001</p>
+                            </div>
+                            
+                            <div class="text-right text-sm">
+                                <p class="font-mono">1024</p>
+                                <div class="mt-2 flex items-center gap-1 justify-end">
+                                    <span class="text-xs uppercase font-sans">Date:</span>
+                                    <button onclick="selectZone('date')" id="btn-date" class="border border-dashed border-brand-500 bg-brand-500/10 hover:bg-brand-500/20 px-2 py-1 rounded text-xs font-mono text-zinc-800 transition-colors">
+                                        05/24/2026
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mid Row 1: Payee and Amount Box -->
+                        <div class="flex justify-between items-center gap-4 mb-6">
+                            <div class="flex-grow flex items-center gap-2">
+                                <span class="text-xs uppercase font-sans shrink-0">Pay to the Order of</span>
+                                <button onclick="selectZone('payTo')" id="btn-payTo" class="flex-grow text-left border border-dashed border-brand-500 bg-brand-500/10 hover:bg-brand-500/20 px-3 py-1.5 rounded font-bold text-sm tracking-wide text-zinc-800 transition-colors">
+                                    U.S. Department of State
+                                </button>
+                            </div>
+                            
+                            <div class="flex items-center gap-1 shrink-0">
+                                <span class="text-lg font-bold font-sans">$</span>
+                                <button onclick="selectZone('amountNum')" id="btn-amountNum" class="border border-dashed border-brand-500 bg-brand-500/10 hover:bg-brand-500/20 px-3 py-1.5 rounded font-mono text-sm text-zinc-800 transition-colors">
+                                    130.00
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Mid Row 2: Written out amount -->
+                        <div class="flex items-center gap-2 mb-6">
+                            <button onclick="selectZone('amountWord')" id="btn-amountWord" class="flex-grow text-left border border-dashed border-brand-500 bg-brand-500/10 hover:bg-brand-500/20 px-3 py-1.5 rounded text-sm text-zinc-800 transition-colors">
+                                One hundred thirty and 00/100 ——————————————————
+                            </button>
+                            <span class="text-xs uppercase font-sans shrink-0">Dollars</span>
+                        </div>
+
+                        <!-- Bottom Row: Memo, Signature -->
+                        <div class="flex justify-between items-end gap-6">
+                            <div class="flex-grow flex items-center gap-2">
+                                <span class="text-xs uppercase font-sans">Memo:</span>
+                                <button onclick="selectZone('memo')" id="btn-memo" class="flex-grow text-left border border-dashed border-brand-500 bg-brand-500/10 hover:bg-brand-500/20 px-2 py-1 rounded text-xs font-mono text-zinc-800 transition-colors">
+                                    JOHN DOE - DOB: 12/25/1990
+                                </button>
+                            </div>
+                            
+                            <div class="w-1/3 flex flex-col items-center">
+                                <button onclick="selectZone('signature')" id="btn-signature" class="w-full border-b border-dashed border-brand-500 bg-brand-500/10 hover:bg-brand-500/20 py-1.5 px-2 rounded text-center text-xs font-mono text-zinc-800 transition-colors">
+                                    Sign Here
+                                </button>
+                                <span class="text-[9px] uppercase font-sans text-zinc-500 mt-1">Authorized Signature</span>
+                            </div>
+                        </div>
+
+                        <!-- Bank code bottom line -->
+                        <div class="mt-6 font-mono text-sm text-zinc-500 tracking-[0.2em] flex gap-8">
+                            <span>⑆123456789⑆</span>
+                            <span>987654321⑈</span>
+                            <span>1024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Card (right) -->
+                <div class="lg:col-span-4 glass p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl relative min-h-[320px]">
+                    <div id="info-default" class="space-y-4">
+                        <h4 class="text-xl font-bold text-white flex items-center gap-2">
+                            <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                            Explore Check Zones
+                        </h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Click any highlighted area on the check to view specific formatting instructions, valid fee options, and mistakes flagged by the U.S. Department of State.
+                        </p>
+                        <div class="border-t border-white/5 pt-4">
+                            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">PRO TIP:</span>
+                            <p class="text-xs text-zinc-500 mt-1">Always write checks in blue or black ink. Pencil or colored inks are grounds for rejection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Explanatory elements updated dynamically by JS -->
+                    <div id="info-detail" class="hidden space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div id="info-icon" class="w-10 h-10 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-400">
+                                <!-- Dynamic Icon -->
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-brand-400 font-bold uppercase tracking-wider">Selected Field</div>
+                                <h4 id="info-title" class="text-lg font-bold text-white leading-tight">Field Title</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-800/60 p-4 rounded-xl border border-white/5">
+                            <div class="text-xs text-zinc-400 font-semibold mb-1">INSTRUCTION:</div>
+                            <p id="info-instruction" class="text-sm text-white font-medium">Instruction goes here.</p>
+                        </div>
+
+                        <div class="bg-dark-800/40 p-4 rounded-xl border border-white/5">
+                            <div class="text-xs text-zinc-400 font-semibold mb-1">EXAMPLE:</div>
+                            <p id="info-example" class="text-sm font-mono text-zinc-300">Example goes here.</p>
+                        </div>
+
+                        <div id="warning-box" class="bg-red-500/10 p-4 rounded-xl border border-red-500/20 hidden">
+                            <div class="text-xs text-red-400 font-semibold mb-1">CRITICAL WARNINGS:</div>
+                            <ul id="info-warnings" class="list-disc list-inside text-xs text-zinc-400 space-y-1">
+                                <!-- Dynamic warnings list -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo & Assembly Guidelines Section -->
+    <section class="py-24 bg-dark-800 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Complete Envelope Assembly Checklist</h2>
+                    <p class="text-zinc-400 text-lg mb-8 leading-relaxed">
+                        Gather and bundle your physical items correctly before shipping to the regional center. Follow the app's step-by-step assembly guides to complete passport renewal envelopes with zero items missing.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-white"><strong>U.S. Photo Standard:</strong> Camera overlay rules for 2x2 inch prints with no glasses.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-white"><strong>Staple Rules:</strong> Exact placement instructions for securing photos on DS-82.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-white"><strong>Mailing Grouping:</strong> Correct postal routing addresses determined by state.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Guidelines panel -->
+                <div class="glass p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl">
+                    <h4 class="text-xl font-bold text-white mb-6">U.S. Photo Quick Rules</h4>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-dark-800 rounded-2xl border border-white/5">
+                            <div class="flex items-center justify-between font-bold text-white mb-1">
+                                <span>Dimensions & Print</span>
+                                <span class="text-brand-400">2" x 2" (51x51mm)</span>
+                            </div>
+                            <p class="text-xs text-zinc-500">Must be printed on matte or glossy quality paper. Do not resize or crop digitally.</p>
+                        </div>
+                        <div class="p-4 bg-dark-800 rounded-2xl border border-white/5">
+                            <div class="flex items-center justify-between font-bold text-white mb-1">
+                                <span>Eye Wear Rule</span>
+                                <span class="text-red-400">No Glasses Allowed</span>
+                            </div>
+                            <p class="text-xs text-zinc-500">Remove eyeglasses, sunglasses, tinted glasses, or lenses, unless medically required (requires statement).</p>
+                        </div>
+                        <div class="p-4 bg-dark-800 rounded-2xl border border-white/5">
+                            <div class="flex items-center justify-between font-bold text-white mb-1">
+                                <span>Expression & Background</span>
+                                <span class="text-brand-400">Neutral & White</span>
+                            </div>
+                            <p class="text-xs text-zinc-500">Smile must be natural, both eyes open. Background must be plain white or off-white.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.png" alt="PassPrep App Icon" class="w-8 h-8 rounded-lg shadow-lg object-cover">
+                        <span class="text-white font-bold text-lg">PassPrep</span>
+                    </div>
+                    <p class="text-zinc-500 max-w-sm">
+                        Verify eligibility pathways, calculate passport fees, write check details correctly, and track family expirations in one complete companion.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-zinc-500 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#simulator" class="text-zinc-500 hover:text-white transition-colors">Interactive Guide</a></li>
+                        <li><a href="#download" class="text-zinc-500 hover:text-white transition-colors">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Support & Terms</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contact.devotellix@gmail.com" class="text-zinc-500 hover:text-brand-400 transition-colors">contact.devotellix@gmail.com</a></li>
+                        <li><a href="support.html" class="text-zinc-500 hover:text-white transition-colors">Support Center</a></li>
+                        <li><a href="privacy.html" class="text-zinc-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-zinc-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Processed and prepared offline locally.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Simulator JS Logic -->
+    <script>
+        const zones = {
+            date: {
+                title: "Date Field",
+                instruction: "Write today's date in MM/DD/YYYY format.",
+                example: "05/24/2026",
+                icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>',
+                warnings: [
+                    "Post-dating your check (writing a date in the future) is not recommended.",
+                    "Ensure the year matches the current year. Checks with outdated years may be returned."
+                ]
+            },
+            payTo: {
+                title: "Pay to the Order of",
+                instruction: "Write exactly: U.S. Department of State",
+                example: "U.S. Department of State",
+                icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>',
+                warnings: [
+                    "Do NOT write 'US Passport Office', 'Passport Agency', or 'Department of State'.",
+                    "Do NOT write 'US' without periods. It must be written as 'U.S.'.",
+                    "Do NOT abbreviate 'Department' to 'Dept.'."
+                ]
+            },
+            amountNum: {
+                title: "Amount in Numbers",
+                instruction: "Write the exact dollar amount in numbers inside the box.",
+                example: "$130.00 (DS-82 Routine Book Fee)",
+                icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
+                warnings: [
+                    "Include the exact cents (e.g. '.00') even if it is a whole dollar amount.",
+                    "Ensure this amount matches the fee calculation exactly. Insufficient fees will cause rejection."
+                ]
+            },
+            amountWord: {
+                title: "Amount in Words",
+                instruction: "Write out the legal amount in words, followed by 'and 00/100'. Draw a line through any remaining blank space.",
+                example: "One hundred thirty and 00/100 ——————",
+                icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>',
+                warnings: [
+                    "If the written amount and the number in the box conflict, the written amount takes precedence.",
+                    "Do not use white-out or correction tape to fix typos. Banks will reject modified checks."
+                ]
+            },
+            memo: {
+                title: "Memo / For Line",
+                instruction: "Write the applicant's full legal name and date of birth in MM/DD/YYYY format.",
+                example: "JOHN DOE - DOB: 12/25/1990",
+                icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>',
+                warnings: [
+                    "Crucial for identifying your check in case it becomes separated from your physical application form.",
+                    "Ensure the name is spelled exactly as it appears on your passport renewal application."
+                ]
+            },
+            signature: {
+                title: "Authorized Signature",
+                instruction: "Sign the check on the designated line. An unsigned check will result in immediate rejection.",
+                example: "Sign with your legal financial signature",
+                icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>',
+                warnings: [
+                    "Forgetting the signature is the most common reason passport applications are returned.",
+                    "Make sure the signature matches your official bank records."
+                ]
+            }
+        };
+
+        let currentActiveId = null;
+
+        function selectZone(id) {
+            // Update active styling
+            if (currentActiveId) {
+                const prevBtn = document.getElementById('btn-' + currentActiveId);
+                if (prevBtn) {
+                    prevBtn.classList.remove('bg-brand-500/30', 'border-solid');
+                    prevBtn.classList.add('bg-brand-500/10', 'border-dashed');
+                }
+            }
+
+            const currentBtn = document.getElementById('btn-' + id);
+            if (currentBtn) {
+                currentBtn.classList.remove('bg-brand-500/10', 'border-dashed');
+                currentBtn.classList.add('bg-brand-500/30', 'border-solid');
+            }
+            currentActiveId = id;
+
+            // Load data
+            const data = zones[id];
+            document.getElementById('info-default').classList.add('hidden');
+            document.getElementById('info-detail').classList.remove('hidden');
+
+            document.getElementById('info-icon').innerHTML = data.icon;
+            document.getElementById('info-title').innerText = data.title;
+            document.getElementById('info-instruction').innerText = data.instruction;
+            document.getElementById('info-example').innerText = data.example;
+
+            const warningBox = document.getElementById('warning-box');
+            const warningsList = document.getElementById('info-warnings');
+            warningsList.innerHTML = '';
+
+            if (data.warnings && data.warnings.length > 0) {
+                data.warnings.forEach(w => {
+                    const li = document.createElement('li');
+                    li.innerText = w;
+                    warningsList.appendChild(li);
+                });
+                warningBox.classList.remove('hidden');
+            } else {
+                warningBox.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
