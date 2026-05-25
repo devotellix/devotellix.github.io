@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | MistakeLab</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { 400: '#BF5AF2', 500: '#A33BE2', 600: '#7E22CE' },
+                        dark: { 950: '#000000', 900: '#0B0F19', 800: '#151D30', 700: '#1E294B' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(21, 29, 48, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #94A3B8; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #94A3B8; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-800 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-500/20 transition-colors">
+                        <svg class="w-5 h-5 text-slate-400 group-hover:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                    Security & Privacy
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-slate-500">Effective Date: May 25, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-8 border-l-4 border-l-brand-500">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> MistakeLab is built from the ground up to protect your academic work. All exam photos, OCR text extraction, spaced repetition calculations, and study metrics are executed entirely on your local iOS device. We do not collect, upload, share, or sell your data.</p>
+                </div>
+
+                <h2>1. Offline-First Architecture</h2>
+                <p>MistakeLab operates 100% offline. All mistakes, corrections, notes, exam configurations, and SM-2 spaced repetition dates are processed locally using Apple's native SwiftData framework. <strong>We do not maintain backend databases or servers, and we never transmit your study content over the network.</strong></p>
+
+                <h2>2. On-Device Text Recognition (OCR)</h2>
+                <p>When you capture or import a question, text recognition is handled locally on your iPhone using iOS's native <strong>VisionKit / Live Text API</strong>. No image files or extracted texts are uploaded to external APIs, cloud services, or developers. All computational work is performed strictly on your CPU/GPU.</p>
+
+                <h2>3. iOS Device Permissions</h2>
+                <p>Depending on how you use MistakeLab, the application may ask for the following standard system permissions:</p>
+                <ul>
+                    <li><strong>Camera:</strong> Used exclusively to photograph failed exam questions. Image processing is run entirely on-device, and the images are saved locally to your app's isolated sandbox.</li>
+                    <li><strong>Photo Library:</strong> Optional. Used if you wish to import screenshots or pre-existing pictures of exam errors from your camera roll.</li>
+                    <li><strong>Notifications:</strong> Optional. Used to deliver local push alerts reminding you when errors are due for review (Spaced Repetition intervals). These reminders are scheduled locally and do not use a remote server.</li>
+                    <li><strong>iCloud (CloudKit):</strong> Optional. If you choose to enable iCloud syncing in your system settings, Apple secures your data across your private iCloud account. We have no access to your iCloud credentials or sync data.</li>
+                </ul>
+
+                <h2>4. Zero Third-Party Integrations</h2>
+                <p>MistakeLab is free of advertisements, tracking scripts, and external analytic frameworks (such as Google Analytics or Facebook SDK). We receive anonymous crash reports from Apple only if you have consented to share diagnostics in your iOS system settings. These reports contain no personal information or study content.</p>
+
+                <h2>5. PDF Document Generation</h2>
+                <p>The PDF Export feature utilizes Apple's native <strong>PDFKit</strong> framework. The creation of your mistake workbook is executed entirely on your device. The resulting PDF file is saved locally to your chosen directory or shared directly via the native share sheet.</p>
+
+                <h2>6. Changes to this Policy</h2>
+                <p>We may update this Privacy Policy to align with new iOS features or App Store guidelines. Any updates will be published on this page. Because we do not collect email addresses, we suggest checking this policy occasionally or reading the App Store release notes.</p>
+
+                <h2>Contact Us</h2>
+                <p>For questions or suggestions regarding our offline security practices, please contact us at <a href="mailto:contact.devotellix@gmail.com" class="text-brand-400 hover:text-brand-300">contact.devotellix@gmail.com</a>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>

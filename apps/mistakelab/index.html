@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MistakeLab | Premium Wrong Answer Journal & Spaced Repetition</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Master your competitive exams (SAT, GMAT, GRE, CFA, PACES) with MistakeLab. Capture mistakes via OCR, categorize their cognitive causes, and study them using spaced repetition.">
+    <meta name="keywords" content="MistakeLab, Error Log, Wrong Answer Journal, Spaced Repetition, SM-2, Flashcards, Exam Prep, SAT, GMAT, GRE, CFA, PACES, iOS App">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/mistakelab/index.html">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/mistakelab/index.html">
+    <meta property="og:title" content="MistakeLab | Premium Wrong Answer Journal & Spaced Repetition">
+    <meta property="og:description" content="Capture exam mistakes, identify cognitive weakness patterns, and review them using scientific spaced repetition. Stop repeating errors.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/mistakelab/app-icon.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MistakeLab | Premium Wrong Answer Journal">
+    <meta name="twitter:description" content="Track and analyze failed questions on your iPhone. Solve them via SM-2 daily quiz. Offline-first and private.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/mistakelab/app-icon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: { 400: '#BF5AF2', 500: '#A33BE2', 600: '#7E22CE' },
+                        dark: { 950: '#000000', 900: '#0B0F19', 800: '#151D30', 700: '#1E294B' }
+                    },
+                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(21, 29, 48, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #FFF 0%, #BF5AF2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-perspective { perspective: 1000px; }
+        .card-inner { transition: transform 0.6s; transform-style: preserve-3d; }
+        .card-flipped { transform: rotateY(180deg); }
+        .card-face { backface-visibility: hidden; }
+        .card-back { transform: rotateY(180deg); }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.png" alt="MistakeLab App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-500/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">MistakeLab</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#features" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                        <a href="#simulator" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Interactive Card</a>
+                        <a href="#taxonomy" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Error Taxonomy</a>
+                        <a href="support.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                        <a href="#download" class="bg-brand-500 text-white hover:bg-brand-400 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(163,59,226,0.3)] hover:shadow-[0_0_25px_rgba(163,59,226,0.5)]">
+                            Get App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">
+        <!-- Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-700/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                Ultimate Wrong Answer Journal
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                Don't Make The Same Mistake Twice.<br class="hidden md:block" />
+                <span class="text-gradient">Master Your Exam Weaknesses</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-slate-400 mx-auto mb-10 leading-relaxed">
+                Recommended by 99th percentile scorers. Capture failed prep questions via OCR, diagnose their cognitive failure reasons, and study them using scientific spaced repetition.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://apps.apple.com/app/id6475143329" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+            </div>
+
+            <!-- Preview/Visual Anchor -->
+            <div class="mt-20 relative max-w-4xl mx-auto">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div class="glass rounded-3xl p-6 md:p-8 border border-white/5 shadow-2xl text-left">
+                    <div class="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                        <div>
+                            <div class="text-xs text-brand-400 font-semibold tracking-widest uppercase mb-1">Study Dashboard</div>
+                            <div class="text-2xl font-bold text-white font-sans">Pattern Recognition</div>
+                        </div>
+                        <div class="bg-brand-500/20 px-3 py-1.5 rounded-xl border border-brand-500/30 text-xs font-semibold text-brand-400">
+                            Offline-First Data
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5">
+                            <div class="text-xs text-slate-400 mb-2 uppercase font-semibold">Mastery Percentage</div>
+                            <div class="text-3xl font-extrabold text-white font-mono flex items-baseline gap-1">
+                                74.2% <span class="text-xs text-emerald-400 font-sans font-medium">+5.4% this week</span>
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5">
+                            <div class="text-xs text-slate-400 mb-2 uppercase font-semibold">Active Error Log</div>
+                            <div class="text-3xl font-extrabold text-white font-mono">
+                                142 <span class="text-xs text-slate-500 font-sans font-medium">Questions total</span>
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5">
+                            <div class="text-xs text-slate-400 mb-2 uppercase font-semibold">Today's SRS Queue</div>
+                            <div class="text-3xl font-extrabold text-brand-400 font-mono text-purple-400">
+                                12 <span class="text-xs text-brand-500 font-sans font-medium">Pending Quiz</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Engineered For High-Stakes Exam Prep</h2>
+                <p class="text-slate-400 mt-2">Study smarter, recognize logical patterns, and eliminate repeat errors.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">On-Device OCR Scanner</h3>
+                    <p class="text-slate-400 leading-relaxed">Snapshot failed questions from books or screens in under 10 seconds. iOS native VisionKit automatically extracts the text and stores the image locally.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 border-brand-500/20 shadow-[0_0_30px_rgba(163,59,226,0.05)]">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cognitive Taxonomy</h3>
+                    <p class="text-slate-400 leading-relaxed">Categorize errors by root cause: Content Gaps, Careless Mistakes, Misreads, Logic Traps, or Time Pressure. Identify exact behavioral patterns holding your scores back.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Spaced Repetition (SM-2)</h3>
+                    <p class="text-slate-400 leading-relaxed">Reviewing too early creates false fluency. MistakeLab schedules re-testing drills at optimal scientific intervals so you permanently lock in corrections.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Card Simulator Section -->
+    <section id="simulator" class="py-24 bg-dark-950 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Interactive Quiz Flashcard</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Experience the active recall flow. Read the mock SAT/GMAT question below, guess the solution, and click to flip the card and check the remediation notes.
+                </p>
+            </div>
+
+            <div class="max-w-md mx-auto card-perspective">
+                <!-- Flippable Card Container -->
+                <div onclick="flipCard()" id="flip-card-inner" class="card-inner cursor-pointer relative w-full min-h-[400px] shadow-2xl rounded-3xl glass border border-white/10 p-8 flex flex-col justify-between select-none">
+                    
+                    <!-- FRONT SIDE (Question) -->
+                    <div id="card-front" class="card-face absolute inset-0 p-8 flex flex-col justify-between h-full bg-slate-900 rounded-3xl border border-white/10">
+                        <div class="flex justify-between items-center text-xs text-slate-500 font-semibold tracking-wider">
+                            <span>SECTION: QUANTITATIVE</span>
+                            <span class="text-brand-400 font-bold uppercase bg-brand-500/10 px-2 py-1 rounded">Quiz Active</span>
+                        </div>
+
+                        <div class="my-6">
+                            <h3 class="text-white text-lg font-medium leading-relaxed mb-4">
+                                If <span class="font-serif italic font-bold text-brand-400">x</span> is a positive integer and <span class="font-serif italic font-bold">x² + x</span> is odd, which of the following must be true?
+                            </h3>
+                            <ul class="space-y-2 text-sm text-slate-400 font-mono">
+                                <li class="p-2.5 rounded bg-slate-800/50 border border-white/5">A) x is odd</li>
+                                <li class="p-2.5 rounded bg-slate-800/50 border border-white/5">B) x is even</li>
+                                <li class="p-2.5 rounded bg-slate-800/50 border border-white/5">C) x² is odd</li>
+                                <li class="p-2.5 rounded bg-brand-500/10 border border-brand-500/20 text-brand-400 font-bold">D) None of the above</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-center text-xs text-slate-500 uppercase tracking-widest font-semibold flex items-center justify-center gap-2">
+                            <span>Tap to reveal solution</span>
+                            <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </div>
+                    </div>
+
+                    <!-- BACK SIDE (Correction & Notes) -->
+                    <div id="card-back" class="card-face card-back absolute inset-0 p-8 flex flex-col justify-between h-full bg-slate-950 rounded-3xl border border-white/10">
+                        <div class="flex justify-between items-center text-xs text-slate-500 font-semibold tracking-wider">
+                            <span>CORRECT ANSWER: D</span>
+                            <span class="text-emerald-400 font-bold uppercase bg-emerald-500/10 px-2 py-1 rounded">Concept Trap</span>
+                        </div>
+
+                        <div class="my-4">
+                            <h4 class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-1">REMEDIATION LESSON</h4>
+                            <p class="text-white text-base leading-relaxed bg-brand-500/5 p-4 rounded-xl border border-brand-500/10 font-medium">
+                                "The product of two consecutive integers <span class="font-serif italic font-bold text-brand-400">x(x + 1)</span> is always even, because one of them must be even. Thus, <span class="font-serif italic font-bold">x² + x</span> can never be odd. Don't rush to guess values!"
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="border-t border-white/5 pt-4 flex gap-2">
+                                <button onclick="handleAction(event, 'review')" class="flex-1 py-2.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs font-bold uppercase border border-red-500/20 transition-all">
+                                    Re-Review (J+1)
+                                </button>
+                                <button onclick="handleAction(event, 'master')" class="flex-1 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase border border-emerald-500/20 transition-all">
+                                    Mastered (J+4)
+                                </button>
+                            </div>
+                            <div class="text-center text-[10px] text-slate-500 uppercase tracking-widest font-semibold">
+                                Tap card to hide solution
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Error Taxonomy Section -->
+    <section id="taxonomy" class="py-24 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Interactive Cognitive Taxonomy</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    To fix a mistake, you must isolate the psychological reason behind it. Select one of the 5 categories below to analyze your patterns.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Taxonomy Selection (left) -->
+                <div class="lg:col-span-6 space-y-4">
+                    <!-- Option 1 -->
+                    <button onclick="selectCategory('gap')" id="cat-gap" class="w-full text-left p-6 rounded-2xl border border-white/5 bg-slate-900/50 hover:bg-slate-900 hover:border-red-500/20 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                            <span class="text-white font-bold text-lg">Content Gap</span>
+                        </div>
+                        <span class="text-xs text-slate-500 group-hover:text-slate-300">Theoretical Lacuna &rarr;</span>
+                    </button>
+                    <!-- Option 2 -->
+                    <button onclick="selectCategory('careless')" id="cat-careless" class="w-full text-left p-6 rounded-2xl border border-white/5 bg-slate-900/50 hover:bg-slate-900 hover:border-orange-500/20 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <span class="w-3 h-3 rounded-full bg-orange-500"></span>
+                            <span class="text-white font-bold text-lg">Careless Mistake</span>
+                        </div>
+                        <span class="text-xs text-slate-500 group-hover:text-slate-300">Distraction Slips &rarr;</span>
+                    </button>
+                    <!-- Option 3 -->
+                    <button onclick="selectCategory('misread')" id="cat-misread" class="w-full text-left p-6 rounded-2xl border border-white/5 bg-slate-900/50 hover:bg-slate-900 hover:border-cyan-500/20 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <span class="w-3 h-3 rounded-full bg-cyan-400"></span>
+                            <span class="text-white font-bold text-lg">Misread Prompt</span>
+                        </div>
+                        <span class="text-xs text-slate-500 group-hover:text-slate-300">Key Word Omissions &rarr;</span>
+                    </button>
+                    <!-- Option 4 -->
+                    <button onclick="selectCategory('trap')" id="cat-trap" class="w-full text-left p-6 rounded-2xl border border-white/5 bg-slate-900/50 hover:bg-slate-900 hover:border-emerald-500/20 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                            <span class="text-white font-bold text-lg">Concept Trap</span>
+                        </div>
+                        <span class="text-xs text-slate-500 group-hover:text-slate-300">Logical Distractors &rarr;</span>
+                    </button>
+                    <!-- Option 5 -->
+                    <button onclick="selectCategory('time')" id="cat-time" class="w-full text-left p-6 rounded-2xl border border-white/5 bg-slate-900/50 hover:bg-slate-900 hover:border-purple-500/20 transition-all flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                            <span class="text-white font-bold text-lg">Time Pressure</span>
+                        </div>
+                        <span class="text-xs text-slate-500 group-hover:text-slate-300">Speed Panic &rarr;</span>
+                    </button>
+                </div>
+
+                <!-- Detail Panel (right) -->
+                <div class="lg:col-span-6 glass p-8 rounded-3xl border border-white/10 min-h-[360px] flex flex-col justify-between">
+                    <div id="tax-default" class="space-y-4 my-auto text-center">
+                        <svg class="w-12 h-12 text-brand-400 mx-auto opacity-70 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                        <h4 class="text-lg font-bold text-white">Select a Failure Profile</h4>
+                        <p class="text-slate-400 text-sm max-w-sm mx-auto">Click any of the 5 categories on the left to learn its cognitive definition, exam examples, and diagnostic study advice.</p>
+                    </div>
+
+                    <div id="tax-detail" class="hidden space-y-6">
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-4">
+                            <div id="tax-color" class="w-4 h-4 rounded-full"></div>
+                            <h3 id="tax-title" class="text-2xl font-bold text-white">Category Title</h3>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-1">Psychological Definition</span>
+                                <p id="tax-desc" class="text-slate-300 text-sm leading-relaxed">Detailed description goes here.</p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-1">Common Exam Example</span>
+                                <p id="tax-example" class="text-white text-sm font-mono bg-slate-900/50 p-3 rounded-xl border border-white/5">Example details.</p>
+                            </div>
+                            <div id="tax-advice-box" class="p-4 rounded-xl border">
+                                <span id="tax-advice-label" class="text-[10px] font-bold uppercase tracking-wider block mb-1">Study Advice</span>
+                                <p id="tax-advice" class="text-sm font-medium">Advice details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.png" alt="MistakeLab App Icon" class="w-8 h-8 rounded-lg shadow-lg object-cover">
+                        <span class="text-white font-bold text-lg">MistakeLab</span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm">
+                        Capture failed prep questions, diagnose their cognitive weaknesses, and master your competitive exams via offline spaced repetition.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-slate-500 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#simulator" class="text-slate-500 hover:text-white transition-colors">Interactive Quiz</a></li>
+                        <li><a href="#download" class="text-slate-500 hover:text-white transition-colors">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Support & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contact.devotellix@gmail.com" class="text-slate-500 hover:text-brand-400 transition-colors">contact.devotellix@gmail.com</a></li>
+                        <li><a href="support.html" class="text-slate-500 hover:text-white transition-colors">Support Portal</a></li>
+                        <li><a href="privacy.html" class="text-slate-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">100% Offline OCR & Local SwiftData.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Simulator JS Logic -->
+    <script>
+        // Flip card logic
+        function flipCard() {
+            document.getElementById('flip-card-inner').classList.toggle('card-flipped');
+        }
+
+        function handleAction(event, action) {
+            event.stopPropagation(); // prevent card flipping when clicking buttons
+            alert(action === 'master' ? 'Card marked as Mastered! Review interval extended.' : 'Card marked for Re-Review! Scheduled for tomorrow.');
+            flipCard();
+        }
+
+        // Interactive Taxonomy selection logic
+        const categories = {
+            gap: {
+                title: "Content Gap",
+                color: "bg-red-500",
+                border: "border-red-500/20 bg-red-500/5 text-red-400",
+                desc: "You did not know the underlying facts, rules, formulas, or syntax necessary to solve the problem.",
+                example: "Forgot the trigonometric identity for double angles, or missed a specific grammar agreement in a foreign language section.",
+                advice: "Pause solving drills. Spend dedicated sessions studying textbooks, reviewing lecture slides, and writing down formula cheat sheets."
+            },
+            careless: {
+                title: "Careless Mistake",
+                color: "bg-orange-500",
+                border: "border-orange-500/20 bg-orange-500/5 text-orange-400",
+                desc: "You understood the concept fully, but made an inadvertent slip during manual calculation, writing, or transcription.",
+                example: "Writing 5 * 3 = 18, or dropping a negative sign in the third step of an algebra system.",
+                advice: "Maintain neat scratch paper. Write down steps explicitly rather than computing mentally, and perform quick bounds checks on your answers."
+            },
+            misread: {
+                title: "Misread Prompt",
+                color: "bg-cyan-400",
+                border: "border-cyan-500/20 bg-cyan-500/5 text-cyan-400",
+                desc: "You misread or skipped a critical constraint in the question stem, or answered the wrong question.",
+                example: "Failing to see the word 'EXCEPT' or 'not', or solving for the value of y when the prompt asked for 2y + 5.",
+                advice: "Develop a physical underlining habit. Circle key negation words and the final target variable before touching your pencil."
+            },
+            trap: {
+                title: "Concept Trap",
+                color: "bg-emerald-500",
+                border: "border-emerald-500/20 bg-emerald-500/5 text-emerald-400",
+                desc: "You fell for a logical trap set by the test makers, choosing an attractive but mathematically/logically invalid option.",
+                example: "Assuming x is a positive integer instead of any real number, or choosing a distractor that matched an intermediate value.",
+                advice: "Examine distractor designs. Spend time analyzing why the incorrect option was so tempting, and document the specific trap mechanism."
+            },
+            time: {
+                title: "Time Pressure",
+                color: "bg-purple-500",
+                border: "border-purple-500/20 bg-purple-500/5 text-purple-400",
+                desc: "You made an error or guessed randomly because you ran out of time, or rushed under clock anxiety.",
+                example: "Spending 4 minutes stuck on a hard level-5 math question, causing you to rush through the last 4 easy questions.",
+                advice: "Establish timing checkpoints. Practice skipping highly resistant questions early to secure easy points at the end of the sections."
+            }
+        };
+
+        let activeCatId = null;
+
+        function selectCategory(id) {
+            if (activeCatId) {
+                document.getElementById('cat-' + activeCatId).classList.remove('border-brand-500/40', 'bg-slate-900');
+                document.getElementById('cat-' + activeCatId).classList.add('border-white/5', 'bg-slate-900/50');
+            }
+
+            const btn = document.getElementById('cat-' + id);
+            btn.classList.remove('border-white/5', 'bg-slate-900/50');
+            btn.classList.add('border-brand-500/40', 'bg-slate-900');
+            activeCatId = id;
+
+            const cat = categories[id];
+            document.getElementById('tax-default').classList.add('hidden');
+            document.getElementById('tax-detail').classList.remove('hidden');
+
+            document.getElementById('tax-title').innerText = cat.title;
+            document.getElementById('tax-desc').innerText = cat.desc;
+            document.getElementById('tax-example').innerText = cat.example;
+            document.getElementById('tax-advice').innerText = cat.advice;
+
+            const colorDiv = document.getElementById('tax-color');
+            colorDiv.className = 'w-4 h-4 rounded-full ' + cat.color;
+
+            const adviceBox = document.getElementById('tax-advice-box');
+            adviceBox.className = 'p-4 rounded-xl border ' + cat.border;
+        }
+    </script>
+</body>
+</html>
