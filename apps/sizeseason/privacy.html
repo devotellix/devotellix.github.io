@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | SizeSeason</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { mint: '#059487', peach: '#FA7217', lavender: '#8C5CF5' },
+                        dark: { 950: '#060910', 900: '#0C1222', 800: '#121627', 700: '#1E293B' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(18, 22, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #94A3B8; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #94A3B8; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-800 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-mint/20 transition-colors">
+                        <svg class="w-5 h-5 text-slate-400 group-hover:text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-mint/10 border border-brand-mint/20 text-brand-mint text-xs font-semibold uppercase tracking-wider mb-4">
+                    Security & Privacy
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-slate-500">Effective Date: May 28, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-8 border-l-4 border-l-brand-mint">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> SizeSeason is built from the ground up to protect your family's personal data. All child growth profiles, measurements, wardrobe lists, and seasonal size projections are processed and stored exclusively on your local iOS device. We do not collect, transmit, share, or sell your data.</p>
+                </div>
+
+                <h2>1. Offline-First Architecture</h2>
+                <p>SizeSeason operates 100% offline. All growth profiles (name, date of birth, gestational age, gender), logs (height, weight measurements), and wardrobe inventories (clothing item counts) are saved locally using Apple's native SwiftData framework. <strong>We do not maintain cloud databases or remote servers, and we never transmit your baby's logs over the network.</strong></p>
+
+                <h2>2. No Accounts or Registration</h2>
+                <p>We do not require accounts, logins, passwords, or emails. You can open the app and immediately use all features. There is no user profiling or registration data stored by us.</p>
+
+                <h2>3. Regional Climate & Forecast Calculations</h2>
+                <p>Seasonal forecasts are processed entirely on-device. The app contains a database of 150+ pre-compiled offline climate profiles. When you select a workshop or regional climate, the lookup is done locally. Your physical location coordinates are never requested, tracked, or sent to any server.</p>
+
+                <h2>4. iOS Device Permissions</h2>
+                <p>Depending on how you use SizeSeason, the application may request the following system permissions:</p>
+                <ul>
+                    <li><strong>Notifications:</strong> Optional. Used to schedule local push alerts reminding you of upcoming size changes or measurements. These notifications are scheduled locally and do not use a remote push notification server.</li>
+                    <li><strong>iCloud (CloudKit):</strong> Optional. If you choose to enable iCloud backup/syncing in your iOS system settings, Apple secures your data across your private iCloud account. We have no access to your iCloud credentials or synchronized logs.</li>
+                </ul>
+
+                <h2>5. Zero Third-Party Tracking</h2>
+                <p>SizeSeason is free of advertisements, tracking scripts, and external analytic SDKs. We receive anonymous crash reports from Apple only if you have opted to share diagnostics in your global iOS system settings. These reports contain no personal information or child profile details.</p>
+
+                <h2>6. PDF Export for Thrifting</h2>
+                <p>The PDF generation feature utilizes Apple's native <strong>PDFKit</strong> framework. The creation of your thirfting checklist is executed entirely on your device. The resulting PDF file is stored locally in your chosen directory or shared directly via the native share sheet.</p>
+
+                <h2>7. Changes to this Policy</h2>
+                <p>We may update this Privacy Policy to align with new iOS features or App Store guidelines. Any updates will be published on this page. Because we do not collect contact details, we suggest checking this policy occasionally or reading the App Store release notes.</p>
+
+                <h2>Contact Us</h2>
+                <p>For questions or suggestions regarding our offline security practices, please contact us at <a href="mailto:contact.devotellix@gmail.com" class="text-brand-mint hover:text-teal-400">contact.devotellix@gmail.com</a>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>

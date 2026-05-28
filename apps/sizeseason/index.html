@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SizeSeason | Intelligent Baby Clothes Size Predictor & WHO Growth Tracker</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Stop wasting money on baby clothes. SizeSeason predicts your baby's clothing size by season using WHO growth curves and regional climate data. 100% private & offline.">
+    <meta name="keywords" content="SizeSeason, Baby Clothes Size, Growth Tracker, WHO Percentiles, Infant Size Predictor, Vinted Baby, Second Hand Clothes, Baby Budget, iOS App">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/sizeseason/index.html">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/sizeseason/index.html">
+    <meta property="og:title" content="SizeSeason | Baby Clothes Size Predictor">
+    <meta property="og:description" content="Predict your child's clothing size by season and make smart second-hand purchases. Private, offline-first growth tracker.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/sizeseason/app-icon.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SizeSeason | Baby Clothes Size Predictor">
+    <meta name="twitter:description" content="Crosses WHO growth percentiles with seasonal temperature charts to forecast your baby's exact clothing sizes.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/sizeseason/app-icon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            mint: '#059487',
+                            peach: '#FA7217',
+                            lavender: '#8C5CF5',
+                            ochre: '#D99933',
+                            sage: '#0FB882'
+                        },
+                        dark: {
+                            950: '#060910', // Dark Slate background
+                            900: '#0C1222',
+                            800: '#121627', // Card Fill background
+                            700: '#1E293B'
+                        }
+                    },
+                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(18, 22, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #FFF 0%, #059487 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.png" alt="SizeSeason App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-mint/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">SizeSeason</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#features" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                        <a href="#calculator" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Interactive Predictor</a>
+                        <a href="support.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                        <a href="#download" class="bg-brand-mint text-white hover:bg-teal-600 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(5,148,135,0.3)] hover:shadow-[0_0_25px_rgba(5,148,135,0.5)]">
+                            Get App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">
+        <!-- Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-mint/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-lavender/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-mint/10 border border-brand-mint/20 text-brand-mint text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-mint animate-pulse"></span>
+                WHO Growth Tracker & Predictor
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                Predict Baby Clothes Size.<br class="hidden md:block" />
+                <span class="text-gradient">Shop Smart & Thrift Ahead</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-slate-400 mx-auto mb-10 leading-relaxed">
+                Stop guessing. SizeSeason crosses pediatric WHO growth percentiles with local seasonal temperatures to forecast your child's exact clothing sizes for the entire year.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://apps.apple.com/app/sizeseason-baby-clothes-size" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+            </div>
+
+            <!-- Preview/Visual Anchor -->
+            <div class="mt-20 relative max-w-4xl mx-auto">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div class="glass rounded-3xl p-6 md:p-8 border border-white/5 shadow-2xl text-left">
+                    <div class="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                        <div>
+                            <div class="text-xs text-brand-mint font-semibold tracking-widest uppercase mb-1">Growth Forecast</div>
+                            <div class="text-2xl font-bold text-white">Seasonal Timeline</div>
+                        </div>
+                        <div class="bg-brand-mint/20 px-3 py-1.5 rounded-xl border border-brand-mint/30 text-xs font-semibold text-brand-mint">
+                            100% Offline & Private
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Spring (Age 3-5m)</span>
+                                    <span class="text-lg">🌸</span>
+                                </div>
+                                <div class="text-2xl font-extrabold text-white font-mono">3-6 Months</div>
+                                <p class="text-xs text-slate-500 mt-1">EU Size 62-68</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-mint font-semibold">
+                                Average 14°C (Mild)
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Summer (Age 6-8m)</span>
+                                    <span class="text-lg">☀️</span>
+                                </div>
+                                <div class="text-2xl font-extrabold text-white font-mono text-brand-peach">6-9 Months</div>
+                                <p class="text-xs text-slate-500 mt-1">EU Size 74</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-peach font-semibold">
+                                Average 24°C (Warm)
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Autumn (Age 9-11m)</span>
+                                    <span class="text-lg">🍁</span>
+                                </div>
+                                <div class="text-2xl font-extrabold text-white font-mono text-brand-ochre">9-12 Months</div>
+                                <p class="text-xs text-slate-500 mt-1">EU Size 80</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-ochre font-semibold">
+                                Average 12°C (Cool)
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Winter (Age 12-14m)</span>
+                                    <span class="text-lg">❄️</span>
+                                </div>
+                                <div class="text-2xl font-extrabold text-white font-mono text-brand-lavender">12-18 Months</div>
+                                <p class="text-xs text-slate-500 mt-1">EU Size 86</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-lavender font-semibold">
+                                Average 3°C (Cold)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Smart Utilities For Modern Parents</h2>
+                <p class="text-slate-400 mt-2">Every feature is designed to reduce waste, save budgets, and track developmental growth.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">WHO Growth Curve Engine</h3>
+                    <p class="text-slate-400 leading-relaxed">Input your baby's height/weight and let the app adjust predictions to their actual growth percentile (e.g. 10th or 90th). Full support for gestational age correction.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 border-brand-mint/20 shadow-[0_0_30px_rgba(5,148,135,0.05)]">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Weather-Linked Forecast</h3>
+                    <p class="text-slate-400 leading-relaxed">Map your baby's growth timeline against average regional temperatures. Features 150+ pre-compiled offline climate profiles to ensure weather and sizes sync perfectly.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Wardrobe Gap Detector</h3>
+                    <p class="text-slate-400 leading-relaxed">Log what baby clothes you already own. SizeSeason compares your inventory with future seasonal size predictions, listing exactly what is missing.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">PDF Thrifting Lists</h3>
+                    <p class="text-slate-400 leading-relaxed">Export minimal checklists containing missing sizes and item categories. Print it out or look at it on your phone while sorting through garage sales or flea markets.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Interactive Vector Charts</h3>
+                    <p class="text-slate-400 leading-relaxed">Log regular pediatrician measurements. Visualize weight and height progress on beautiful vector charts aligned with WHO percentiles (3rd, 50th, and 97th).</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">100% Privacy-First</h3>
+                    <p class="text-slate-400 leading-relaxed">Zero accounts, zero registration, and zero cloud databases. No advertisements, SDK tracking, or analytics. Your child's growth logs belong only to you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator Section -->
+    <section id="calculator" class="py-24 bg-dark-950 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Size Forecast Calculator</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Try the simulation below. Choose your baby's birth month and growth percentile to see their forecasted sizes for the upcoming seasons.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto glass rounded-3xl p-8 border border-white/10 shadow-2xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                    <!-- Birth Month -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Birth Month</label>
+                        <select id="calc-birth-month" onchange="updateCalculator()" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-mint text-sm">
+                            <option value="0">January</option>
+                            <option value="1">February</option>
+                            <option value="2">March</option>
+                            <option value="3" selected>April</option>
+                            <option value="4">May</option>
+                            <option value="5">June</option>
+                            <option value="6">July</option>
+                            <option value="7">August</option>
+                            <option value="8">September</option>
+                            <option value="9">October</option>
+                            <option value="10">November</option>
+                            <option value="11">December</option>
+                        </select>
+                    </div>
+                    <!-- Growth Percentile -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Growth Percentile (WHO)</label>
+                        <select id="calc-percentile" onchange="updateCalculator()" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-mint text-sm">
+                            <option value="slow">3rd Percentile (Petite)</option>
+                            <option value="average" selected>50th Percentile (Average)</option>
+                            <option value="fast">97th Percentile (Tall/Robust)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest border-b border-white/5 pb-2">Forecasted Timeline</h3>
+                    <div id="calculator-results" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.png" alt="SizeSeason App Icon" class="w-8 h-8 rounded-lg shadow-lg object-cover">
+                        <span class="text-white font-bold text-lg">SizeSeason</span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm">
+                        Crosses official WHO growth curves with seasonal climate profiles to accurately project clothing sizes. Thrift smart, budget ahead.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-slate-500 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#calculator" class="text-slate-500 hover:text-white transition-colors">Interactive Predictor</a></li>
+                        <li><a href="#download" class="text-slate-500 hover:text-white transition-colors">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Support & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contact.devotellix@gmail.com" class="text-slate-500 hover:text-brand-mint transition-colors">contact.devotellix@gmail.com</a></li>
+                        <li><a href="support.html" class="text-slate-500 hover:text-white transition-colors">Support Portal</a></li>
+                        <li><a href="privacy.html" class="text-slate-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">100% Offline & Private Pediatric Growth Utility.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Simulator JS Logic -->
+    <script>
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        const seasons = [
+            { name: "Winter", months: [11, 0, 1], emoji: "❄️", colorClass: "text-brand-lavender", temp: "4°C (Cold)" },
+            { name: "Spring", months: [2, 3, 4], emoji: "🌸", colorClass: "text-brand-mint", temp: "15°C (Mild)" },
+            { name: "Summer", months: [5, 6, 7], emoji: "☀️", colorClass: "text-brand-peach", temp: "25°C (Warm)" },
+            { name: "Autumn", months: [8, 9, 10], emoji: "🍁", colorClass: "text-brand-ochre", temp: "11°C (Cool)" }
+        ];
+
+        // Maps age ranges in months to standard US clothing sizes, depending on percentile
+        function getClothingSize(ageInMonths, percentile) {
+            let offset = 0;
+            if (percentile === 'slow') offset = -1.5; // smaller size
+            if (percentile === 'fast') offset = 2.0;  // larger size
+
+            const adjustedAge = ageInMonths + offset;
+
+            if (adjustedAge < 0) return "Newborn (NB)";
+            if (adjustedAge <= 3) return "0-3 Months";
+            if (adjustedAge <= 6) return "3-6 Months";
+            if (adjustedAge <= 9) return "6-9 Months";
+            if (adjustedAge <= 12) return "9-12 Months";
+            if (adjustedAge <= 18) return "12-18 Months";
+            if (adjustedAge <= 24) return "18-24 Months";
+            return "2T - 3T";
+        }
+
+        function getEUSize(sizeUS) {
+            const euMapping = {
+                "Newborn (NB)": "EU 50-56",
+                "0-3 Months": "EU 56-62",
+                "3-6 Months": "EU 62-68",
+                "6-9 Months": "EU 74",
+                "9-12 Months": "EU 80",
+                "12-18 Months": "EU 86",
+                "18-24 Months": "EU 92",
+                "2T - 3T": "EU 98-104"
+            };
+            return euMapping[sizeUS] || "EU 56";
+        }
+
+        function updateCalculator() {
+            const birthMonthIndex = parseInt(document.getElementById('calc-birth-month').value);
+            const percentile = document.getElementById('calc-percentile').value;
+
+            // Generate timeline for 4 key seasons in the upcoming year
+            // Let's assume the current date is May 2026.
+            // Let's predict sizes for the seasons: Spring, Summer, Autumn, Winter.
+            // Spring (April-June), Summer (July-Sept), Autumn (Oct-Dec), Winter (Jan-Mar).
+            // We calculate age relative to these season midpoints.
+            
+            const resultsContainer = document.getElementById('calculator-results');
+            resultsContainer.innerHTML = '';
+
+            const seasonDetails = [
+                { name: "Spring", monthOffset: 4, emoji: "🌸", colorClass: "text-brand-mint", borderClass: "border-brand-mint/20", temp: "14°C" },
+                { name: "Summer", monthOffset: 7, emoji: "☀️", colorClass: "text-brand-peach", borderClass: "border-brand-peach/20", temp: "24°C" },
+                { name: "Autumn", monthOffset: 10, emoji: "🍁", colorClass: "text-brand-ochre", borderClass: "border-brand-ochre/20", temp: "12°C" },
+                { name: "Winter", monthOffset: 13, emoji: "❄️", colorClass: "text-brand-lavender", borderClass: "border-brand-lavender/20", temp: "3°C" }
+            ];
+
+            seasonDetails.forEach(s => {
+                // Age at this season midpoint
+                let age = s.monthOffset - birthMonthIndex;
+                if (age < 0) age += 12; // Wrap around for next calendar year
+                
+                const sizeUS = getClothingSize(age, percentile);
+                const sizeEU = getEUSize(sizeUS);
+
+                const cardHtml = `
+                    <div class="bg-dark-900/90 p-5 rounded-2xl border border-white/5 hover:border-brand-mint/30 transition-colors flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-semibold text-slate-400">${s.name} (Age ~${age}m)</span>
+                                <span class="text-lg">${s.emoji}</span>
+                            </div>
+                            <div class="text-xl font-bold text-white font-sans">${sizeUS}</div>
+                            <div class="text-xs text-slate-500 mt-1 font-mono">${sizeEU}</div>
+                        </div>
+                        <div class="mt-4 pt-2 border-t border-white/5 flex justify-between text-[11px] font-semibold">
+                            <span class="${s.colorClass}">Forecasted Size</span>
+                            <span class="text-slate-500">Avg Temp: ${s.temp}</span>
+                        </div>
+                    </div>
+                `;
+                resultsContainer.innerHTML += cardHtml;
+            });
+        }
+
+        // Initialize calculator on page load
+        window.onload = function() {
+            updateCalculator();
+        };
+    </script>
+</body>
+</html>
