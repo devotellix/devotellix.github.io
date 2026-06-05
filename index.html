@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devotellix | Premium Mobile & Web Applications</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore Devotellix's suite of premium, offline-first utilities, sports trackers, calculators, and tools. Built for simplicity, speed, and privacy.">
+    <meta name="keywords" content="Devotellix, Football 2026, AeroRatio, CarLook Studio, MistakeLab, MycoMix, NoisePro, NotchForge, PassPrep, SizeSeason, Mobile Apps">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/">
+    <meta property="og:title" content="Devotellix | Premium Mobile & Web Applications">
+    <meta property="og:description" content="Explore Devotellix's suite of premium, offline-first utilities, sports trackers, calculators, and tools.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/world-cup-hub/app-icon.jpeg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Devotellix | Premium Mobile & Web Applications">
+    <meta name="twitter:description" content="Explore Devotellix's suite of premium, offline-first utilities, sports trackers, calculators, and tools.">
+
+    <!-- Schema.org Publisher & Portfolio Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Devotellix",
+      "url": "https://devotellix.github.io/",
+      "logo": "https://devotellix.github.io/apps/world-cup-hub/app-icon.jpeg",
+      "description": "Creator of premium, offline-first utility and lifestyle mobile applications.",
+      "sameAs": [],
+      "publishingPrinciples": "https://devotellix.github.io/"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="apps/world-cup-hub/app-icon.jpeg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: { 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb' },
+                        dark: { 950: '#030712', 900: '#090d16', 800: '#111827', 700: '#1f2937' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glow-card:hover { box-shadow: 0 0 30px rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans">
+
+    <!-- Header / Nav -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center font-bold text-white shadow-lg">D</div>
+                    <span class="text-white font-extrabold text-xl tracking-wider">DEVOTELLIX</span>
+                </div>
+                <div>
+                    <a href="mailto:contact.devotellix@gmail.com" class="text-slate-400 hover:text-white transition-colors text-sm font-semibold border border-white/10 px-4 py-2 rounded-xl glass">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 relative">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight mb-6 leading-tight">
+                    Premium <span class="text-gradient">App Ecosystem</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 leading-relaxed">
+                    Designed for speed, performance, and offline-first capabilities. Discover our collection of specialized apps, calculators, and tracking tools.
+                </p>
+            </div>
+
+            <!-- App Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Football 2026: Live Scores -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <img src="apps/world-cup-hub/app-icon.jpeg" alt="Football 2026" class="w-14 h-14 rounded-2xl object-cover shadow-lg border border-white/10 group-hover:scale-105 transition-transform duration-300">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Football 2026</h3>
+                                <span class="text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded-full">Sports</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Become the ultimate sports expert. Live scores, detailed predictions, premium trivia, and full matches companion offline-first.
+                        </p>
+                    </div>
+                    <a href="apps/world-cup-hub/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- AeroRatio -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">AR</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">AeroRatio</h3>
+                                <span class="text-xs text-indigo-400 font-semibold bg-indigo-500/10 px-2 py-0.5 rounded-full">Utility</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Physics-based airbrush dilution calculator. Get perfect paint ratios, flow settings, and custom pressure suggestions for flawless coating.
+                        </p>
+                    </div>
+                    <a href="apps/aeroratio/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- CarLook Studio -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">CL</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">CarLook Studio</h3>
+                                <span class="text-xs text-red-400 font-semibold bg-red-500/10 px-2 py-0.5 rounded-full">Visualizer</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Ultra HD tuning visualizer. Customize body kits, colors, rims, and preview your custom configuration in immersive high-fidelity styles.
+                        </p>
+                    </div>
+                    <a href="apps/carlook/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- MistakeLab -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-500 to-amber-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">ML</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">MistakeLab</h3>
+                                <span class="text-xs text-amber-400 font-semibold bg-amber-500/10 px-2 py-0.5 rounded-full">Education</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Premium wrong answer journal & spaced repetition app. Track mistakes, learn from errors, and memorize keys with scientific retention algorithms.
+                        </p>
+                    </div>
+                    <a href="apps/mistakelab/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- MycoMix -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">MM</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">MycoMix</h3>
+                                <span class="text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded-full">Cultivation</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Premium mushroom cultivation and substrate calculator. Optimize hydration percentages, bulk recipe weights, and track harvest yields.
+                        </p>
+                    </div>
+                    <a href="apps/mycomix/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- NoisePro -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">NP</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">NoisePro</h3>
+                                <span class="text-xs text-cyan-400 font-semibold bg-cyan-500/10 px-2 py-0.5 rounded-full">Compliance</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Professional HSE noise compliance tools. Measure decibels, estimate work shift exposure levels, and generate safety compliance reports.
+                        </p>
+                    </div>
+                    <a href="apps/noise-meter/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- NotchForge -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">NF</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">NotchForge</h3>
+                                <span class="text-xs text-violet-400 font-semibold bg-violet-500/10 px-2 py-0.5 rounded-full">Health</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Premium tinnitus relief and notched noise sound therapy generator. Relieve ringing in the ears using scientific notch frequency filters.
+                        </p>
+                    </div>
+                    <a href="apps/notchforge/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- PassPrep -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">PP</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">PassPrep</h3>
+                                <span class="text-xs text-sky-400 font-semibold bg-sky-500/10 px-2 py-0.5 rounded-full">Finance / Travel</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Premium US passport renewal companion. Step-by-step checklist, requirements guides, and photo validation check tool for easy renewals.
+                        </p>
+                    </div>
+                    <a href="apps/passprep/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- SizeSeason -->
+                <div class="glass p-8 rounded-3xl glow-card transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white text-2xl font-black shadow-lg">SS</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">SizeSeason</h3>
+                                <span class="text-xs text-rose-400 font-semibold bg-rose-500/10 px-2 py-0.5 rounded-full">Lifestyle</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Baby clothes size predictor and WHO growth chart tracker. Keep record of weight, height, and anticipate future clothes sizes for seasons.
+                        </p>
+                    </div>
+                    <a href="apps/sizeseason/" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-2 group/btn">
+                        Explore App <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="mailto:contact.devotellix@gmail.com" class="hover:text-white transition-colors">contact.devotellix@gmail.com</a>
+                    <a href="sitemap.xml" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
