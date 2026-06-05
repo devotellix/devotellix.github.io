@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | NotchForge</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { 400: '#63D1FF', 500: '#00B0FF', 600: '#0081CB' },
+                        teal: { 400: '#70FFDC', 500: '#33FFCB', 600: '#00E5AE' },
+                        dark: { 950: '#03050A', 900: '#050810', 800: '#0D1429', 700: '#1A243D' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(13, 20, 41, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #A3B2C7; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #A3B2C7; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-dark-950 text-zinc-300 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-900 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-500/20 transition-colors">
+                        <svg class="w-5 h-5 text-zinc-400 group-hover:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                    Legal Document
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-zinc-500">Effective Date: June 5, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-8 border-l-4 border-l-brand-400">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> NotchForge respects your privacy. We run completely offline, do not require registration, and collect zero personal information, health logs, or acoustic data. Everything stays on your device.</p>
+                </div>
+
+                <h2>1. Offline-First Architecture</h2>
+                <p>NotchForge is built to run entirely offline on your iOS device. All notched-noise therapy configurations, distress journal logs, timer settings, and sound layer mixes are processed locally using Apple's SwiftData. <strong>We do not run backend servers, and we never sync, transmit, or sell your data.</strong></p>
+
+                <h2>2. Device Permissions</h2>
+                <p>The application may ask for the following standard iOS permissions depending on how you use it:</p>
+                <ul>
+                    <li><strong>Notifications:</strong> Used strictly to alert you when your session timer expires. You can decline this permission and still use all sound therapy features and calculators.</li>
+                </ul>
+
+                <h2>3. Local Storage and Backups</h2>
+                <p>Your distress ratings, center frequencies, and custom profiles are stored securely in your device's sandbox database. If you back up your iOS device via Apple iCloud, your data may be backed up to your personal iCloud account in accordance with Apple's standard security policies. We do not have access to these backups.</p>
+
+                <h2>4. Diagnostics and Crash Logs</h2>
+                <p>To keep NotchForge stable and bug-free, we utilize Apple's standard diagnostic reporting. If you choose to share diagnostics with developers in your iOS settings, we receive anonymous crash reports that contain no identifying details or custom frequency details.</p>
+
+                <h2>5. Third-Party Websites</h2>
+                <p>Our app does not display advertisements or include third-party trackers. Any external links open in your default browser and are subject to their respective terms.</p>
+
+                <h2>6. Changes to this Policy</h2>
+                <p>We may update this Privacy Policy occasionally. Any adjustments will be posted here. Since we do not collect contact details, we recommend checking this page periodically or reviewing updates in the App Store release notes.</p>
+
+                <h2>Contact Us</h2>
+                <p>If you have any questions or feedback about our privacy practices, please contact us at <a href="mailto:contact.devotellix@gmail.com" class="text-brand-400 hover:text-brand-300">contact.devotellix@gmail.com</a>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-zinc-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>
