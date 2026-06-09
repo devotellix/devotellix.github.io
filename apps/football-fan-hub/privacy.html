@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Fan Hub | Privacy Policy</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Privacy Policy for Football Fan Hub, including analytics, community votes, advertising, and privacy controls.">
+    <link rel="canonical" href="https://devotellix.github.io/apps/football-fan-hub/privacy.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="app-icon.jpeg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: { 400: '#34d399', 500: '#10b981', 600: '#059669' },
+                        dark: { 900: '#09090b', 800: '#18181b', 700: '#27272a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="bg-dark-900 text-zinc-300 min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <img src="app-icon.jpeg" alt="Football Fan Hub App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-500/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">Football Fan Hub</span>
+                </a>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="index.html" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Home</a>
+                        <a href="support.html" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-white transition-colors text-sm font-bold">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <main class="flex-grow pt-32 pb-16 relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="mb-12 border-b border-white/10 pb-8">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-xl text-zinc-400">Effective Date: June 8, 2026</p>
+            </div>
+
+            <div class="glass p-8 md:p-10 rounded-3xl mb-8 space-y-8">
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Local Data and Community Votes</h2>
+                    <p class="text-zinc-400 leading-relaxed">
+                        Football Fan Hub stores quiz scores, preferences, and settings locally on your device. When you submit a player rating or formation vote, the selected player identifier and vote are sent to Firebase Firestore and combined into anonymous aggregate totals. The app does not require an account and does not attach your name or email address to those votes.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">2. Advertisements (Publicités) & Partners</h2>
+                    <p class="text-zinc-400 leading-relaxed">
+                        To keep this app free of charge, we display advertisements. These ads are served by third-party advertising partners who may collect and process device-specific information to serve ads that are relevant to you.
+                    </p>
+                    <p class="text-zinc-400 leading-relaxed mt-3">
+                        Our advertising providers are <strong>Google AdMob</strong>, <strong>Unity Ads</strong>, and <strong>Pangle</strong>. Depending on your consent choices and location, these providers may process device information, advertising identifiers, approximate location derived from IP address, ad interactions, and diagnostics. Review their policies:
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:text-brand-300 underline transition-colors ml-1">Google</a>,
+                        <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:text-brand-300 underline transition-colors ml-1">Unity</a>, and
+                        <a href="https://www.pangleglobal.com/privacy" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:text-brand-300 underline transition-colors ml-1">Pangle</a>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Tracking & Device Identifiers</h2>
+                    <p class="text-zinc-400 leading-relaxed">
+                        To provide personalized advertising, the app requests permission through Apple's <strong>App Tracking Transparency (ATT)</strong> prompt. If authorized, advertising providers may use the iOS advertising identifier (IDFA) and usage information for ad personalization and measurement.
+                    </p>
+                    <p class="text-zinc-400 leading-relaxed mt-3">
+                        If you decline tracking, ads will still be displayed, but they will not be personalized and may be less relevant to you.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">4. Analytics & Performance Tracking</h2>
+                    <p class="text-zinc-400 leading-relaxed">
+                        We use third-party analytics services to monitor app performance, track crash reports, and gather aggregate usage statistics to improve the app.
+                    </p>
+                    <p class="text-zinc-400 leading-relaxed mt-3">
+                        Specifically, we use <strong>Firebase Analytics</strong> to understand app usage and <strong>Firebase Firestore</strong> to store anonymous aggregate community votes. Information processed may include app interactions, device and app information, diagnostics, and identifiers as described by Google. You can read how Google processes data in its privacy policy:
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:text-brand-300 underline transition-colors ml-1">Google Privacy Policy</a>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">5. Privacy Controls and Retention</h2>
+                    <p class="text-zinc-400 leading-relaxed">
+                        You can manage your tracking preferences and opt-out of personalized advertisements at any time directly through your device settings:
+                    </p>
+                    <ul class="list-disc list-inside text-zinc-400 mt-3 space-y-2">
+                        <li><strong>Tracking:</strong> Go to iOS Settings > Privacy & Security > Tracking and disable permission for Football Fan Hub.</li>
+                        <li><strong>Notifications:</strong> Manage notification permission in iOS Settings.</li>
+                        <li><strong>Local data:</strong> Delete the app to remove locally stored quiz scores, preferences, and settings.</li>
+                        <li><strong>Community votes:</strong> Votes are stored only as aggregate totals and cannot be linked back to an individual user for deletion.</li>
+                    </ul>
+                    <p class="text-zinc-400 leading-relaxed mt-3">
+                        Aggregate community totals are retained while the related feature remains available. Analytics and advertising data retention is controlled by the third-party providers listed above under their respective privacy policies. Contact us with any privacy or deletion request.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">6. Changes to This Policy</h2>
+                    <p class="text-zinc-400 leading-relaxed">
+                        We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">7. Contact Us</h2>
+                    <p class="text-zinc-400 leading-relaxed">
+                        If you have any questions or concerns about this Privacy Policy, please contact us at: <a href="mailto:contact.devotellix@gmail.com" class="text-brand-400 hover:text-brand-300 transition-colors">contact.devotellix@gmail.com</a>
+                    </p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between text-sm text-zinc-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <a href="support.html" class="hover:text-white transition-colors">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
