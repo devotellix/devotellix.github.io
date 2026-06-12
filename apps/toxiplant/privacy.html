@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | ToxiPlant</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { 400: '#4CAF80', 500: '#2C5E43', 600: '#1E442F' },
+                        dark: { 900: '#0C0F0D', 800: '#161A17', 700: '#1E2420', 600: '#2A342E' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(30, 36, 32, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #A8B8AE; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #A8B8AE; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-dark-900 text-zinc-300 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-800 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-500/20 transition-colors">
+                        <svg class="w-5 h-5 text-zinc-400 group-hover:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                    Legal Document
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-zinc-500">Effective Date: June 12, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-8 border-l-4 border-l-brand-400">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> ToxiPlant respects your privacy. Our app operates completely offline, requires no registration, and collects absolutely zero personal information, plant scan images, or database query history. Everything stays on your device.</p>
+                </div>
+
+                <h2>1. Offline-First & On-Device AI Architecture</h2>
+                <p>ToxiPlant is built to run entirely offline on your iOS device. All plant identifications via camera scan or photo library imports are analyzed locally using Apple's Vision and CoreML frameworks. <strong>We do not host or operate backend servers, and we never sync, transmit, or sell your data.</strong></p>
+
+                <h2>2. Device Permissions</h2>
+                <p>Depending on how you use the app, it may request the following permissions, which are processed strictly on-device:</p>
+                <ul>
+                    <li><strong>Camera Access:</strong> Used exclusively to let you point your camera at a plant and receive instant toxicity analysis in real-time. The video feed is analyzed frame-by-frame in-memory; no video or image files are ever stored or transmitted.</li>
+                    <li><strong>Photo Library Access:</strong> Used strictly to let you select a plant photo from your device's library for analysis. This is managed via Apple's secure out-of-process PHPicker, meaning ToxiPlant never reads your broader photo library—only the specific image you select.</li>
+                </ul>
+
+                <h2>3. Local Storage</h2>
+                <p>Your saved home plant inventory, customized safe/unsafe lists, and setup preferences (such as language and pets/kids configurations) are stored securely inside the app's sandboxed storage database using Apple's SwiftData framework. If you use iCloud backup, Apple may back up your app containers to your personal iCloud account in accordance with your iOS settings. We have no access to these backups.</p>
+
+                <h2>4. Analytics and Diagnostics</h2>
+                <p>ToxiPlant does not include any third-party analytics SDKs, trackers, or telemetry systems. We only receive basic, fully anonymized crash reports aggregated by Apple if you have explicitly chosen to share developer diagnostics in your iOS system settings.</p>
+
+                <h2>5. Changes to this Policy</h2>
+                <p>We may update this Privacy Policy from time to time. Any changes will be published on this page. Because we do not collect email addresses or contact information, we recommend checking this page periodically or reviewing details in our App Store release notes.</p>
+
+                <h2>Contact Us</h2>
+                <p>If you have any questions or feedback about our privacy practices, please contact us at <a href="mailto:contact.devotellix@gmail.com" class="text-brand-400 hover:text-brand-300">contact.devotellix@gmail.com</a>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-zinc-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>
