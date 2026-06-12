@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PupTone | Premium Dog Whistle & Clicker (No Ads, Offline)</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="PupTone is a premium, 100% offline dog whistle and training clicker app for iOS. No ads, no subscriptions, no accounts. Clean design, adjustable frequencies (1-22kHz), and low-latency audio.">
+    <meta name="keywords" content="PupTone, Dog Whistle, Dog Clicker, Pet Training, Puppy Training, Bark Control, Recall Training, Positive Reinforcement, Low Latency Clicker, iOS App">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/puptone/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/puptone/">
+    <meta property="og:title" content="PupTone | Premium Dog Whistle & Clicker">
+    <meta property="og:description" content="Pure sound, zero noise. An offline dog training utility with adjustable high-frequency sifflet and responsive clicker. No ads, just results.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/puptone/app-icon.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PupTone | Premium Dog Whistle & Clicker">
+    <meta name="twitter:description" content="Pure sound, zero noise. An offline dog training utility with adjustable high-frequency sifflet and responsive clicker. No ads, just results.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/puptone/app-icon.png">
+
+    <!-- JSON-LD Schema for Software Application -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PupTone",
+      "operatingSystem": "iOS",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.99",
+        "priceCurrency": "USD"
+      },
+      "description": "Adjustable high-frequency dog whistle and instant haptic training clicker for iPhone and iPad. Works fully offline with zero ads.",
+      "image": "https://devotellix.github.io/apps/puptone/app-icon.png",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Devotellix"
+      }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        evergreen: {
+                            50: '#f2f8f5',
+                            100: '#e1eff7',
+                            500: '#10B981',
+                            800: '#064E3B',
+                            900: '#043A2C',
+                        },
+                        amberbrand: {
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        },
+                        stonebrand: {
+                            950: '#0C0A09',
+                            900: '#1C1917',
+                            800: '#292524',
+                            700: '#44403C',
+                            500: '#78716C',
+                            400: '#A8A29E',
+                            300: '#D6D3D1',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'ripple': 'ripple 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+                    },
+                    keyframes: {
+                        ripple: {
+                            '0%': { transform: 'scale(1)', opacity: '0.8' },
+                            '100%': { transform: 'scale(2.2)', opacity: '0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(28, 25, 23, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.04); }
+        .text-gradient-evergreen { background: linear-gradient(135deg, #34D399 0%, #10B981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gradient-amber { background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .active-glow-whistle { box-shadow: 0 0 40px rgba(245, 158, 11, 0.25); }
+        .active-glow-clicker { box-shadow: 0 0 40px rgba(16, 185, 129, 0.25); }
+    </style>
+</head>
+<body class="bg-stonebrand-950 text-stonebrand-300 min-h-screen flex flex-col antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.png" alt="PupTone Logo" class="w-10 h-10 rounded-xl shadow-lg border border-white/10 object-cover">
+                    <span class="text-white font-bold text-xl tracking-tight">PupTone</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-stonebrand-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                    <a href="#interactive" class="text-stonebrand-400 hover:text-white transition-colors text-sm font-medium">Demo Simulator</a>
+                    <a href="#safety" class="text-stonebrand-400 hover:text-white transition-colors text-sm font-medium">Safety Guide</a>
+                    <a href="support.html" class="text-stonebrand-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                    <a href="privacy.html" class="text-stonebrand-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                    <a href="#download" class="bg-evergreen-800 text-white hover:bg-evergreen-900 border border-evergreen-500/20 px-5 py-2 rounded-full text-sm font-bold transition-all shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                        Get App
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-44 lg:pb-24 overflow-hidden relative">
+        <!-- Background Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-evergreen-800/10 rounded-full blur-[140px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-amberbrand-500/5 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-evergreen-800/20 border border-evergreen-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Professional Training Utility
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-none">
+                Pure Sound. Perfect Timing.<br>
+                <span class="text-gradient-evergreen">No Distractions.</span>
+            </h1>
+            
+            <p class="max-w-2xl text-lg md:text-xl text-stonebrand-400 mx-auto mb-10 leading-relaxed">
+                PupTone combines an adjustable high-frequency dog whistle and an instant haptic clicker in your pocket. 100% offline, zero ads, and no subscriptions. Designed for real outdoor training.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-20">
+                <a href="https://apps.apple.com/app/id6670233481" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+                <span class="text-xs text-stonebrand-500 font-mono">1.00 € One-Time | Lifetime Ownership</span>
+            </div>
+
+            <!-- Simulator Title -->
+            <div id="interactive" class="scroll-mt-28 mb-6">
+                <h2 class="text-2xl font-bold text-white uppercase tracking-wider">Interactive App Simulator</h2>
+                <p class="text-sm text-stonebrand-400 mt-1">Tap controls to try the whistle presets and clicker behavior.</p>
+            </div>
+
+            <!-- INTERACTIVE SIMULATOR CARD -->
+            <div class="max-w-md mx-auto relative z-20">
+                <!-- Device Frame mockup -->
+                <div class="glass rounded-[40px] p-6 border border-white/10 shadow-2xl relative text-left select-none">
+                    
+                    <!-- Segmented Picker (Whistle / Clicker) -->
+                    <div class="bg-stonebrand-950 p-1 rounded-xl flex mb-8 border border-white/5 font-bold text-sm">
+                        <button id="btn-whistle-mode" class="flex-1 py-2 text-center rounded-lg bg-stonebrand-800 text-white transition-all">
+                            Whistle
+                        </button>
+                        <button id="btn-clicker-mode" class="flex-1 py-2 text-center rounded-lg text-stonebrand-500 transition-all hover:text-white">
+                            Clicker
+                        </button>
+                    </div>
+
+                    <!-- WHISTLE VIEW -->
+                    <div id="whistle-panel" class="space-y-8">
+                        <!-- Frequency display -->
+                        <div class="text-center">
+                            <span class="text-stonebrand-500 font-bold uppercase tracking-widest text-xs">FREQUENCY</span>
+                            <div class="text-5xl font-extrabold text-white font-mono mt-1">
+                                <span id="freq-val">12.5</span> <span class="text-lg font-sans text-stonebrand-500 font-medium">kHz</span>
+                            </div>
+                        </div>
+
+                        <!-- Big Circular Whistle Button -->
+                        <div class="flex justify-center items-center h-48 relative">
+                            <!-- Ripples -->
+                            <div id="ripple-1" class="absolute w-24 h-24 rounded-full bg-amber-500/30 animate-ripple hidden pointer-events-none"></div>
+                            <div id="ripple-2" class="absolute w-24 h-24 rounded-full bg-amber-500/20 animate-ripple hidden [animation-delay:0.5s] pointer-events-none"></div>
+                            <div id="ripple-3" class="absolute w-24 h-24 rounded-full bg-amber-500/10 animate-ripple hidden [animation-delay:1s] pointer-events-none"></div>
+                            
+                            <button id="whistle-trigger" class="w-36 h-36 rounded-full bg-stonebrand-800 text-stonebrand-300 font-bold flex flex-col justify-center items-center border border-white/10 transition-all active:scale-95 z-10 relative">
+                                <svg class="w-10 h-10 mb-1 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                                <span class="text-xs uppercase tracking-widest pointer-events-none">Hold to Play</span>
+                            </button>
+                        </div>
+
+                        <!-- Slider -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs text-stonebrand-500 font-mono">
+                                <span>1 kHz (Audible)</span>
+                                <span>22 kHz (High-Frequency)</span>
+                            </div>
+                            <input id="freq-slider" type="range" min="10" max="220" value="125" class="w-full h-1 bg-stonebrand-800 rounded-lg appearance-none cursor-pointer accent-amberbrand-500">
+                        </div>
+
+                        <!-- Presets Rail -->
+                        <div class="space-y-2">
+                            <span class="text-stonebrand-500 text-xs font-bold uppercase tracking-wider block">PRESETS</span>
+                            <div class="flex gap-2 overflow-x-auto pb-1 font-semibold text-xs">
+                                <button data-freq="15.0" class="preset-btn px-4 py-2 rounded-lg bg-stonebrand-800 text-white border border-white/5 whitespace-nowrap active:scale-95 transition-transform">
+                                    Recall (15kHz)
+                                </button>
+                                <button data-freq="18.0" class="preset-btn px-4 py-2 rounded-lg bg-stonebrand-950 text-stonebrand-500 border border-white/5 whitespace-nowrap active:scale-95 transition-transform">
+                                    Stop Bark (18kHz)
+                                </button>
+                                <button data-freq="10.0" class="preset-btn px-4 py-2 rounded-lg bg-stonebrand-950 text-stonebrand-500 border border-white/5 whitespace-nowrap active:scale-95 transition-transform">
+                                    Attention (10kHz)
+                                </button>
+                                <button data-freq="6.0" class="preset-btn px-4 py-2 rounded-lg bg-stonebrand-950 text-stonebrand-500 border border-white/5 whitespace-nowrap active:scale-95 transition-transform">
+                                    Puppy Soft (6kHz)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Safety limit indicator -->
+                        <div class="bg-amberbrand-500/10 p-3.5 rounded-xl border border-amberbrand-500/20 flex gap-3 text-xs">
+                            <svg class="w-5 h-5 text-amberbrand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            <p class="text-amber-200">
+                                <strong>Safety burst active:</strong> Keep whistle signals brief (under 3 seconds) to prevent ear fatigue.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CLICKER VIEW (Hidden by default) -->
+                    <div id="clicker-panel" class="space-y-8 hidden">
+                        <!-- Clicker label -->
+                        <div class="text-center">
+                            <span class="text-stonebrand-500 font-bold uppercase tracking-widest text-xs">MARKER CUE</span>
+                            <div class="text-2xl font-extrabold text-white mt-1">
+                                Positive Clicker
+                            </div>
+                        </div>
+
+                        <!-- Big Circular Clicker Button -->
+                        <div class="flex justify-center items-center h-48 relative">
+                            <!-- Ripples -->
+                            <div id="clicker-ripple" class="absolute w-24 h-24 rounded-full bg-emerald-500/30 animate-ripple hidden pointer-events-none"></div>
+                            
+                            <button id="clicker-trigger" class="w-36 h-36 rounded-full bg-stonebrand-800 text-stonebrand-300 font-bold flex flex-col justify-center items-center border border-white/10 transition-all active:scale-95 z-10 relative">
+                                <svg class="w-12 h-12 mb-1 text-emerald-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-xs uppercase tracking-widest pointer-events-none">Tap to Click</span>
+                            </button>
+                        </div>
+
+                        <!-- Feedback Options -->
+                        <div class="space-y-3 bg-stonebrand-950 p-4 rounded-xl border border-white/5 text-xs">
+                            <div class="flex items-center justify-between">
+                                <span class="text-stonebrand-300 font-medium">Haptic Feedback</span>
+                                <span class="text-emerald-500 font-semibold font-mono">Taptic Sharp</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-stonebrand-300 font-medium">Sound Latency</span>
+                                <span class="text-emerald-500 font-semibold font-mono">&lt; 10 ms (Preloaded)</span>
+                            </div>
+                        </div>
+
+                        <!-- Bluetooth warning alert -->
+                        <div class="bg-evergreen-900/20 p-3.5 rounded-xl border border-evergreen-800/30 flex gap-3 text-xs">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <p class="text-emerald-200">
+                                <strong>Direct speaker connection:</strong> For absolute timing precision, avoid Bluetooth latency by using the built-in device speaker.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-stonebrand-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Structured for Effective Training</h2>
+                <p class="text-stonebrand-400 mt-2">Zero noise, just clean tools optimized for positive reinforcement.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-amberbrand-500/10 flex items-center justify-center text-amberbrand-500 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Adjustable Frequency</h3>
+                    <p class="text-stonebrand-400 leading-relaxed text-sm">Synthesize stable tones from 1 kHz up to 22 kHz. Hold or pulse patterns to build clear recall signals that cut through environmental noise.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300 border-emerald-500/10">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Low-Latency Clicker</h3>
+                    <p class="text-stonebrand-400 leading-relaxed text-sm">Perfect clicker timing is the core of positive reward. Built with native preloaded audio nodes to trigger immediately, paired with sharp taptic responses.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-amberbrand-500/10 flex items-center justify-center text-amberbrand-500 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tone Finder Assistant</h3>
+                    <p class="text-stonebrand-400 leading-relaxed text-sm">Find your dog's responsive frequency. Test, observe their reactions, and save the winning pitch as your default custom preset.</p>
+                </div>
+            </div>
+
+            <!-- Value Proposition Row -->
+            <div class="mt-16 bg-stonebrand-950 p-8 rounded-3xl border border-white/5 flex flex-col md:flex-row gap-8 items-center justify-between">
+                <div>
+                    <span class="text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider block mb-1">PROMISE</span>
+                    <h3 class="text-2xl font-bold text-white mb-2">No Ads. No Accounts. Offline Only.</h3>
+                    <p class="text-stonebrand-400 text-sm max-w-xl">
+                        Training sessions require focus. PupTone never interrupts you with pop-ups, has no account requirements, and runs entirely local so it works in fields, forests, and remote locations.
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 border-l border-stonebrand-800 pl-0 md:pl-8 shrink-0">
+                    <div class="text-center md:text-left">
+                        <div class="text-3xl font-extrabold text-white font-mono">1.00 €</div>
+                        <div class="text-xs text-stonebrand-500 mt-1 uppercase tracking-widest">Single Purchase</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety" class="py-24 bg-stonebrand-950 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amberbrand-500/10 border border-amberbrand-500/20 text-amberbrand-500 text-xs font-semibold uppercase tracking-wider mb-4">
+                    Usage Guidelines
+                </div>
+                <h2 class="text-3xl font-bold text-white tracking-tight">Safe High-Frequency Training</h2>
+                <p class="text-stonebrand-400 mt-2">Protecting your dog's hearing and building positive habits.</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="glass p-6 rounded-2xl border-l-4 border-l-amberbrand-500">
+                    <h4 class="text-white font-bold mb-2">1. Use Short Bursts</h4>
+                    <p class="text-stonebrand-400 text-sm leading-relaxed">
+                        Dogs have highly sensitive hearing. High-frequency tones should be played in brief 1-to-2 second pulses. Avoid keeping the whistle active for prolonged intervals.
+                    </p>
+                </div>
+                <div class="glass p-6 rounded-2xl border-l-4 border-l-evergreen-500">
+                    <h4 class="text-white font-bold mb-2">2. Low Volume Initial Calibration</h4>
+                    <p class="text-stonebrand-400 text-sm leading-relaxed">
+                        Start your training sessions at lower volumes and check your dog's reactions. Keep the volume output appropriate for the distance and noise level.
+                    </p>
+                </div>
+                <div class="glass p-6 rounded-2xl border-l-4 border-l-amberbrand-500">
+                    <h4 class="text-white font-bold mb-2">3. Bluetooth Delay Warning</h4>
+                    <p class="text-stonebrand-400 text-sm leading-relaxed">
+                        Wireless earphones or speakers introduce up to 300ms of audio latency. For reward timing that coordinates with the clicker, use the built-in speaker.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stonebrand-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.png" alt="PupTone Logo" class="w-8 h-8 rounded-lg shadow-lg object-cover">
+                        <span class="text-white font-bold text-lg">PupTone</span>
+                    </div>
+                    <p class="text-stonebrand-500 text-sm max-w-sm">
+                        Adjustable frequency generator, clicker tool, and frequency finder helper built exclusively for dog training sessions without ads or network dependencies.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="text-stonebrand-500 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#interactive" class="text-stonebrand-500 hover:text-white transition-colors">Simulator</a></li>
+                        <li><a href="#download" class="text-stonebrand-500 hover:text-white transition-colors">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal & Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="support.html" class="text-stonebrand-500 hover:text-white transition-colors">Support</a></li>
+                        <li><a href="privacy.html" class="text-stonebrand-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stonebrand-500">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p>Designed for iOS & iPadOS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive script -->
+    <script>
+        const btnWhistleMode = document.getElementById('btn-whistle-mode');
+        const btnClickerMode = document.getElementById('btn-clicker-mode');
+        const whistlePanel = document.getElementById('whistle-panel');
+        const clickerPanel = document.getElementById('clicker-panel');
+
+        const whistleTrigger = document.getElementById('whistle-trigger');
+        const clickerTrigger = document.getElementById('clicker-trigger');
+
+        const ripple1 = document.getElementById('ripple-1');
+        const ripple2 = document.getElementById('ripple-2');
+        const ripple3 = document.getElementById('ripple-3');
+        const clickerRipple = document.getElementById('clicker-ripple');
+
+        const freqSlider = document.getElementById('freq-slider');
+        const freqVal = document.getElementById('freq-val');
+        const presetBtns = document.querySelectorAll('.preset-btn');
+
+        // Audio feedback (synthesis dummy / click sound)
+        let audioCtx = null;
+        let oscillator = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Toggle Views
+        btnWhistleMode.addEventListener('click', () => {
+            btnWhistleMode.classList.add('bg-stonebrand-800', 'text-white');
+            btnWhistleMode.classList.remove('text-stonebrand-500');
+            btnClickerMode.classList.remove('bg-stonebrand-800', 'text-white');
+            btnClickerMode.classList.add('text-stonebrand-500');
+
+            whistlePanel.classList.remove('hidden');
+            clickerPanel.classList.add('hidden');
+        });
+
+        btnClickerMode.addEventListener('click', () => {
+            btnClickerMode.classList.add('bg-stonebrand-800', 'text-white');
+            btnClickerMode.classList.remove('text-stonebrand-500');
+            btnWhistleMode.classList.remove('bg-stonebrand-800', 'text-white');
+            btnWhistleMode.classList.add('text-stonebrand-500');
+
+            clickerPanel.classList.remove('hidden');
+            whistlePanel.classList.add('hidden');
+        });
+
+        // Whistle Interactive
+        function startOscillator() {
+            initAudio();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+
+            const frequencyKhz = parseFloat(freqVal.innerText);
+            // Limit audio rendering in browsers so it doesn't hurt human ears but simulates sound (cap at 1500Hz for demo safety)
+            const demoFrequency = Math.min(frequencyKhz * 80, 1000); 
+            
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(demoFrequency, audioCtx.currentTime);
+            
+            gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            oscillator.start();
+        }
+
+        function stopOscillator() {
+            if (oscillator) {
+                oscillator.stop();
+                oscillator.disconnect();
+                oscillator = null;
+            }
+        }
+
+        whistleTrigger.addEventListener('mousedown', () => {
+            whistleTrigger.classList.add('active-glow-whistle', 'bg-amberbrand-500', 'text-stonebrand-950', 'scale-95');
+            ripple1.classList.remove('hidden');
+            ripple2.classList.remove('hidden');
+            ripple3.classList.remove('hidden');
+            try { startOscillator(); } catch(e) {}
+        });
+
+        const endWhistle = () => {
+            whistleTrigger.classList.remove('active-glow-whistle', 'bg-amberbrand-500', 'text-stonebrand-950', 'scale-95');
+            ripple1.classList.add('hidden');
+            ripple2.classList.add('hidden');
+            ripple3.classList.add('hidden');
+            try { stopOscillator(); } catch(e) {}
+        };
+
+        whistleTrigger.addEventListener('mouseup', endWhistle);
+        whistleTrigger.addEventListener('mouseleave', endWhistle);
+
+        // Mobile touch support
+        whistleTrigger.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            whistleTrigger.classList.add('active-glow-whistle', 'bg-amberbrand-500', 'text-stonebrand-950', 'scale-95');
+            ripple1.classList.remove('hidden');
+            ripple2.classList.remove('hidden');
+            ripple3.classList.remove('hidden');
+            try { startOscillator(); } catch(e) {}
+        });
+        whistleTrigger.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            endWhistle();
+        });
+
+        // Slider logic
+        freqSlider.addEventListener('input', (e) => {
+            const val = (e.target.value / 10).toFixed(1);
+            freqVal.innerText = val;
+            
+            // Unselect preset buttons
+            presetBtns.forEach(btn => {
+                btn.classList.remove('bg-stonebrand-800', 'text-white');
+                btn.classList.add('bg-stonebrand-950', 'text-stonebrand-500');
+            });
+        });
+
+        // Presets logic
+        presetBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const targetFreq = btn.getAttribute('data-freq');
+                freqVal.innerText = parseFloat(targetFreq).toFixed(1);
+                freqSlider.value = parseFloat(targetFreq) * 10;
+
+                presetBtns.forEach(b => {
+                    b.classList.remove('bg-stonebrand-800', 'text-white');
+                    b.classList.add('bg-stonebrand-950', 'text-stonebrand-500');
+                });
+                btn.classList.add('bg-stonebrand-800', 'text-white');
+                btn.classList.remove('bg-stonebrand-950', 'text-stonebrand-500');
+            });
+        });
+
+        // Clicker Interactive
+        clickerTrigger.addEventListener('click', () => {
+            initAudio();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            
+            clickerTrigger.classList.add('active-glow-clicker', 'bg-emerald-500', 'text-stonebrand-950', 'scale-95');
+            clickerRipple.classList.remove('hidden');
+            
+            // Sound feedback
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'triangle';
+                // sharp clicking sound effect representation
+                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.04);
+                
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.04);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.05);
+            } catch(e) {}
+
+            setTimeout(() => {
+                clickerTrigger.classList.remove('active-glow-clicker', 'bg-emerald-500', 'text-stonebrand-950', 'scale-95');
+                clickerRipple.classList.add('hidden');
+            }, 150);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | PupTone</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        evergreen: {
+                            500: '#10B981',
+                        },
+                        stonebrand: {
+                            950: '#0C0A09',
+                            900: '#1C1917',
+                            800: '#292524',
+                            700: '#44403C',
+                            500: '#78716C',
+                            400: '#A8A29E',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(28, 25, 23, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.04); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #A8A29E; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #A8A29E; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-stonebrand-950 text-stonebrand-300 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-stonebrand-900 border border-white/5 flex items-center justify-center text-white font-bold group-hover:bg-evergreen-500/20 transition-colors">
+                        <svg class="w-5 h-5 text-stonebrand-500 group-hover:text-evergreen-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-evergreen-500/10 border border-evergreen-500/20 text-evergreen-500 text-xs font-semibold uppercase tracking-wider mb-4">
+                    Legal Info
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-stonebrand-500 font-mono text-sm">Effective Date: June 12, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-8 border-l-4 border-l-evergreen-500">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> PupTone operates 100% offline. We do not use servers, require no login credentials, and collect zero personal information, training frequencies, click logs, or safety presets. All data remains exclusively on your device.</p>
+                </div>
+
+                <h2>1. Offline Architecture</h2>
+                <p>PupTone is built as a self-contained local utility tool. All high-frequency whistle configurations, safety threshold toggles, saved presets, and clicker parameters are processed directly on your iPhone or iPad and saved locally via Apple's local app storage database (UserDefaults/AppStorage). We run no external servers and have no technical capability to view, sync, share, or sell your data.</p>
+
+                <h2>2. Device Permissions</h2>
+                <p>PupTone values your privacy and requires no runtime permissions to function:</p>
+                <ul>
+                    <li><strong>No Network Access:</strong> The application does not require internet access and does not connect to any servers.</li>
+                    <li><strong>No Microphone Access:</strong> We generate sound output; we do not record audio.</li>
+                    <li><strong>No Location Access:</strong> Location tracking is not required or implemented.</li>
+                    <li><strong>No Notifications:</strong> No background notification permissions are requested in the initial version.</li>
+                </ul>
+
+                <h2>3. Local Data and Device Backups</h2>
+                <p>Your saved custom frequencies and settings are stored locally in the application's secure sandbox. If you back up your iOS device to Apple iCloud, your settings are included in your standard device backup under Apple's standard terms of service. We do not have access to these files.</p>
+
+                <h2>4. App Store Diagnostic Data</h2>
+                <p>To help maintain app stability and eliminate bugs, we receive aggregated, anonymous crash reports from Apple if you have consented to share diagnostics with developers in your iOS system settings. These reports contain only basic system architecture information and do not include any user identifiers or details of your pet training routines.</p>
+
+                <h2>5. Third-Party Libraries</h2>
+                <p>PupTone uses only Apple's native APIs (AVFoundation, CoreHaptics, and SwiftUI). We do not include third-party advertising SDKs, analytic trackers, or social sign-ins, keeping your training environment safe from telemetry and background traffic.</p>
+
+                <h2>Contact Us</h2>
+                <p>For any questions or suggestions regarding this privacy policy, please contact us at <a href="mailto:contact.devotellix@gmail.com" class="text-evergreen-500 hover:text-emerald-400 font-mono">contact.devotellix@gmail.com</a>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-xs text-stonebrand-500">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>
