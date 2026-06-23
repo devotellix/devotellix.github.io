@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoryArc | Private, Local-First iOS Memory Journal & Guided Reflections</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Capture meaningful moments quickly and private-by-default. MemoryArc is a calm, local-first visual journal for iPhone and iPad. 100% secure, offline SwiftData storage.">
+    <meta name="keywords" content="MemoryArc, Memory Journal, iOS Journal, Local First, Private Diary, SwiftData Sync, Guided Reflection, Mood Tracker, Offline Journal, iPad Diary">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/memoryarc/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/memoryarc/">
+    <meta property="og:title" content="MemoryArc | Private, Local-First iOS Memory Journal">
+    <meta property="og:description" content="A visual alternative to a traditional diary. Process and store your memories safely on-device with guided reflection prompts.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/memoryarc/app-icon.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MemoryArc | Private iOS Journal">
+    <meta name="twitter:description" content="Capture reflections in under a minute. Private by default: memories stay securely on your device using SwiftData.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/memoryarc/app-icon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            coral: '#FF6B57',
+                            violet: '#A38CDE'
+                        },
+                        dark: {
+                            950: '#0E0A12', // Deep plum-black
+                            900: '#160F1E',
+                            800: '#22162B', // Cards background
+                            700: '#2D1F3B'
+                        }
+                    },
+                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(34, 22, 43, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #FFF 0%, #FF6B57 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.png" alt="MemoryArc App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-coral/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">MemoryArc</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#features" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                        <a href="#simulator" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Interactive Demo</a>
+                        <a href="support.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                        <a href="#download" class="bg-brand-coral text-white hover:bg-rose-500 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(255,107,87,0.3)] hover:shadow-[0_0_25px_rgba(255,107,87,0.5)]">
+                            Get App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">
+        <!-- Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-coral/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-violet/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-coral/10 border border-brand-coral/20 text-brand-coral text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-coral animate-pulse"></span>
+                Local-First & Private Diary
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                Understand the Shape of Your Life.<br class="hidden md:block" />
+                <span class="text-gradient">Private & Mindful Memory Journal</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-slate-400 mx-auto mb-10 leading-relaxed">
+                A calm alternative to social media and a rich, visual alternative to a traditional diary. Capture reflections in under a minute, stored exclusively on your iPhone and iPad.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://apps.apple.com/app/memoryarc-private-journal" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+            </div>
+
+            <!-- Preview/Visual Anchor -->
+            <div class="mt-20 relative max-w-4xl mx-auto">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div class="glass rounded-3xl p-6 md:p-8 border border-white/5 shadow-2xl text-left">
+                    <div class="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                        <div>
+                            <div class="text-xs text-brand-coral font-semibold tracking-widest uppercase mb-1">Today Dashboard</div>
+                            <div class="text-2xl font-bold text-white">Your Weekly Rhythm</div>
+                        </div>
+                        <div class="bg-brand-coral/20 px-3 py-1.5 rounded-xl border border-brand-coral/30 text-xs font-semibold text-brand-coral">
+                            🔒 100% Private SwiftData
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Gratitude</span>
+                                    <span class="text-lg">✨</span>
+                                </div>
+                                <div class="text-lg font-extrabold text-white">Three things that made me smile today</div>
+                                <p class="text-xs text-slate-500 mt-2">Morning Reflection</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-coral font-semibold">
+                                Collection: Personal
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Mood Tracking</span>
+                                    <span class="text-lg">🍃</span>
+                                </div>
+                                <div class="text-lg font-extrabold text-brand-violet">Calm & Peaceful</div>
+                                <p class="text-xs text-slate-500 mt-2">Energy level is moderate</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-violet font-semibold">
+                                Atmospheric indicator: Warm
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Travel logs</span>
+                                    <span class="text-lg">🏔️</span>
+                                </div>
+                                <div class="text-lg font-extrabold text-white">Weekend hike at the mountain lake</div>
+                                <p class="text-xs text-slate-500 mt-2">1 photo attached</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-coral font-semibold">
+                                Tagged: Escape
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">On This Day</span>
+                                    <span class="text-lg">⏳</span>
+                                </div>
+                                <div class="text-lg font-extrabold text-slate-400">Revisited: 1 Year Ago Today</div>
+                                <p class="text-xs text-slate-500 mt-2">"Started coding my dream project..."</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-500 font-semibold">
+                                Streak: 12 days
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">An Editorial Journal, Native to iOS</h2>
+                <p class="text-slate-400 mt-2">Built with generous breathing room and warm tinted neutrals for quiet reflection.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-coral/20 flex items-center justify-center text-brand-coral mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">On-Device Privacy First</h3>
+                    <p class="text-slate-400 leading-relaxed">No databases, trackers, or advertising scripts. All logs stay strictly on your local hardware using Apple's secure database framework, private by design.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 border-brand-coral/20 shadow-[0_0_30px_rgba(255,107,87,0.05)]">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-coral/20 flex items-center justify-center text-brand-coral mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.168.477-4 1.253"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Guided Reflection Prompts</h3>
+                    <p class="text-slate-400 leading-relaxed">Choose from pre-designed templates for morning gratitude, self-growth, travel memories, relationships, and monthly life reviews to kickstart your writing.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-coral/20 flex items-center justify-center text-brand-coral mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">On-Device Insights</h3>
+                    <p class="text-slate-400 leading-relaxed">Discover emotional patterns, mood trends, and energy spikes with local charting. Visualize your life rhythms without sending diagnostic data to servers.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-coral/20 flex items-center justify-center text-brand-coral mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Calendar & Visual Moments</h3>
+                    <p class="text-slate-400 leading-relaxed">Browse your entries using a flexible calendar view, a grid of visual photo cards, or filter by collections, tags, and places you have visited.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-coral/20 flex items-center justify-center text-brand-coral mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Data Sovereignty (JSON)</h3>
+                    <p class="text-slate-400 leading-relaxed">Your memories belong to you forever. Export your entire journal timeline in a readable, standard JSON format at any time with a single tap in settings.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-coral/20 flex items-center justify-center text-brand-coral mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19v-8.93a2 2 0 01.89-1.664l8-5.333a2 2 0 012.22 0l8 5.333A2 2 0 0121 10.07V19a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">iCloud Secure Sync</h3>
+                    <p class="text-slate-400 leading-relaxed">Optionally enable private iCloud backup. Your database automatically syncs across your iOS, iPadOS, and macOS devices via Apple's secure CloudKit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulator Section -->
+    <section id="simulator" class="py-24 bg-dark-950 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Interactive Reflection Builder</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Simulate writing a memory card. Select a prompt, set your mood, write a note, and see the local rendering generated by the app.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
+                <!-- Inputs Column -->
+                <div class="glass rounded-3xl p-8 border border-white/10 shadow-2xl">
+                    <div class="space-y-6">
+                        <!-- Reflection Template -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Prompt Template</label>
+                            <select id="sim-prompt" onchange="updateSimulator()" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-coral text-sm">
+                                <option value="Gratitude" selected>Daily Gratitude (What made you smile today?)</option>
+                                <option value="Growth">Self Growth (What did you learn about yourself?)</option>
+                                <option value="Travel">Travel Moment (What caught your attention during the trip?)</option>
+                                <option value="Relationships">Relationships (Who are you thankful to have in your life?)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Mood Selector -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Current Mood</label>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button onclick="selectMood('🌈 Joyful')" id="mood-btn-joy" class="mood-btn py-2 rounded-xl bg-dark-900 border border-white/5 text-sm hover:border-brand-coral/50 transition-colors text-white font-medium">🌈 Joyful</button>
+                                <button onclick="selectMood('🍃 Calm')" id="mood-btn-calm" class="mood-btn py-2 rounded-xl bg-brand-coral/20 border border-brand-coral/40 text-sm transition-colors text-white font-medium">🍃 Calm</button>
+                                <button onclick="selectMood('⚡ Energetic')" id="mood-btn-energy" class="mood-btn py-2 rounded-xl bg-dark-900 border border-white/5 text-sm hover:border-brand-coral/50 transition-colors text-white font-medium">⚡ Active</button>
+                                <button onclick="selectMood('Reflective')" id="mood-btn-reflect" class="mood-btn py-2 rounded-xl bg-dark-900 border border-white/5 text-sm hover:border-brand-coral/50 transition-colors text-white font-medium">🌧️ Thoughtful</button>
+                            </div>
+                        </div>
+
+                        <!-- Story Text -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Your Journal Note</label>
+                            <textarea id="sim-text" oninput="updateSimulator()" rows="4" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-coral text-sm placeholder-slate-600" placeholder="Type your journal entry..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Column -->
+                <div class="glass rounded-3xl p-8 border border-white/10 shadow-2xl relative bg-gradient-to-br from-dark-800 to-dark-900">
+                    <div class="absolute -top-3 -right-3 bg-brand-coral text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full shadow-lg">
+                        Device Preview
+                    </div>
+                    
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-brand-coral/10 border border-brand-coral/25 flex items-center justify-center text-brand-coral text-lg font-bold">
+                            📖
+                        </div>
+                        <div>
+                            <div id="preview-date" class="text-xs text-slate-500 font-medium">Today</div>
+                            <div id="preview-title" class="text-lg font-bold text-white">Daily Gratitude</div>
+                        </div>
+                    </div>
+
+                    <div id="preview-body" class="text-slate-300 leading-relaxed text-sm italic min-h-[80px] bg-dark-950/40 p-4 rounded-xl border border-white/5 mb-6">
+                        "Took a quiet walk around the park. The weather was breezy and cool, and I felt a deep sense of stillness."
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span id="preview-tag-mood" class="px-2.5 py-1 rounded-lg bg-brand-violet/20 border border-brand-violet/30 text-xs font-semibold text-brand-violet">Mood: 🍃 Calm</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-slate-400">App State: Local-Only</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-green-500/10 border border-green-500/20 text-xs font-semibold text-green-400">🔒 SwiftData Secured</span>
+                    </div>
+
+                    <div class="border-t border-white/5 pt-4 flex justify-between items-center text-xs">
+                        <span class="text-slate-500">Storage Size: <span class="font-mono text-slate-400">~250 B</span></span>
+                        <button onclick="downloadMockJSON()" class="text-brand-coral hover:underline font-semibold flex items-center gap-1">
+                            Export JSON
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.png" alt="MemoryArc App Icon" class="w-8 h-8 rounded-lg shadow-lg object-cover">
+                        <span class="text-white font-bold text-lg">MemoryArc</span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm">
+                        A private, local-first memory journal designed for quick journaling and quiet self-reflection on iOS and iPadOS.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-slate-500 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#simulator" class="text-slate-500 hover:text-white transition-colors">Reflection Builder</a></li>
+                        <li><a href="#download" class="text-slate-500 hover:text-white transition-colors">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Support & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contact.devotellix@gmail.com" class="text-slate-500 hover:text-brand-coral transition-colors">contact.devotellix@gmail.com</a></li>
+                        <li><a href="support.html" class="text-slate-500 hover:text-white transition-colors">Support Portal</a></li>
+                        <li><a href="privacy.html" class="text-slate-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">100% Offline-First iOS Journaling Platform.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simulator JS Logic -->
+    <script>
+        let selectedMoodValue = "🍃 Calm";
+        const promptSuggestions = {
+            "Gratitude": "Took a quiet walk around the park. The weather was breezy and cool, and I felt a deep sense of stillness.",
+            "Growth": "Reflected on how I handled the feedback today. I didn't get defensive; I listened, took notes, and realized it's a great opportunity to scale my skillsets.",
+            "Travel": "Sitting by the lakeside watching the sunset. The purple clouds reflecting on the water is a scene I hope to remember for years.",
+            "Relationships": "Had a long call with my sibling today. We laughed about childhood trips and promised to meet up next month."
+        };
+
+        function selectMood(mood) {
+            selectedMoodValue = mood;
+            
+            // Highlight button
+            const buttons = {
+                "🌈 Joyful": "mood-btn-joy",
+                "🍃 Calm": "mood-btn-calm",
+                "⚡ Energetic": "mood-btn-energy",
+                "Reflective": "mood-btn-reflect"
+            };
+
+            Object.keys(buttons).forEach(key => {
+                const btn = document.getElementById(buttons[key]);
+                if (key === mood || (key === "Reflective" && mood.includes("Thoughtful"))) {
+                    btn.className = "mood-btn py-2 rounded-xl bg-brand-coral/20 border border-brand-coral/40 text-sm transition-colors text-white font-medium";
+                } else {
+                    btn.className = "mood-btn py-2 rounded-xl bg-dark-900 border border-white/5 text-sm hover:border-brand-coral/50 transition-colors text-white font-medium";
+                }
+            });
+
+            updateSimulator();
+        }
+
+        function updateSimulator() {
+            const promptType = document.getElementById('sim-prompt').value;
+            const textValue = document.getElementById('sim-text').value;
+
+            // Date formatting
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('preview-date').innerText = new Date().toLocaleDateString('en-US', dateOptions);
+            
+            // Title
+            document.getElementById('preview-title').innerText = promptType + " Reflection";
+
+            // Body
+            const bodyPreview = document.getElementById('preview-body');
+            if (textValue.trim() === '') {
+                bodyPreview.innerText = `"${promptSuggestions[promptType]}"`;
+                bodyPreview.classList.add('text-slate-500');
+            } else {
+                bodyPreview.innerText = `"${textValue}"`;
+                bodyPreview.classList.remove('text-slate-500');
+            }
+
+            // Tag
+            document.getElementById('preview-tag-mood').innerText = "Mood: " + selectedMoodValue;
+        }
+
+        function downloadMockJSON() {
+            const promptType = document.getElementById('sim-prompt').value;
+            const textValue = document.getElementById('sim-text').value || promptSuggestions[promptType];
+            
+            const mockEntry = {
+                app: "MemoryArc",
+                date: new Date().toISOString(),
+                category: promptType,
+                mood: selectedMoodValue,
+                story: textValue,
+                local_sync_status: "encrypted_on_device",
+                database: "SwiftData"
+            };
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(mockEntry, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", `memoryarc_${promptType.toLowerCase()}_entry.json`);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        // Initialize simulator
+        window.onload = function() {
+            updateSimulator();
+        };
+    </script>
+</body>
+</html>
