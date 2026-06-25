@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentuEase | Private, Local-First iOS Denture Care Journal & Maintenance Log</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Manage your denture care with ease. DentuEase is a private, local-first visual journal for tracking denture discomfort, logging cleanings, and exporting reports.">
+    <meta name="keywords" content="DentuEase, Denture Tracker, Denture Care, iOS Denture App, Local First, Private Health, Dental Journal, Gums Discomfort, Cleanings Log, SwiftData, offline health log">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/dentuease/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/dentuease/">
+    <meta property="og:title" content="DentuEase | Private, Local-First iOS Denture Care Journal">
+    <meta property="og:description" content="A visual diary for denture maintenance and adjustment. Track discomfort zones, log daily cleaning sessions, and export reports for your dentist.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/dentuease/app-icon.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DentuEase | Private iOS Denture Assistant">
+    <meta name="twitter:description" content="Log cleanings, monitor discomfort spots with visual charts, and export PDF summaries. Private by default: all data stays on your device.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/dentuease/app-icon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            teal: '#14b8a6',
+                            mint: '#0d9488',
+                            cyan: '#06b6d4'
+                        },
+                        dark: {
+                            950: '#0b0f19', // Deep navy-black
+                            900: '#111827',
+                            800: '#1f2937', // Cards background
+                            700: '#374151'
+                        }
+                    },
+                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(31, 41, 55, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #FFF 0%, #14b8a6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.png" alt="DentuEase App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-teal/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">DentuEase</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#features" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                        <a href="#simulator" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Interactive Tracker</a>
+                        <a href="support.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                        <a href="#download" class="bg-brand-teal text-white hover:bg-teal-500 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:shadow-[0_0_25px_rgba(20,184,166,0.5)]">
+                            Get App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">
+        <!-- Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-teal/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-cyan/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-teal/10 border border-brand-teal/20 text-brand-teal text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
+                Local-First Denture Assistant
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                Your Denture Care Companion.<br class="hidden md:block" />
+                <span class="text-gradient">Private & Simple Tracking</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-slate-400 mx-auto mb-10 leading-relaxed">
+                Log your daily maintenance, map sore spots on an interactive dental chart, and export clean reports for your dentist. All stored securely on-device with zero server transmission.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://apps.apple.com/app/dentuease" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+            </div>
+
+            <!-- Preview/Visual Anchor -->
+            <div class="mt-20 relative max-w-4xl mx-auto">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div class="glass rounded-3xl p-6 md:p-8 border border-white/5 shadow-2xl text-left">
+                    <div class="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                        <div>
+                            <div class="text-xs text-brand-teal font-semibold tracking-widest uppercase mb-1">Today Dashboard</div>
+                            <div class="text-2xl font-bold text-white">Your Denture Health Overview</div>
+                        </div>
+                        <div class="bg-brand-teal/20 px-3 py-1.5 rounded-xl border border-brand-teal/30 text-xs font-semibold text-brand-teal">
+                            🔒 100% Private SwiftData
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Maintenance</span>
+                                    <span class="text-lg">🧼</span>
+                                </div>
+                                <div class="text-lg font-extrabold text-white">Denture Cleaned & Soaked</div>
+                                <p class="text-xs text-slate-500 mt-2">15 mins • Cleaning Tablet</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-teal font-semibold">
+                                Routine: Morning Check
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Discomfort Tracking</span>
+                                    <span class="text-lg">⚡</span>
+                                </div>
+                                <div class="text-lg font-extrabold text-teal-400">Upper Left Gum Soreness</div>
+                                <p class="text-xs text-slate-500 mt-2">Severity: Mild (Level 2)</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-teal-500 font-semibold">
+                                Trigger: While Eating
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Fitting Date</span>
+                                    <span class="text-lg">🗓️</span>
+                                </div>
+                                <div class="text-lg font-extrabold text-white">Active for 3 months</div>
+                                <p class="text-xs text-slate-500 mt-2">Upper & Lower Full Set</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-teal font-semibold">
+                                Fitted: March 15, 2026
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Dentist Checkup</span>
+                                    <span class="text-lg">🏥</span>
+                                </div>
+                                <div class="text-lg font-extrabold text-slate-400">Next appointment scheduled</div>
+                                <p class="text-xs text-slate-500 mt-2">Dr. John Doe</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-500 font-semibold">
+                                Date: July 10, 2026
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Intuitive Denture Care Assistant</h2>
+                <p class="text-slate-400 mt-2">Simplifying the denture adjustment process, protecting your comfort and privacy.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 hover:border-brand-teal/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-teal/10 flex items-center justify-center text-brand-teal mb-6 font-bold text-xl">🦷</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Discomfort Mapping</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Map soreness zones visually on an upper/lower dental chart. Record severity levels and environmental triggers like eating or speaking.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 hover:border-brand-teal/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-teal/10 flex items-center justify-center text-brand-teal mb-6 font-bold text-xl">🧼</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Maintenance History</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Log cleaning details, brushing times, soaking durations, and products. Build healthy habits with daily morning and evening reminders.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl border border-white/5 hover:border-brand-teal/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-teal/10 flex items-center justify-center text-brand-teal mb-6 font-bold text-xl">📄</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Doctor PDF Exports</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Generate concise clinical PDF logs containing your statistics, most sensitive denture zones, and cleaning consistency to share during checkups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulator / Reflection Section -->
+    <section id="simulator" class="py-24 relative overflow-hidden">
+        <!-- Background Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-teal/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-teal/10 border border-brand-teal/20 text-brand-teal text-xs font-semibold uppercase tracking-wider mb-4">
+                    Interactive Demonstration
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">DentuEase Simulator</h2>
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto">Experience how easily you can log denture discomfort or cleaning logs, and download a sample data snippet.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto">
+                <!-- Inputs Column -->
+                <div class="lg:col-span-7 glass p-6 md:p-8 rounded-3xl border border-white/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Log New Entry</h3>
+                        
+                        <!-- Toggle log type -->
+                        <div class="mb-6">
+                            <label class="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Entry Type</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button onclick="setSimType('discomfort')" id="sim-type-discomfort" class="py-2.5 px-4 rounded-xl border border-brand-teal/40 bg-brand-teal/20 text-white text-xs font-bold transition-all uppercase tracking-wider">⚡ Discomfort</button>
+                                <button onclick="setSimType('cleaning')" id="sim-type-cleaning" class="py-2.5 px-4 rounded-xl border border-white/5 bg-dark-900 text-slate-400 hover:text-white text-xs font-bold transition-all uppercase tracking-wider">🧼 Cleaning Log</button>
+                            </div>
+                        </div>
+
+                        <!-- Discomfort Fields -->
+                        <div id="sim-discomfort-fields" class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Sore Spot Zone</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                    <button onclick="selectZone('Upper Left')" class="zone-btn py-2 px-3 rounded-lg bg-dark-900 border border-white/5 text-xs text-slate-300 font-semibold" id="zone-ul">Upper Left</button>
+                                    <button onclick="selectZone('Upper Center')" class="zone-btn py-2 px-3 rounded-lg bg-dark-900 border border-white/5 text-xs text-slate-300 font-semibold" id="zone-uc">Upper Center</button>
+                                    <button onclick="selectZone('Upper Right')" class="zone-btn py-2 px-3 rounded-lg bg-dark-900 border border-white/5 text-xs text-slate-300 font-semibold" id="zone-ur">Upper Right</button>
+                                    <button onclick="selectZone('Lower Left')" class="zone-btn py-2 px-3 rounded-lg bg-dark-900 border border-white/5 text-xs text-slate-300 font-semibold" id="zone-ll">Lower Left</button>
+                                    <button onclick="selectZone('Lower Center')" class="zone-btn py-2 px-3 rounded-lg bg-dark-900 border border-white/5 text-xs text-slate-300 font-semibold" id="zone-lc">Lower Center</button>
+                                    <button onclick="selectZone('Lower Right')" class="zone-btn py-2 px-3 rounded-lg bg-dark-900 border border-white/5 text-xs text-slate-300 font-semibold" id="zone-lr">Lower Right</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Intensity (1 - 5)</label>
+                                <div class="grid grid-cols-5 gap-2">
+                                    <button onclick="selectIntensity(1)" class="intensity-btn py-2 rounded-lg bg-dark-900 border border-white/5 text-xs text-white" id="int-1">1</button>
+                                    <button onclick="selectIntensity(2)" class="intensity-btn py-2 rounded-lg bg-dark-900 border border-white/5 text-xs text-white" id="int-2">2</button>
+                                    <button onclick="selectIntensity(3)" class="intensity-btn py-2 rounded-lg bg-dark-900 border border-white/5 text-xs text-white" id="int-3">3</button>
+                                    <button onclick="selectIntensity(4)" class="intensity-btn py-2 rounded-lg bg-dark-900 border border-white/5 text-xs text-white" id="int-4">4</button>
+                                    <button onclick="selectIntensity(5)" class="intensity-btn py-2 rounded-lg bg-dark-900 border border-white/5 text-xs text-white" id="int-5">5</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Trigger</label>
+                                <select onchange="updateSimulator()" id="sim-trigger" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-slate-300 text-sm focus:border-brand-teal outline-none transition-colors">
+                                    <option value="Eating">Eating</option>
+                                    <option value="Speaking">Speaking</option>
+                                    <option value="Resting">Resting</option>
+                                    <option value="Morning">Morning Wear</option>
+                                    <option value="Evening">Evening Wear</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Cleaning Fields (hidden by default) -->
+                        <div id="sim-cleaning-fields" class="space-y-6 hidden">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Cleaning Type</label>
+                                <select onchange="updateSimulator()" id="sim-clean-type" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-slate-300 text-sm focus:border-brand-teal outline-none transition-colors">
+                                    <option value="Brush Only">Brushing (Brush Only)</option>
+                                    <option value="Soaking Tablet">Soaking (Tablet)</option>
+                                    <option value="Ultrasonic Clean">Ultrasonic Cleaner</option>
+                                    <option value="Combined Routine">Combined Routine</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Soaking Duration (Minutes)</label>
+                                <input type="number" oninput="updateSimulator()" id="sim-soak-duration" min="0" max="60" value="15" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-slate-300 text-sm focus:border-brand-teal outline-none transition-colors">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Product Used</label>
+                                <input type="text" oninput="updateSimulator()" id="sim-product" placeholder="e.g. Polident, Efferdent, Water" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-slate-300 text-sm focus:border-brand-teal outline-none transition-colors">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button onclick="downloadMockJSON()" class="w-full bg-brand-teal text-white hover:bg-teal-500 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-brand-teal/20 flex items-center justify-center gap-2">
+                            📥 Export Entry JSON
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Preview Column -->
+                <div class="lg:col-span-5 flex flex-col gap-4">
+                    <div class="glass rounded-3xl p-6 border border-white/5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-white/5 pb-4 mb-6">
+                                <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">DentuEase Preview</span>
+                                <span class="text-[10px] text-slate-500 font-mono">ON-DEVICE</span>
+                            </div>
+
+                            <!-- Interactive mock screens -->
+                            <div class="space-y-4">
+                                <div class="bg-dark-900/80 p-4 rounded-2xl border border-white/5">
+                                    <div class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold mb-2">Current Date</div>
+                                    <div class="text-sm font-bold text-white" id="preview-date">Thursday, June 25, 2026</div>
+                                </div>
+
+                                <div class="bg-dark-900/80 p-4 rounded-2xl border border-white/5">
+                                    <div class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold mb-2" id="preview-header">Logged Event</div>
+                                    <div class="text-lg font-extrabold text-white" id="preview-title">Upper Center Discomfort</div>
+                                    <div class="text-sm text-slate-400 mt-2" id="preview-details">Intensity: Moderate (3/5)</div>
+                                    <div class="text-xs text-brand-teal font-semibold mt-2" id="preview-extra">Trigger: Eating</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-teal/10 border border-brand-teal/20 p-4 rounded-2xl mt-6 text-xs text-slate-400 leading-relaxed">
+                            💡 <strong>Private Storage:</strong> This entry is stored in SwiftData locally and remains sandboxed. It can only leave your device if you explicitly export it.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.png" alt="DentuEase Icon" class="w-8 h-8 rounded-lg">
+                        <span class="text-white font-bold text-lg tracking-tight">DentuEase</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-sm">
+                        Helping individuals adjust comfortably to their dentures with secure, local-first logs. No server syncing, no tracking.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-slate-500 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#simulator" class="text-slate-500 hover:text-white transition-colors">Interactive Demo</a></li>
+                        <li><a href="#download" class="text-slate-500 hover:text-white transition-colors">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Support & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contact.devotellix@gmail.com" class="text-slate-500 hover:text-brand-teal transition-colors">contact.devotellix@gmail.com</a></li>
+                        <li><a href="support.html" class="text-slate-500 hover:text-white transition-colors">Support Portal</a></li>
+                        <li><a href="privacy.html" class="text-slate-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">100% Offline-First iOS Denture Assistant.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simulator JS Logic -->
+    <script>
+        let selectedType = "discomfort";
+        let selectedZone = "Upper Center";
+        let selectedIntensityValue = 3;
+
+        function setSimType(type) {
+            selectedType = type;
+            const discomfortBtn = document.getElementById("sim-type-discomfort");
+            const cleaningBtn = document.getElementById("sim-type-cleaning");
+            
+            const discomfortFields = document.getElementById("sim-discomfort-fields");
+            const cleaningFields = document.getElementById("sim-cleaning-fields");
+
+            if (type === "discomfort") {
+                discomfortBtn.className = "py-2.5 px-4 rounded-xl border border-brand-teal/40 bg-brand-teal/20 text-white text-xs font-bold transition-all uppercase tracking-wider";
+                cleaningBtn.className = "py-2.5 px-4 rounded-xl border border-white/5 bg-dark-900 text-slate-400 hover:text-white text-xs font-bold transition-all uppercase tracking-wider";
+                discomfortFields.classList.remove("hidden");
+                cleaningFields.classList.add("hidden");
+            } else {
+                cleaningBtn.className = "py-2.5 px-4 rounded-xl border border-brand-teal/40 bg-brand-teal/20 text-white text-xs font-bold transition-all uppercase tracking-wider";
+                discomfortBtn.className = "py-2.5 px-4 rounded-xl border border-white/5 bg-dark-900 text-slate-400 hover:text-white text-xs font-bold transition-all uppercase tracking-wider";
+                discomfortFields.classList.add("hidden");
+                cleaningFields.classList.remove("hidden");
+            }
+
+            updateSimulator();
+        }
+
+        function selectZone(zone) {
+            selectedZone = zone;
+            const buttons = {
+                "Upper Left": "zone-ul",
+                "Upper Center": "zone-uc",
+                "Upper Right": "zone-ur",
+                "Lower Left": "zone-ll",
+                "Lower Center": "zone-lc",
+                "Lower Right": "zone-lr"
+            };
+
+            Object.keys(buttons).forEach(key => {
+                const btn = document.getElementById(buttons[key]);
+                if (key === zone) {
+                    btn.className = "py-2 px-3 rounded-lg bg-brand-teal/20 border border-brand-teal/40 text-xs text-white font-semibold";
+                } else {
+                    btn.className = "py-2 px-3 rounded-lg bg-dark-900 border border-white/5 text-xs text-slate-300 font-semibold";
+                }
+            });
+
+            updateSimulator();
+        }
+
+        function selectIntensity(val) {
+            selectedIntensityValue = val;
+            for (let i = 1; i <= 5; i++) {
+                const btn = document.getElementById(`int-${i}`);
+                if (i === val) {
+                    btn.className = "intensity-btn py-2 rounded-lg bg-brand-teal/20 border border-brand-teal/40 text-xs text-white font-bold";
+                } else {
+                    btn.className = "intensity-btn py-2 rounded-lg bg-dark-900 border border-white/5 text-xs text-slate-300";
+                }
+            }
+
+            updateSimulator();
+        }
+
+        function updateSimulator() {
+            // Date formatting
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('preview-date').innerText = new Date().toLocaleDateString('en-US', dateOptions);
+
+            const titleElement = document.getElementById("preview-title");
+            const detailsElement = document.getElementById("preview-details");
+            const extraElement = document.getElementById("preview-extra");
+            const headerElement = document.getElementById("preview-header");
+
+            if (selectedType === "discomfort") {
+                headerElement.innerText = "Logged Discomfort";
+                titleElement.innerText = `${selectedZone} soreness`;
+                detailsElement.innerText = `Severity: Level ${selectedIntensityValue}/5`;
+                
+                const trigger = document.getElementById("sim-trigger").value;
+                extraElement.innerText = `Trigger: While ${trigger.toLowerCase()}`;
+                titleElement.classList.remove("text-teal-400", "text-slate-400");
+                titleElement.classList.add("text-white");
+            } else {
+                headerElement.innerText = "Logged Maintenance";
+                const cleanType = document.getElementById("sim-clean-type").value;
+                const soakDuration = document.getElementById("sim-soak-duration").value;
+                const product = document.getElementById("sim-product").value || "water";
+                
+                titleElement.innerText = cleanType;
+                detailsElement.innerText = `Soaking duration: ${soakDuration} mins`;
+                extraElement.innerText = `Product: ${product}`;
+                titleElement.classList.remove("text-white");
+                titleElement.classList.add("text-teal-400");
+            }
+        }
+
+        function downloadMockJSON() {
+            let mockEntry = {};
+            
+            if (selectedType === "discomfort") {
+                const trigger = document.getElementById("sim-trigger").value;
+                mockEntry = {
+                    app: "DentuEase",
+                    date: new Date().toISOString(),
+                    type: "discomfort",
+                    zone: selectedZone,
+                    severity: selectedIntensityValue,
+                    trigger: trigger,
+                    storage: "SwiftData (encrypted_on_device)"
+                };
+            } else {
+                const cleanType = document.getElementById("sim-clean-type").value;
+                const soakDuration = parseInt(document.getElementById("sim-soak-duration").value) || 0;
+                const product = document.getElementById("sim-product").value || "Water";
+                mockEntry = {
+                    app: "DentuEase",
+                    date: new Date().toISOString(),
+                    type: "cleaning",
+                    cleaning_type: cleanType,
+                    soaking_minutes: soakDuration,
+                    product_used: product,
+                    storage: "SwiftData (encrypted_on_device)"
+                };
+            }
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(mockEntry, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", `dentuease_${selectedType}_entry.json`);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        // Initialize simulator options
+        window.onload = function() {
+            selectZone("Upper Center");
+            selectIntensity(3);
+            updateSimulator();
+        };
+    </script>
+</body>
+</html>

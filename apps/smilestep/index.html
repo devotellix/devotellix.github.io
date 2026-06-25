@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmileStep | Private, Local Aligner Tracker & Wear Timer for iOS</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Track your Invisalign and clear aligners privately. SmileStep is a local-first wear timer, set change tracker, and smile evolution gallery for iPhone. 100% secure, offline SwiftData storage.">
+    <meta name="keywords" content="SmileStep, Aligner Tracker, Invisalign, Aligner Timer, Teeth Alignment, Orthodontic Tracker, Wear Time Timer, Clear Aligners, Offline Aligner Tracker, Invisalign Tracker">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/smilestep/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/smilestep/">
+    <meta property="og:title" content="SmileStep | Private, Local Aligner Tracker">
+    <meta property="og:description" content="Achieve your dream smile. Track Invisalign wear time and set change schedules. 100% private, secure SwiftData on-device storage.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/smilestep/app-icon.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SmileStep | iOS Aligner Tracker">
+    <meta name="twitter:description" content="Track Invisalign wear time, set change schedule, and smile evolution. Private by default: all data stays secure on-device.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/smilestep/app-icon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            mint: '#10B981',
+                            cyan: '#06B6D4'
+                        },
+                        dark: {
+                            950: '#070C0A', // Deep minty black
+                            900: '#0E1714',
+                            800: '#152520',
+                            700: '#1D352D'
+                        }
+                    },
+                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(21, 37, 32, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #FFF 0%, #10B981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.png" alt="SmileStep App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-mint/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">SmileStep</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#features" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                        <a href="#simulator" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Interactive Demo</a>
+                        <a href="support.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                        <a href="#download" class="bg-brand-mint text-dark-950 hover:bg-emerald-400 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)]">
+                            Get App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">
+        <!-- Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-mint/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-cyan/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-mint/10 border border-brand-mint/20 text-brand-mint text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-mint animate-pulse"></span>
+                100% Private Aligner Tracker
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                Achieve Your Perfect Smile.<br class="hidden md:block" />
+                <span class="text-gradient">Local Aligner Tracker & Wear Timer</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-slate-400 mx-auto mb-10 leading-relaxed">
+                Log wear time in real-time, get notification reminders after meals, and watch your teeth align with side-by-side progress comparisons. No ads. No accounts. Your data never leaves your iPhone.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://apps.apple.com/app/smilestep-aligner-tracker" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+            </div>
+
+            <!-- Preview/Visual Anchor -->
+            <div class="mt-20 relative max-w-4xl mx-auto">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div class="glass rounded-3xl p-6 md:p-8 border border-white/5 shadow-2xl text-left">
+                    <div class="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                        <div>
+                            <div class="text-xs text-brand-mint font-semibold tracking-widest uppercase mb-1">Live Dashboard</div>
+                            <div class="text-2xl font-bold text-white">Daily Tracker</div>
+                        </div>
+                        <div class="bg-brand-mint/20 px-3 py-1.5 rounded-xl border border-brand-mint/30 text-xs font-semibold text-brand-mint">
+                            🔒 100% Offline SwiftData
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Wearing Time</span>
+                                    <span class="text-lg">⏱️</span>
+                                </div>
+                                <div class="text-2xl font-black text-white">21h 45m</div>
+                                <p class="text-xs text-slate-500 mt-2">Daily Goal: 22h</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-mint font-semibold">
+                                Progress: 98%
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Current Set</span>
+                                    <span class="text-lg">🦷</span>
+                                </div>
+                                <div class="text-2xl font-black text-brand-cyan">Set 04/20</div>
+                                <p class="text-xs text-slate-500 mt-2">10 days remaining in set</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-cyan font-semibold">
+                                Brand: Invisalign
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Wear Streak</span>
+                                    <span class="text-lg">🔥</span>
+                                </div>
+                                <div class="text-2xl font-black text-white">12 Days</div>
+                                <p class="text-xs text-slate-500 mt-2">Goal achieved consecutively</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-brand-mint font-semibold">
+                                Level: Aligner Master
+                            </div>
+                        </div>
+                        <div class="bg-dark-900/80 p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-semibold text-slate-400">Total Treatment</span>
+                                    <span class="text-lg">⏳</span>
+                                </div>
+                                <div class="text-2xl font-black text-slate-400">20% Done</div>
+                                <p class="text-xs text-slate-500 mt-2">Est. completion: Nov 12</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-500 font-semibold">
+                                Active Treatment
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Features Built for Aligner Success</h2>
+                <p class="text-slate-400 mt-2">Design-focused tracker running strictly offline for maximum compliance and privacy.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Real-Time Wear Timer</h3>
+                    <p class="text-slate-400 leading-relaxed">Start or stop tracking your aligners with a simple, massive tactile button. Watch your hours, minutes, and goals calculate automatically.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 border-brand-mint/20 shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Smart Meal Reminders</h3>
+                    <p class="text-slate-400 leading-relaxed">Get friendly local notification reminders 15, 30, or 45 minutes after you take your aligners out for meals. Never forget to put them back in.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Smile Progress Gallery</h3>
+                    <p class="text-slate-400 leading-relaxed">Snap smile photos at each aligner change. Use our alignment grid and ghost overlay in the camera to take perfectly positioned progress shots.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 10.742l-2.084 1.39A2 2 0 006 13.82v5.43a2 2 0 001.077 1.776l4.47 2.233a2 2 0 001.81 0l4.47-2.233A2 2 0 0019 19.25v-5.43a2 2 0 00-.595-1.39l-2.084-1.39m-7.632 0C9.646 9.873 11.233 9 13 9s3.354.873 4.316 1.742m-7.632 0l2.308-1.538A2 2 0 0113 9.077v0a2 2 0 011.326.485l2.308 1.538m-4.615 0H13m0 0v1.5"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Before & After Slider</h3>
+                    <p class="text-slate-400 leading-relaxed">Visualize your tooth movements using our side-by-side comparison screen or the interactive swipe overlay slider. See the difference instantly.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Est. End Date Calculator</h3>
+                    <p class="text-slate-400 leading-relaxed">Input your total sets and days per set, and let SmileStep project your treatment timeline. Adjusts automatically as you mark set changes.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">On-Device Security</h3>
+                    <p class="text-slate-400 leading-relaxed">No medical history is sent to databases. No tracking scripts or cloud logins. All aligner stats are stored locally on your device via SwiftData.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulator Section -->
+    <section id="simulator" class="py-24 bg-dark-950 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Interactive Wear Simulator</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Simulate how SmileStep tracks your daily aligner usage. Start the timer, choose your set configuration, and see your progress updates.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
+                <!-- Inputs Column -->
+                <div class="glass rounded-3xl p-8 border border-white/10 shadow-2xl">
+                    <div class="space-y-6">
+                        <!-- Aligner Brand -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Aligner Brand</label>
+                            <select id="sim-brand" onchange="updateSimulator()" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-mint text-sm">
+                                <option value="Invisalign" selected>Invisalign</option>
+                                <option value="ClearCorrect">ClearCorrect</option>
+                                <option value="Spark">Spark</option>
+                                <option value="Autre">Other Aligner Brand</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Set Configuration -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Total Aligner Sets</label>
+                                <input type="number" id="sim-sets" value="20" min="1" max="99" oninput="updateSimulator()" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-mint text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Current Set Number</label>
+                                <input type="number" id="sim-current-set" value="4" min="1" max="99" oninput="updateSimulator()" class="w-full bg-dark-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-mint text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Timer Controls -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Timer Toggle</label>
+                            <div class="flex gap-4">
+                                <button onclick="toggleTimer(true)" id="btn-wear" class="flex-grow py-3 rounded-xl bg-brand-mint text-dark-950 font-bold text-sm shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all">
+                                    🦷 Wear Aligners (Start)
+                                </button>
+                                <button onclick="toggleTimer(false)" id="btn-remove" class="flex-grow py-3 rounded-xl bg-dark-900 border border-white/5 text-slate-400 font-bold text-sm hover:border-brand-mint/50 transition-colors">
+                                    🍽️ Remove for Meal
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Column -->
+                <div class="glass rounded-3xl p-8 border border-white/10 shadow-2xl relative bg-gradient-to-br from-dark-800 to-dark-900">
+                    <div class="absolute -top-3 -right-3 bg-brand-mint text-dark-950 text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full shadow-lg">
+                        Live Tracking state
+                    </div>
+                    
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-brand-mint/10 border border-brand-mint/25 flex items-center justify-center text-brand-mint text-lg font-bold">
+                            ⏱️
+                        </div>
+                        <div>
+                            <div id="preview-brand" class="text-xs text-slate-500 font-medium">Invisalign Treatment</div>
+                            <div id="preview-status" class="text-lg font-bold text-white">Currently Wearing</div>
+                        </div>
+                    </div>
+
+                    <!-- Wear Progress Dial -->
+                    <div class="bg-dark-950/40 p-6 rounded-2xl border border-white/5 mb-6 text-center">
+                        <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Today's Wearing Time</div>
+                        <div id="preview-timer" class="text-4xl font-mono font-black text-brand-mint tracking-tight">21:45:00</div>
+                        <div class="w-full bg-white/5 rounded-full h-2.5 mt-4 overflow-hidden">
+                            <div id="preview-bar" class="bg-gradient-to-r from-brand-mint to-brand-cyan h-2.5 rounded-full" style="width: 98.8%"></div>
+                        </div>
+                        <div class="flex justify-between items-center text-xs text-slate-500 mt-2">
+                            <span>Goal: 22h</span>
+                            <span id="preview-percentage">98.8% achieved</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span id="preview-set-badge" class="px-2.5 py-1 rounded-lg bg-brand-cyan/20 border border-brand-cyan/30 text-xs font-semibold text-brand-cyan">Set 4 of 20</span>
+                        <span id="preview-streak" class="px-2.5 py-1 rounded-lg bg-brand-mint/20 border border-brand-mint/30 text-xs font-semibold text-brand-mint">🔥 12 day streak</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-slate-400">🔒 Local SwiftData</span>
+                    </div>
+
+                    <div class="border-t border-white/5 pt-4 flex justify-between items-center text-xs">
+                        <span class="text-slate-500">Database State: <span class="font-mono text-slate-400">Treatment.WearSession</span></span>
+                        <button onclick="downloadMockJSON()" class="text-brand-mint hover:underline font-semibold flex items-center gap-1">
+                            Export Log JSON
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.png" alt="SmileStep App Icon" class="w-8 h-8 rounded-lg shadow-lg object-cover">
+                        <span class="text-white font-bold text-lg">SmileStep</span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm">
+                        A private, local-first clear aligner tracker and wear timer designed for easy treatment logging and photo progress comparison on iOS.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-slate-500 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#simulator" class="text-slate-500 hover:text-white transition-colors">Wear Simulator</a></li>
+                        <li><a href="#download" class="text-slate-500 hover:text-white transition-colors">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Support & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contact.devotellix@gmail.com" class="text-slate-500 hover:text-brand-mint transition-colors">contact.devotellix@gmail.com</a></li>
+                        <li><a href="support.html" class="text-slate-500 hover:text-white transition-colors">Support Portal</a></li>
+                        <li><a href="privacy.html" class="text-slate-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">100% Offline-First iOS Aligner Tracking Tool.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simulator JS Logic -->
+    <script>
+        let isWearing = true;
+        let wearSecondsToday = 21 * 3600 + 45 * 60; // 21h 45m in seconds
+        let timerInterval = null;
+
+        function startTick() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                if (isWearing) {
+                    wearSecondsToday++;
+                    updateTimerUI();
+                }
+            }, 1000);
+        }
+
+        function toggleTimer(wear) {
+            isWearing = wear;
+            const statusText = document.getElementById("preview-status");
+            const btnWear = document.getElementById("btn-wear");
+            const btnRemove = document.getElementById("btn-remove");
+
+            if (isWearing) {
+                statusText.innerText = "Currently Wearing";
+                statusText.className = "text-lg font-bold text-white";
+                btnWear.className = "flex-grow py-3 rounded-xl bg-brand-mint text-dark-950 font-bold text-sm shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all";
+                btnRemove.className = "flex-grow py-3 rounded-xl bg-dark-900 border border-white/5 text-slate-400 font-bold text-sm hover:border-brand-mint/50 transition-colors";
+            } else {
+                statusText.innerText = "Aligners Removed";
+                statusText.className = "text-lg font-bold text-brand-cyan";
+                btnWear.className = "flex-grow py-3 rounded-xl bg-dark-900 border border-white/5 text-slate-400 font-bold text-sm hover:border-brand-mint/50 transition-colors";
+                btnRemove.className = "flex-grow py-3 rounded-xl bg-brand-cyan text-dark-950 font-bold text-sm shadow-[0_0_15px_rgba(6,182,212,0.2)] transition-all";
+            }
+        }
+
+        function updateTimerUI() {
+            // Calculate hours, minutes, seconds
+            const hrs = Math.floor(wearSecondsToday / 3600);
+            const mins = Math.floor((wearSecondsToday % 3600) / 60);
+            const secs = wearSecondsToday % 60;
+
+            const format = (val) => String(val).padStart(2, '0');
+            document.getElementById("preview-timer").innerText = `${format(hrs)}:${format(mins)}:${format(secs)}`;
+
+            // Percentage achieved (Goal: 22h = 22 * 3600 = 79200 seconds)
+            const goalSecs = 22 * 3600;
+            const percentage = Math.min((wearSecondsToday / goalSecs) * 100, 100).toFixed(2);
+            document.getElementById("preview-percentage").innerText = `${percentage}% achieved`;
+            document.getElementById("preview-bar").style.width = `${percentage}%`;
+        }
+
+        function updateSimulator() {
+            const brand = document.getElementById("sim-brand").value;
+            const totalSets = document.getElementById("sim-sets").value || 20;
+            const currentSet = document.getElementById("sim-current-set").value || 1;
+
+            document.getElementById("preview-brand").innerText = `${brand} Treatment`;
+            document.getElementById("preview-set-badge").innerText = `Set ${currentSet} of ${totalSets}`;
+        }
+
+        function downloadMockJSON() {
+            const brand = document.getElementById("sim-brand").value;
+            const totalSets = document.getElementById("sim-sets").value || 20;
+            const currentSet = document.getElementById("sim-current-set").value || 1;
+
+            const mockEntry = {
+                app: "SmileStep",
+                device_timestamp: new Date().toISOString(),
+                aligner_brand: brand,
+                total_sets: parseInt(totalSets),
+                current_set: parseInt(currentSet),
+                today_wear_duration_seconds: wearSecondsToday,
+                goal_hours: 22,
+                storage: "SwiftData",
+                privacy_scope: "on-device_only"
+            };
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(mockEntry, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", `smilestep_wear_log.json`);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        // Initialize simulator on window load
+        window.onload = function() {
+            updateSimulator();
+            updateTimerUI();
+            startTick();
+        };
+    </script>
+</body>
+</html>

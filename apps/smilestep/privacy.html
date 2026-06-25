@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | SmileStep</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { mint: '#10B981', cyan: '#06B6D4' },
+                        dark: { 950: '#070C0A', 900: '#0E1714', 800: '#152520', 700: '#1D352D' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(21, 37, 32, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #A0B2AC; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #A0B2AC; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-800 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-mint/20 transition-colors">
+                        <svg class="w-5 h-5 text-slate-400 group-hover:text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-mint/10 border border-brand-mint/20 text-brand-mint text-xs font-semibold uppercase tracking-wider mb-4">
+                    Security & Privacy
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-slate-500">Effective Date: June 25, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-8 border-l-4 border-l-brand-mint">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> SmileStep is built from the ground up to protect your orthodontic treatment details. All aligner wear logs, progress photos, symptoms, and goal statistics are stored exclusively on your local iOS device. We do not collect, transmit, share, or sell your data.</p>
+                </div>
+
+                <h2>1. Local-Only & Private Storage</h2>
+                <p>SmileStep operates on an offline-first, local-only model. All created wear logs (including timestamps, active aligner sets, daily notes, and progress photos) are saved locally using Apple's native SwiftData framework. <strong>We do not maintain remote servers or databases, and we never transmit your private orthodontic entries over the network.</strong></p>
+
+                <h2>2. No Account Creation</h2>
+                <p>We do not require user accounts, email registration, logins, or passwords. You can launch the app and start logging your aligner wear time immediately. No personal profiles are created.</p>
+
+                <h2>3. No Cloud Syncing</h2>
+                <p>SmileStep stores all treatment statistics on the local hardware of your device. Your data remains strictly on your iPhone. There is no automated CloudKit sync, keeping your private medical records isolated and secure.</p>
+
+                <h2>4. Data Portability & Ownership</h2>
+                <p>You own 100% of your data. Because all data is stored on-device, you have full control over it. If you delete the app, your local logs will be removed by the iOS system. We cannot retrieve or restore your data as we do not have access to it.</p>
+
+                <h2>5. Zero Ad Scripts or Trackers</h2>
+                <p>SmileStep contains no advertisements, analytics trackers, or external marketing SDKs. We only receive anonymous crash reports from Apple if you have explicitly consented to share diagnostics in your global iOS system settings. These reports contain no personal information or tracking stats.</p>
+
+                <h2>6. iOS Device Permissions</h2>
+                <p>SmileStep may request the following device permissions to enable specific tracking features:</p>
+                <ul>
+                    <li><strong>Notifications:</strong> Optional. Used to send local alerts reminding you to clean your aligners in the morning, change sets, or put them back in after meals. These notifications are scheduled locally on your device and do not use remote push servers.</li>
+                    <li><strong>Camera & Photo Library:</strong> Optional. Used to take and save smile progress photos in the app's visual evolution gallery. Photos are processed locally.</li>
+                </ul>
+
+                <h2>7. Changes to this Policy</h2>
+                <p>We may update this Privacy Policy as new iOS features or App Store guidelines are introduced. Any updates will be published on this page. Because we do not collect email addresses, we suggest reviewing this policy occasionally or reading the App Store release notes.</p>
+
+                <h2>Contact Us</h2>
+                <p>For questions or feedback regarding our offline-first security practices, please contact us at <a href="mailto:contact.devotellix@gmail.com" class="text-brand-mint hover:text-emerald-400">contact.devotellix@gmail.com</a>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>

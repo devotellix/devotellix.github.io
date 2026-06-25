@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | BootWright</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { tan: '#D2B48C', amber: '#C08552', brown: '#5E3A1A' },
+                        dark: { 950: '#0F0D0C', 900: '#14110F', 800: '#1D1A17', 700: '#2A2521' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(29, 26, 23, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #A69C93; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #A69C93; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-dark-950 text-[#E6DFD9] min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-800 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-amber/20 transition-colors">
+                        <svg class="w-5 h-5 text-slate-400 group-hover:text-brand-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-amber/10 border border-brand-amber/20 text-brand-amber text-xs font-semibold uppercase tracking-wider mb-4">
+                    Security & Privacy
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Privacy Policy</h1>
+                <p class="text-slate-500">Effective Date: June 25, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-8 border-l-4 border-l-brand-amber">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> BootWright is built from the ground up to protect your private data. All details about your boot collection, wear counts, drying times, care history, and uploaded images are processed and stored exclusively on your local iOS device. We do not collect, transmit, share, or sell your data.</p>
+                </div>
+
+                <h2>1. Offline-First & Local Storage</h2>
+                <p>BootWright operates on a local-first model. All created data (including boot details, wear history, care sessions, drying timers, and attached photos) is saved locally using Apple's native SwiftData framework. <strong>We do not maintain cloud databases or remote servers, and we never transmit your private collection information over the network.</strong></p>
+
+                <h2>2. No Account Creation Required</h2>
+                <p>We do not require accounts, logins, passwords, or emails. You can open the app and start tracking your collection immediately. There is no user profiling or registration data stored by us.</p>
+
+                <h2>3. No Cloud Syncing</h2>
+                <p>BootWright does not synchronize its database through CloudKit or any other cloud service. Your collection history remains strictly on the device where it was created.</p>
+
+                <h2>4. Complete Data Ownership</h2>
+                <p>You maintain full ownership of your data. The data remains securely stored in the application directory on your device. Deleting the application will remove all local data, as is standard with offline iOS apps.</p>
+
+                <h2>5. Zero Third-Party Trackers</h2>
+                <p>BootWright is completely free of advertisements, tracking scripts, and external analytic SDKs. We receive anonymous crash reports from Apple only if you have consented to share diagnostics in your global iOS system settings. These reports contain no personal information or private data.</p>
+
+                <h2>6. iOS Device Permissions</h2>
+                <p>Depending on how you use BootWright, the application may request the following system permissions:</p>
+                <ul>
+                    <li><strong>Photo Library:</strong> Optional. Used to attach custom photos of your boots. The selection and rendering of images are handled entirely on-device via Apple's native PhotosPicker API.</li>
+                    <li><strong>Notifications:</strong> Optional. Used to schedule local alerts reminding you when a boot drying timer has completed. These are scheduled locally and do not use a remote push notification server.</li>
+                </ul>
+
+                <h2>7. Changes to this Policy</h2>
+                <p>We may update this Privacy Policy to align with new iOS features or App Store guidelines. Any updates will be published on this page. Because we do not collect contact details, we suggest checking this policy occasionally or reading the App Store release notes.</p>
+
+                <h2>Contact Us</h2>
+                <p>For questions or suggestions regarding our local-first security practices, please contact us at <a href="mailto:contact.devotellix@gmail.com" class="text-brand-amber hover:text-amber-400">contact.devotellix@gmail.com</a>.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>

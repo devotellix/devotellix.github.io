@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | SmileStep</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { mint: '#10B981', cyan: '#06B6D4' },
+                        dark: { 950: '#070C0A', 900: '#0E1714', 800: '#152520', 700: '#1D352D' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(21, 37, 32, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 min-h-screen flex flex-col font-sans antialiased relative">
+
+    <!-- Background Glow -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-mint/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-800 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-mint/20 transition-colors">
+                        <svg class="w-5 h-5 text-slate-400 group-hover:text-brand-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">SmileStep</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-24 relative z-10">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-mint/10 border border-brand-mint/20 text-brand-mint text-xs font-semibold uppercase tracking-wider mb-4">
+                    App Support
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Customer Support</h1>
+                <p class="text-xl text-slate-400">Need help tracking your wearing sessions or comparing your smile progress?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Email Support Card -->
+                <a href="mailto:contact.devotellix@gmail.com?subject=SmileStep%20Support%20Request" class="glass p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 group hover:border-brand-mint/50 block">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Email Support</h3>
+                    <p class="text-slate-400 mb-6">Contact our developer desk directly for feature requests, bugs, or orthodontic tracking support.</p>
+                    <span class="text-brand-mint font-medium group-hover:text-emerald-400 flex items-center gap-2">
+                        contact.devotellix@gmail.com
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                </a>
+
+                <!-- FAQs Card -->
+                <div class="glass p-8 rounded-3xl border-l-4 border-l-brand-mint">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-mint/20 flex items-center justify-center text-brand-mint mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Frequently Asked Questions</h3>
+                    <ul class="text-slate-400 space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-brand-mint shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>How does the wear timer work?</strong> Tap "Retirer les aligneurs" (Remove aligners) when eating or brushing, and tap "Remettre" (Wear aligners) when you put them back. The app automatically calculates your daily wear time.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-brand-mint shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>Where is my dental data stored?</strong> Your progress photos and wear times are stored 100% locally on your iOS device via SwiftData database. There is no cloud storage, and your medical data never leaves your iPhone.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-brand-mint shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>How do notifications work?</strong> SmileStep uses local notifications to send meal reminders after 15, 30, or 45 minutes, set change notifications, and morning cleaning alerts. No remote push servers are used.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center p-6 glass rounded-2xl">
+                <p class="text-slate-400">
+                    Have feedback or feature requests? We'd love to hear from you. <br>
+                    Send us an email at <a href="mailto:contact.devotellix@gmail.com?subject=SmileStep%20Feedback" class="text-brand-mint hover:underline">contact.devotellix@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>
