@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LockShield | Premium Central Heating Balancing Companion</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Balance your home radiator system and optimize your heating efficiency. Map your layout, log temperatures, calculate Delta T, and get precise non-linear lockshield valve adjustments.">
+    <meta name="keywords" content="LockShield, Radiator Balancing, Central Heating, Hydronic Balancing, Boiler Efficiency, Delta T Calculator, Lockshield Valve, Heating DIY, iOS App">
+    <meta name="author" content="Devotellix">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devotellix.github.io/apps/lockshield/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devotellix.github.io/apps/lockshield/">
+    <meta property="og:title" content="LockShield | Premium Central Heating Balancing Companion">
+    <meta property="og:description" content="Stop wasting fuel on unbalanced heating. Calculate Delta T targets and adjust radiator lockshield valves in fractional turns. Zero mistakes. Up to 15% energy savings.">
+    <meta property="og:image" content="https://devotellix.github.io/apps/lockshield/app-icon.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LockShield | Radiator Balancing Companion">
+    <meta name="twitter:description" content="Stop wasting fuel on unbalanced heating. Calculate Delta T targets and adjust radiator lockshield valves in fractional turns.">
+    <meta name="twitter:image" content="https://devotellix.github.io/apps/lockshield/app-icon.png">
+
+    <!-- JSON-LD Schema for Software Application -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "LockShield",
+      "operatingSystem": "iOS",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "1.00",
+        "priceCurrency": "EUR"
+      },
+      "description": "Premium iOS companion for radiator hydronic balancing. Calculate Delta T targets, map heating systems, and adjust lockshield valves with precise turns.",
+      "image": "https://devotellix.github.io/apps/lockshield/app-icon.png",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Devotellix"
+      }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: { 400: '#FF8C42', 500: '#FF6B35', 600: '#E25822' },
+                        dark: { 950: '#060E1A', 900: '#0A1628', 800: '#1A2744', 700: '#2A3B5C' }
+                    },
+                    animation: { 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(26, 39, 68, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #FFF 0%, #FF8C42 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .panel-glow { box-shadow: 0 0 25px rgba(255, 107, 53, 0.15); }
+        .flow-bubble { animation: flow 2s linear infinite; }
+        @keyframes flow {
+            0% { stroke-dashoffset: 24; }
+            100% { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-zinc-300 min-h-screen flex flex-col font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <img src="app-icon.png" alt="LockShield App Icon" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-500/20 object-cover border border-white/10">
+                    <span class="text-white font-bold text-xl tracking-tight">LockShield</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-8">
+                        <a href="#features" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Features</a>
+                        <a href="#simulator" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Interactive Simulator</a>
+                        <a href="support.html" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Support</a>
+                        <a href="privacy.html" class="text-zinc-400 hover:text-white transition-colors text-sm font-medium">Privacy</a>
+                        <a href="#download" class="bg-brand-500 text-white hover:bg-brand-400 px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-[0_0_20px_rgba(255,107,53,0.3)] hover:shadow-[0_0_25px_rgba(255,107,53,0.5)]">
+                            Get App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden relative">
+        <!-- Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-700/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                DIY Radiator Balancing Companion
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                Perfect Heat Balance.<br class="hidden md:block" />
+                <span class="text-gradient">Optimize Your Central Heating</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-zinc-400 mx-auto mb-10 leading-relaxed font-light">
+                Unbalanced heating causes rooms close to the boiler to overheat while distant rooms stay freezing cold. Save up to 15% on energy bills by balancing your radiators step-by-step.
+            </p>
+            
+            <div id="download" class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://apps.apple.com/app/id6477889900" target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform duration-300">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-14">
+                </a>
+            </div>
+
+            <!-- Preview/Visual Anchor -->
+            <div class="mt-20 relative max-w-4xl mx-auto perspective-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div class="glass rounded-3xl p-6 md:p-8 border border-white/10 shadow-2xl text-left">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 border-b border-white/10 pb-4 gap-4">
+                        <div>
+                            <div class="text-xs text-brand-400 font-semibold tracking-widest uppercase mb-1">System Optimization Roadmap</div>
+                            <div class="text-2xl font-bold text-white">House Balancing Progress</div>
+                        </div>
+                        <div class="bg-brand-500/20 px-3 py-1.5 rounded-xl border border-brand-500/30 text-xs font-semibold text-brand-400 self-start sm:self-center">
+                            Round 2 Stabilization
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-dark-800/80 p-5 rounded-2xl border border-white/5">
+                            <div class="text-xs text-zinc-400 mb-1 uppercase tracking-wider">Boiler Delta T Target</div>
+                            <div class="text-2xl font-bold text-white font-mono">20.0&deg;C <span class="text-xs font-sans text-brand-400 font-normal">Condensing</span></div>
+                        </div>
+                        <div class="bg-dark-800/80 p-5 rounded-2xl border border-white/5">
+                            <div class="text-xs text-zinc-400 mb-1 uppercase tracking-wider">Stabilized Radiators</div>
+                            <div class="text-2xl font-bold text-emerald-400 font-mono">5 / 6 <span class="text-xs font-sans text-zinc-400 font-normal">Optimized</span></div>
+                        </div>
+                        <div class="bg-dark-800/80 p-5 rounded-2xl border border-white/5">
+                            <div class="text-xs text-zinc-400 mb-1 uppercase tracking-wider">Estimated Fuel Saving</div>
+                            <div class="text-2xl font-bold text-brand-400 font-mono">~12.4% <span class="text-xs font-sans text-emerald-400 font-normal">Calculated</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 space-y-3">
+                        <div class="flex justify-between items-center bg-dark-800/40 p-3 rounded-xl border border-white/5 text-sm">
+                            <span class="text-white">Living Room Radiator (Steel Panel)</span>
+                            <span class="font-mono text-emerald-400">&Delta;T: 19.8&deg;C (Perfect)</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-dark-800/40 p-3 rounded-xl border border-white/5 text-sm">
+                            <span class="text-white">Kitchen Radiator (Cast Iron)</span>
+                            <span class="font-mono text-brand-400">&Delta;T: 14.5&deg;C &rarr; Close 1/4 Turn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-dark-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">How LockShield Optimizes Your System</h2>
+                <p class="text-zinc-400 mt-2 font-light">Scientific hydronic balancing simplified for DIYers.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Boiler & Heat Pump Presets</h3>
+                    <p class="text-zinc-400 leading-relaxed font-light text-sm">Select your heat generator to auto-configure optimal Delta T targets. Targets range from 11&deg;C for standard gas boilers, 20&deg;C to maximize fuel condensing, down to 6&deg;C for high-COP heat pump operation.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 border-brand-500/20 shadow-[0_0_30px_rgba(255,107,53,0.05)]">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 01.553-.894L9 2m0 18l6-3m-6 3V2m6 15l5.447 2.724a1 1 0 001.453-.894V5.618a1 1 0 00-.553-.894L15 2m0 15V2m0 0L9 5"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Ordered Radiator Mapping</h3>
+                    <p class="text-zinc-400 leading-relaxed font-light text-sm">Map your radiators room-by-room in order of piping distance from the pump. Enter quick pipe flow/return surface temperatures with a simple contact or infrared thermometer.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H17m0 0V4m0 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Non-Linear Turn Calculator</h3>
+                    <p class="text-zinc-400 leading-relaxed font-light text-sm">Standard lockshield valves are highly non-linear (a fraction of a turn near closed changes flow immensely). Our algorithm computes the exact turns (e.g. close by 1/8 turn) to reach balance smoothly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulator Section -->
+    <section id="simulator" class="py-24 bg-dark-950 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Interactive Central Heating Simulator</h2>
+                <p class="text-zinc-400 text-lg max-w-2xl mx-auto font-light">
+                    Adjust the virtual lockshield valve below to see how flow rate and Delta T change. Find the perfect setting for each heating source to balance the system!
+                </p>
+            </div>
+
+            <!-- Simulator Card Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-5xl mx-auto">
+                <!-- SVG Diagram Column -->
+                <div class="lg:col-span-7 glass rounded-3xl p-6 border border-white/10 flex flex-col justify-between panel-glow">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-semibold text-brand-400 uppercase tracking-widest">Hydronic Diagram</span>
+                            <span id="simulator-flow-text" class="text-xs text-zinc-500 font-mono">Flow Speed: 1.2 L/min</span>
+                        </div>
+                        
+                        <!-- Radiator SVG -->
+                        <div class="bg-dark-900/50 rounded-2xl p-6 border border-white/5 flex items-center justify-center min-h-[300px]">
+                            <svg class="w-full max-w-[380px] h-auto" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Radiator Body Structure -->
+                                <rect x="80" y="40" width="240" height="200" rx="8" fill="#1A2744" stroke="#2A3B5C" stroke-width="4" />
+                                
+                                <!-- Radiator Vertical Columns -->
+                                <line x1="110" y1="40" x2="110" y2="240" stroke="#2A3B5C" stroke-width="12" />
+                                <line x1="140" y1="40" x2="140" y2="240" stroke="#2A3B5C" stroke-width="12" />
+                                <line x1="170" y1="40" x2="170" y2="240" stroke="#2A3B5C" stroke-width="12" />
+                                <line x1="200" y1="40" x2="200" y2="240" stroke="#2A3B5C" stroke-width="12" />
+                                <line x1="230" y1="40" x2="230" y2="240" stroke="#2A3B5C" stroke-width="12" />
+                                <line x1="260" y1="40" x2="260" y2="240" stroke="#2A3B5C" stroke-width="12" />
+                                <line x1="290" y1="40" x2="290" y2="240" stroke="#2A3B5C" stroke-width="12" />
+                                
+                                <!-- Heat Glow Radiator fill (Dynamic Color overlay) -->
+                                <rect id="radiator-glow" x="84" y="44" width="232" height="192" rx="4" fill="#FF6B35" opacity="0.6" class="transition-all duration-300" />
+                                
+                                <!-- Flow Pipe (Top Left - Hot) -->
+                                <path d="M20 50 H80" stroke="#E74C3C" stroke-width="8" stroke-linecap="round" />
+                                <path id="flow-line" d="M20 50 H80" stroke="#FFF" stroke-width="2" stroke-dasharray="6 6" class="flow-bubble" />
+                                <circle cx="50" cy="50" r="16" fill="#0A1628" stroke="#E74C3C" stroke-width="2" />
+                                <text x="50" y="54" fill="#FFF" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">IN</text>
+                                <text id="flow-temp-lbl" x="50" y="28" fill="#E74C3C" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold">55°C</text>
+                                
+                                <!-- Return Pipe (Bottom Right - Cooler) -->
+                                <path d="M320 230 H380" id="return-pipe" stroke="#3498DB" stroke-width="8" stroke-linecap="round" class="transition-colors duration-300" />
+                                <path id="return-line" d="M320 230 H380" stroke="#FFF" stroke-width="2" stroke-dasharray="6 6" class="flow-bubble" />
+                                <circle cx="350" cy="230" r="16" fill="#0A1628" stroke="#3498DB" stroke-width="2" id="return-circle" class="transition-colors duration-300" />
+                                <text x="350" y="234" fill="#FFF" font-size="10" font-family="monospace" text-anchor="middle" font-weight="bold">OUT</text>
+                                <text id="return-temp-lbl" x="350" y="208" fill="#3498DB" font-size="12" font-family="monospace" text-anchor="middle" font-weight="bold" class="transition-colors duration-300">35°C</text>
+                                
+                                <!-- Lockshield Valve (Bottom Right corner connection) -->
+                                <g id="lockshield-valve-svg" transform="translate(310,215)">
+                                    <!-- Valve body -->
+                                    <rect x="0" y="0" width="20" height="30" rx="3" fill="#D4AF37" stroke="#996515" stroke-width="1.5" />
+                                    <!-- Valve Cap / Screw (Dynamic rotation) -->
+                                    <circle id="valve-cap" cx="10" cy="5" r="7" fill="#8A6D35" stroke="#FFF" stroke-width="1.5" class="transition-transform duration-300 origin-center" style="transform-origin: 10px 5px;" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 flex justify-between items-center text-xs text-zinc-500 font-mono border-t border-white/5 pt-4">
+                        <span>IN: Inlet Flow (Hot)</span>
+                        <span>OUT: Outlet Return (Balanced)</span>
+                    </div>
+                </div>
+
+                <!-- Control Column -->
+                <div class="lg:col-span-5 glass rounded-3xl p-6 md:p-8 border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-6">Simulator Control Panel</h4>
+                        
+                        <!-- Heat Source Selector -->
+                        <div class="mb-6">
+                            <label class="block text-xs font-mono text-zinc-400 uppercase tracking-wider mb-2">1. Select Heating Source:</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button onclick="selectSource('standard')" id="src-standard" class="py-2.5 px-2 rounded-xl border border-elegant bg-white/5 text-slate-400 hover:text-white text-xs font-bold transition-all uppercase tracking-wider">
+                                    Standard<br><span class="text-[9px] font-normal font-mono">&Delta;T Target: 11&deg;C</span>
+                                </button>
+                                <button onclick="selectSource('condensing')" id="src-condensing" class="py-2.5 px-2 rounded-xl border border-brand-500/20 bg-brand-500/5 text-white text-xs font-bold transition-all uppercase tracking-wider">
+                                    Condensing<br><span class="text-[9px] font-normal font-mono">&Delta;T Target: 20&deg;C</span>
+                                </button>
+                                <button onclick="selectSource('heatpump')" id="src-heatpump" class="py-2.5 px-2 rounded-xl border border-elegant bg-white/5 text-slate-400 hover:text-white text-xs font-bold transition-all uppercase tracking-wider">
+                                    Heat Pump<br><span class="text-[9px] font-normal font-mono">&Delta;T Target: 6&deg;C</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Valve Control Slider -->
+                        <div class="mb-8">
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="text-xs font-mono text-zinc-400 uppercase tracking-wider">2. Lockshield Opening (turns):</label>
+                                <span id="valve-turns-val" class="text-lg font-bold text-brand-400 font-mono">2.00 turns</span>
+                            </div>
+                            <input id="valve-slider" type="range" min="0" max="4" step="0.125" value="2.00" oninput="updateValve(this.value)" class="w-full h-2 bg-dark-900 rounded-lg appearance-none cursor-pointer accent-brand-500">
+                            <div class="flex justify-between text-[10px] text-zinc-500 font-mono mt-1">
+                                <span>Closed (0)</span>
+                                <span>Optimal</span>
+                                <span>Fully Open (4)</span>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Status Output Terminal -->
+                        <div class="bg-dark-950 rounded-2xl p-5 border border-white/5 font-mono text-xs flex-grow">
+                            <div class="flex items-center gap-2 mb-3 border-b border-white/5 pb-2">
+                                <span id="status-led" class="w-2.5 h-2.5 rounded-full bg-brand-500 block animate-pulse"></span>
+                                <span id="status-title" class="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">CALCULATING STATUS</span>
+                            </div>
+                            <div class="space-y-2.5 text-zinc-400">
+                                <div class="flex justify-between">
+                                    <span>Target Delta-T:</span>
+                                    <span id="target-dt-lbl" class="text-white font-bold">20.0&deg;C</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Measured Delta-T:</span>
+                                    <span id="measured-dt-lbl" class="text-white font-bold">20.0&deg;C</span>
+                                </div>
+                                <div class="border-t border-white/5 pt-3">
+                                    <div class="text-[10px] text-brand-400 font-bold uppercase tracking-wider mb-1">Feedback:</div>
+                                    <p id="feedback-desc" class="text-white leading-relaxed text-[11px] font-sans">
+                                        Adjust the slider to simulate balancing. Target Delta T varies per heating device.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Tech Info & Guidelines -->
+    <section class="py-24 bg-dark-900 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Thermal Physics & Guidelines</h2>
+                    <p class="text-zinc-400 text-lg mb-8 leading-relaxed font-light">
+                        Central heating balancing relies on controlling the mass flow rate of water through each radiator. Adjusting the lockshield valve limits the flow, ensuring hot water is distributed evenly throughout the entire house.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400 shrink-0 mt-0.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-zinc-300 text-sm"><strong>The Delta T (&Delta;T) Rule:</strong> A higher delta T indicates slow flow and high heat extraction. A lower delta T indicates excessive speed (short-circuiting).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400 shrink-0 mt-0.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-zinc-300 text-sm"><strong>Boiler Condensation Target:</strong> To achieve condensing efficiency (fuel savings up to 15%), the return temperature must drop below 55&deg;C. An unbalanced system returns hot water, shutting off the condensing phase.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400 shrink-0 mt-0.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-zinc-300 text-sm"><strong>Non-Linear Flow Characteristics:</strong> Most lockshield valves are highly restrictive near closing. The first 1/2 turn from closed controls 80% of the flow capacity. Precision is key.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Rules Panel -->
+                <div class="glass p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl">
+                    <h4 class="text-xl font-bold text-white mb-6 font-mono text-sm tracking-wider uppercase text-brand-400">Heating Source Target Guidelines</h4>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-dark-800/60 rounded-2xl border border-white/5">
+                            <div class="flex items-center justify-between font-bold text-white mb-1">
+                                <span>Standard Gas/Oil Boiler</span>
+                                <span class="text-brand-400 font-mono">&Delta;T: 10&deg;C - 12&deg;C</span>
+                            </div>
+                            <p class="text-xs text-zinc-500">Classic non-condensing heaters work best with standard flow ratios, keeping temperatures warm and balanced across all radiator elements.</p>
+                        </div>
+                        <div class="p-4 bg-dark-800/60 rounded-2xl border border-white/5">
+                            <div class="flex items-center justify-between font-bold text-white mb-1">
+                                <span>Condensing Boiler</span>
+                                <span class="text-brand-400 font-mono">&Delta;T: 15&deg;C - 20&deg;C</span>
+                            </div>
+                            <p class="text-xs text-zinc-500">Requires low return temperatures (below 55&deg;C) to allow steam in exhaust flue gas to condense, releasing latent heat back into system.</p>
+                        </div>
+                        <div class="p-4 bg-dark-800/60 rounded-2xl border border-white/5">
+                            <div class="flex items-center justify-between font-bold text-white mb-1">
+                                <span>Heat Pump (COP Optimization)</span>
+                                <span class="text-brand-400 font-mono">&Delta;T: 5&deg;C - 8&deg;C</span>
+                            </div>
+                            <p class="text-xs text-zinc-500">Requires high flow rates and tight delta-Ts to maximize the Coefficient of Performance (COP) and maintain compressor health.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="app-icon.png" alt="LockShield App Icon" class="w-8 h-8 rounded-lg shadow-lg object-cover">
+                        <span class="text-white font-bold text-lg">LockShield</span>
+                    </div>
+                    <p class="text-zinc-500 max-w-sm text-sm font-light leading-relaxed">
+                        Calculate optimal hydronic targets, map radiator grids, log surface pipe temperatures, and adjust lockshield valves with precision. Built 100% offline.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm font-mono uppercase tracking-wider">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="text-zinc-500 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#simulator" class="text-zinc-500 hover:text-white transition-colors">Interactive Simulator</a></li>
+                        <li><a href="#download" class="text-zinc-500 hover:text-white transition-colors">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm font-mono uppercase tracking-wider">Support & Terms</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="mailto:contact.devotellix@gmail.com" class="text-zinc-500 hover:text-brand-400 transition-colors">contact.devotellix@gmail.com</a></li>
+                        <li><a href="support.html" class="text-zinc-500 hover:text-white transition-colors">Support Center</a></li>
+                        <li><a href="privacy.html" class="text-zinc-500 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-zinc-600">
+                <p>&copy; 2026 Devotellix. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Processed offline locally.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Simulator JS Logic -->
+    <script>
+        const sources = {
+            standard: {
+                name: "Standard Boiler",
+                targetDt: 11.0,
+                desc: "Standard boiler optimal delta-T is 11°C (e.g. 55°C flow, 44°C return).",
+                calcFlow: function(turns) {
+                    // Standard Boiler characteristics
+                    // Flow is moderate
+                    let normalized = turns / 4.0; // 0 to 1
+                    let flowK = Math.pow(normalized, 1.8);
+                    let deltaT = 4.0 + (30.0 - 4.0) * Math.pow(1.0 - flowK, 2.0);
+                    if (turns === 0) deltaT = 0;
+                    return deltaT;
+                }
+            },
+            condensing: {
+                name: "Condensing Boiler",
+                targetDt: 20.0,
+                desc: "Condensing boiler optimal delta-T is 20°C (e.g. 55°C flow, 35°C return). Maximizes flue gas water recovery.",
+                calcFlow: function(turns) {
+                    // Condensing Boiler characteristics (low return needed, targets high delta T)
+                    let normalized = turns / 4.0; // 0 to 1
+                    let flowK = Math.pow(normalized, 2.5); // non-linear characteristic
+                    let deltaT = 3.0 + (38.0 - 3.0) * Math.pow(1.0 - flowK, 2.2);
+                    if (turns === 0) deltaT = 0;
+                    return deltaT;
+                }
+            },
+            heatpump: {
+                name: "Heat Pump",
+                targetDt: 6.0,
+                desc: "Heat pump optimal delta-T is 6°C (e.g. 55°C flow, 49°C return). Requires higher volume flow rates.",
+                calcFlow: function(turns) {
+                    // Heat Pump characteristics (narrow delta T, needs high flow)
+                    let normalized = turns / 4.0;
+                    let flowK = Math.pow(normalized, 1.3);
+                    let deltaT = 2.0 + (22.0 - 2.0) * Math.pow(1.0 - flowK, 1.5);
+                    if (turns === 0) deltaT = 0;
+                    return deltaT;
+                }
+            }
+        };
+
+        let currentSourceKey = 'condensing';
+        let currentTurns = 2.0;
+
+        function selectSource(key) {
+            currentSourceKey = key;
+            
+            // Visual Button State
+            const keys = ['standard', 'condensing', 'heatpump'];
+            keys.forEach(k => {
+                const btn = document.getElementById('src-' + k);
+                if (k === key) {
+                    btn.className = "py-2.5 px-2 rounded-xl border border-brand-500/20 bg-brand-500/5 text-white text-xs font-bold transition-all uppercase tracking-wider";
+                } else {
+                    btn.className = "py-2.5 px-2 rounded-xl border border-elegant bg-white/5 text-slate-400 hover:text-white text-xs font-bold transition-all uppercase tracking-wider";
+                }
+            });
+
+            recalculate();
+        }
+
+        function updateValve(value) {
+            currentTurns = parseFloat(value);
+            document.getElementById('valve-turns-val').innerText = currentTurns.toFixed(2) + " turns";
+            
+            // Rotate valve cap in SVG (max turns = 4, let's rotate up to 360 degrees)
+            const angle = currentTurns * 90; 
+            document.getElementById('valve-cap').style.transform = `rotate(${angle}deg)`;
+
+            recalculate();
+        }
+
+        function recalculate() {
+            const src = sources[currentSourceKey];
+            const flowTemp = 55.0;
+            
+            // Calculate Delta T based on turns
+            let deltaT = src.calcFlow(currentTurns);
+            let returnTemp = flowTemp - deltaT;
+            
+            // Handle fully closed valve
+            if (currentTurns === 0) {
+                deltaT = 0;
+                returnTemp = 20.0; // ambient room temperature
+            }
+
+            // Update Labels
+            document.getElementById('target-dt-lbl').innerHTML = src.targetDt.toFixed(1) + "&deg;C";
+            
+            if (currentTurns === 0) {
+                document.getElementById('measured-dt-lbl').innerHTML = "N/A";
+                document.getElementById('return-temp-lbl').innerHTML = "20.0&deg;C (Cold)";
+            } else {
+                document.getElementById('measured-dt-lbl').innerHTML = deltaT.toFixed(1) + "&deg;C";
+                document.getElementById('return-temp-lbl').innerHTML = returnTemp.toFixed(1) + "&deg;C";
+            }
+
+            // Dynamic SVG color animations and adjustments
+            const radGlow = document.getElementById('radiator-glow');
+            const returnPipe = document.getElementById('return-pipe');
+            const returnCircle = document.getElementById('return-circle');
+            const returnTempLbl = document.getElementById('return-temp-lbl');
+            
+            // Radiator heat glow opacity (more flow = hotter radiator)
+            let opacity = 0.1;
+            if (currentTurns > 0) {
+                opacity = 0.2 + (0.7 * (returnTemp - 20.0) / 35.0);
+            }
+            radGlow.style.opacity = Math.max(0.1, Math.min(opacity, 0.95));
+
+            // Return Pipe color animation (cooler = blue, warmer = red)
+            let pipeColor = "#3498db"; // cool blue
+            if (currentTurns > 0) {
+                let heatRatio = (returnTemp - 30.0) / 25.0; // 0 to 1
+                heatRatio = Math.max(0, Math.min(1, heatRatio));
+                // Interpolate between blue (#3498db) and red (#e74c3c)
+                let r = Math.round(52 + (231 - 52) * heatRatio);
+                let g = Math.round(152 + (76 - 152) * heatRatio);
+                let b = Math.round(219 + (60 - 219) * heatRatio);
+                pipeColor = `rgb(${r}, ${g}, ${b})`;
+            } else {
+                pipeColor = "#8E99A4"; // grey when fully shut
+            }
+            
+            returnPipe.setAttribute('stroke', pipeColor);
+            returnCircle.setAttribute('stroke', pipeColor);
+            returnTempLbl.style.color = pipeColor;
+
+            // Flow bubbles animation speed
+            const flowLine = document.getElementById('flow-line');
+            const returnLine = document.getElementById('return-line');
+            
+            let animSpeed = 0;
+            if (currentTurns > 0) {
+                // Higher turns = faster flow
+                animSpeed = 0.5 + (3.5 * currentTurns / 4.0);
+            }
+            
+            if (animSpeed === 0) {
+                flowLine.style.animation = 'none';
+                returnLine.style.animation = 'none';
+                document.getElementById('simulator-flow-text').innerText = "Flow Speed: 0.0 L/min";
+            } else {
+                // Animation duration is inversely proportional to speed
+                let duration = (4.0 / animSpeed).toFixed(2);
+                flowLine.style.animation = `flow ${duration}s linear infinite`;
+                returnLine.style.animation = `flow ${duration}s linear infinite`;
+                
+                let flowRate = (0.2 + (2.1 * currentTurns / 4.0)).toFixed(2);
+                document.getElementById('simulator-flow-text').innerText = `Flow Speed: ${flowRate} L/min`;
+            }
+
+            // Determine balancing feedback status
+            const statusLed = document.getElementById('status-led');
+            const statusTitle = document.getElementById('status-title');
+            const feedbackDesc = document.getElementById('feedback-desc');
+
+            const diff = Math.abs(deltaT - src.targetDt);
+
+            if (currentTurns === 0) {
+                statusLed.className = "w-2.5 h-2.5 rounded-full bg-red-500 block";
+                statusTitle.innerText = "RADIATOR SHUT";
+                feedbackDesc.innerHTML = "<strong>Fully Closed:</strong> The lockshield valve is shut. No water is flowing. The radiator will go completely cold shortly.";
+            } else if (diff <= 1.0) {
+                statusLed.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 block animate-pulse";
+                statusTitle.innerText = "BALANCED & OPTIMIZED";
+                feedbackDesc.innerHTML = `<strong>Perfect Balance!</strong> The measured &Delta;T (${deltaT.toFixed(1)}&deg;C) matches the target. Water flows at the optimal velocity, ensuring the radiator delivers maximum warmth while return water is cool enough for peak heater performance.`;
+            } else if (deltaT < src.targetDt) {
+                statusLed.className = "w-2.5 h-2.5 rounded-full bg-red-500 block";
+                statusTitle.innerText = "FLOW TOO HIGH";
+                feedbackDesc.innerHTML = `<strong>Short Circuit:</strong> The valve is open too much. Water flows too fast, returning to the boiler too hot (${returnTemp.toFixed(1)}&deg;C). This prevents condensing efficiency and starves distant radiators.`;
+            } else {
+                statusLed.className = "w-2.5 h-2.5 rounded-full bg-yellow-500 block";
+                statusTitle.innerText = "FLOW TOO LOW";
+                feedbackDesc.innerHTML = `<strong>Radiator Starved:</strong> The valve is restricted too much. Water trickles too slowly, cooling down too much before reaching the outlet. The radiator will feel warm at the top but cold at the bottom.`;
+            }
+        }
+
+        // Initialize
+        selectSource('condensing');
+        updateValve(2.0);
+    </script>
+</body>
+</html>
