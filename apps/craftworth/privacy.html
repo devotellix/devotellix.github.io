@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | CraftWorth</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { accent: '#E8A849', success: '#6BCB8B' },
+                        dark: { 950: '#1A1614', 900: '#2A2420', 800: '#352E28' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(42, 36, 32, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(232, 168, 73, 0.08); }
+        .prose h2 { color: #fff; font-weight: 700; margin-top: 2em; margin-bottom: 1em; font-size: 1.5rem; }
+        .prose p { color: #A89888; line-height: 1.75; margin-bottom: 1.5em; }
+        .prose ul { color: #A89888; list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
+</head>
+<body class="bg-dark-950 text-[#F5F0EB] min-h-screen flex flex-col font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-dark-900 border border-white/10 flex items-center justify-center text-white font-bold group-hover:bg-brand-accent/20 transition-colors">
+                        <svg class="w-5 h-5 text-slate-400 group-hover:text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    </div>
+                    <span class="text-white font-bold tracking-tight">Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accent/10 border border-brand-accent/20 text-brand-accent text-xs font-semibold uppercase tracking-wider mb-4">
+                    Security & Privacy
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4 animate-fade-in">Privacy Policy</h1>
+                <p class="text-slate-500">Effective Date: July 8, 2026</p>
+            </header>
+
+            <div class="prose max-w-none">
+                <div class="glass p-8 rounded-3xl mb-12 border-l-4 border-l-brand-accent">
+                    <p class="m-0 text-white font-medium"><strong>TL;DR:</strong> CraftWorth is a local-first application. All information regarding your craft projects, material inventory, hourly rates, pricing calculations, and timer sessions is stored exclusively on your device. We do not collect, transmit, sell, or share your data.</p>
+                </div>
+
+                <!-- English Version -->
+                <div class="mb-16">
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Data Collection & Privacy</h2>
+                    <p>CraftWorth does not include advertising SDKs, analytics SDKs, tracking SDKs, account creation, logins, or third-party data collection tools. The information you enter in the app, such as projects, materials, hourly rates, pricing notes, and timer sessions, stays entirely on your device.</p>
+                    
+                    <h2>2. Local Storage</h2>
+                    <p>CraftWorth stores app data locally on your device using Apple frameworks such as SwiftData and UserDefaults. UserDefaults is used only for local app preferences and timer state restoration. This data is not transmitted to us or to any third party.</p>
+                    
+                    <h2>3. Exports and Sharing</h2>
+                    <p>If you choose to export a JSON backup or a PDF report, the file is created locally on your device and shared only through the iOS share sheet actions you select.</p>
+                    
+                    <h2>4. Permissions</h2>
+                    <p>CraftWorth does not request access to protected resources such as location, contacts, camera, microphone, photo library, health data, or tracking permissions.</p>
+                    
+                    <h2>5. Data Deletion</h2>
+                    <p>You can delete projects and materials inside the app. You can also use the data management screen in Settings to delete all local app data from the device.</p>
+                    
+                    <h2>6. Contact</h2>
+                    <p>For privacy questions or support, contact us at: <a href="mailto:contact.devotellix@gmail.com" class="text-brand-accent hover:underline">contact.devotellix@gmail.com</a></p>
+                </div>
+
+                <hr class="border-white/5 my-12" />
+
+                <!-- French Version -->
+                <div class="mb-12">
+                    <h1 class="text-3xl font-bold text-white tracking-tight mb-8">Politique de Confidentialité</h1>
+                    
+                    <p class="m-0 text-white font-medium bg-dark-900/60 p-6 rounded-2xl mb-8 border border-white/5">
+                        <strong>Synthèse :</strong> CraftWorth est conçue comme une application locale. Nous ne collectons, transmettons, vendons, louons ni partageons aucune donnée personnelle.
+                    </p>
+
+                    <h2>1. Collecte de Données</h2>
+                    <p>CraftWorth n'intègre aucun SDK publicitaire, SDK d'analyse, SDK de tracking, création de compte, connexion ou outil tiers de collecte de données. Les informations que vous saisissez dans l'app, comme les projets, matières, taux horaires, notes de prix et sessions de chronométrage, restent sur votre appareil.</p>
+                    
+                    <h2>2. Stockage Local</h2>
+                    <p>CraftWorth stocke les données de l'app localement sur votre appareil avec des frameworks Apple comme SwiftData et UserDefaults. UserDefaults sert uniquement aux préférences locales de l'app et à la restauration de l'état du chronomètre. Ces données ne sont pas transmises à nous ni à un tiers.</p>
+                    
+                    <h2>3. Exports et Partage</h2>
+                    <p>Si vous choisissez d'exporter une sauvegarde JSON ou un rapport PDF, le fichier est créé localement et partagé uniquement via les actions de la feuille de partage iOS que vous sélectionnez.</p>
+                    
+                    <h2>4. Permissions</h2>
+                    <p>CraftWorth ne demande pas l'accès aux ressources protégées comme la localisation, les contacts, la caméra, le microphone, la photothèque, les données de santé ou les permissions de tracking.</p>
+                    
+                    <h2>5. Suppression des Données</h2>
+                    <p>Vous pouvez supprimer les projets et matières dans l'app. Vous pouvez aussi utiliser l'écran de gestion des données dans les Réglages pour supprimer toutes les données locales de l'appareil.</p>
+                    
+                    <h2>6. Contact</h2>
+                    <p>Pour toute question de confidentialité ou de support, vous pouvez nous écrire à : <a href="mailto:contact.devotellix@gmail.com" class="text-brand-accent hover:underline">contact.devotellix@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="border-t border-white/5 py-8 text-center text-sm text-slate-600">
+        <p>&copy; 2026 Devotellix. All rights reserved.</p>
+    </footer>
+</body>
+</html>
