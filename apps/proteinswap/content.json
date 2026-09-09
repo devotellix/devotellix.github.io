@@ -1,0 +1,290 @@
+{
+  "en": {
+    "nav": [
+      "The app",
+      "Privacy",
+      "Support"
+    ],
+    "tag": "PROTEIN SWAP · IPHONE & IPAD",
+    "title": "From protein grams to food on your plate.",
+    "intro": "Enter the protein amount from a serving. Explore weighed food alternatives, adjust the portions and compare the numbers that matter to you.",
+    "detail": "40 foods. Clear prepared weights. Your own prices.",
+    "features": [
+      [
+        "Compare real portions",
+        "Find one- or two-food combinations close to your entered protein amount. See protein, energy, carbohydrates and fat together."
+      ],
+      [
+        "Make it your combination",
+        "Adjust grams, lock a portion and rebalance. Filter by vegetarian or vegan choices, exclude foods and use your available ingredients."
+      ],
+      [
+        "Read a label, check the values",
+        "Choose a photo for on-device text recognition. Confirm the protein, energy and per-serving or per-100-g basis before applying it."
+      ],
+      [
+        "Compare your own costs",
+        "Enter package prices and prepared weights. See a portion cost only when the required prices and currencies are compatible."
+      ],
+      [
+        "Keep what is useful",
+        "Save favorites for later. Record what you ate explicitly, keep dated entries and compare today’s recorded protein with an optional goal you chose."
+      ]
+    ],
+    "availability": "Designed for iPhone and iPad, iOS 17 or later. Interface and food descriptions in English, French and Spanish. App Store listing link will appear here when available.",
+    "limits": "A practical comparison tool, not a diet prescription. Nutrient values are reference estimates and vary with products and preparation. Recorded entries do not represent your entire diet. The app does not set your protein needs.",
+    "privacy_title": "Your data stays under your control.",
+    "privacy_intro": "Protein Swap processes comparisons and selected label images on your device. No account is required, and the app includes no advertising or analytics SDK.",
+    "privacy_sections": [
+      [
+        "What the app stores",
+        "Food selections and exclusions, entered prices, favorites, explicitly recorded portions and nutrient snapshots, and an optional personal goal are saved in the app’s protected local storage. A completed-comparison count and review-request dates support a limited native review request."
+      ],
+      [
+        "Photo labels",
+        "You select a single photo using Apple’s photo picker. Recognition runs locally using Apple Vision. The app keeps the image preview and recognized text only during the import session; it does not upload them or keep an app-owned photo copy. The system may download an iCloud photo you choose and manage temporary provider files. Your original photo remains in your library."
+      ],
+      [
+        "No tracking or broad permissions",
+        "The app does not request camera, microphone, location, contacts, HealthKit or full photo-library access. It does not send your entries to a developer-operated server. There is no app cloud synchronization."
+      ],
+      [
+        "Retention, backups and deletion",
+        "Local records remain until you remove them. In About, choose “Erase all my data” and confirm to clear the app’s saved data, drafts and undo history. The bundled food catalogue remains. Device backups may include app data according to your Apple settings. Erasing the active app data does not independently delete older system backups, original photos or support emails."
+      ],
+      [
+        "Support and external links",
+        "If you email Devotellix, your email provider sends your address, message and attachments to us so we can respond. Please avoid sending health records or unnecessary personal information. Contact us to request deletion of support correspondence, subject to applicable obligations. External reference sites and email providers apply their own policies."
+      ],
+      [
+        "Operator and contact",
+        "Protein Swap is provided by Devotellix. For privacy questions or requests, email contact.devotellix@gmail.com. Effective date: 8 September 2026."
+      ]
+    ],
+    "support_title": "A clearer answer, one comparison at a time.",
+    "support_intro": "For help, bug reports or suggestions, contact Devotellix. Include your app version, device model, iOS version and the steps that led to the problem. Do not include personal nutrition records unless necessary.",
+    "contact": "Email support",
+    "help": [
+      [
+        "How do I start?",
+        "Enter the grams of protein shown for the serving you want to compare, then choose Compare. Add energy or a maximum energy value only if useful. The results show prepared food weights, not shopping weights."
+      ],
+      [
+        "Why are there no results?",
+        "Check the protein amount, energy ceiling, dietary filters and available-food selection. Relax a constraint or add available foods. A combination may not fit the catalogue’s practical portion limits."
+      ],
+      [
+        "Why is a price unknown?",
+        "Enter a package price and its prepared edible weight for every food in the combination. All prices must use the same currency. A price per raw package cannot be treated as a prepared-food price without the appropriate prepared weight."
+      ],
+      [
+        "What if label recognition is wrong?",
+        "Edit the values manually. Choose whether the label gives a serving or 100 g, and enter the portion weight for a per-100-g label. Confirm the proposed values before applying them. A photo stored only in iCloud may need a network connection to download first."
+      ],
+      [
+        "Does saving a favorite log a meal?",
+        "No. A favorite is reusable. Use Record intake explicitly when you want a dated entry. The daily comparison includes only the entries you recorded and does not estimate missing food."
+      ],
+      [
+        "How do I delete data?",
+        "Remove individual favorites or history entries from Saved. History deletion offers Undo. To erase all local data, open About, choose Erase all my data and confirm. This full erase cannot be undone."
+      ],
+      [
+        "Can the app choose a nutrition goal?",
+        "No. The optional daily goal is a number you enter yourself. The app compares food reference values and recorded entries; it does not diagnose conditions or determine dietary needs."
+      ]
+    ]
+  },
+  "fr": {
+    "nav": [
+      "L’application",
+      "Confidentialité",
+      "Assistance"
+    ],
+    "tag": "PROTEIN SWAP · IPHONE ET IPAD",
+    "title": "Des grammes de protéines aux aliments dans votre assiette.",
+    "intro": "Saisissez les protéines d’une portion. Découvrez des alternatives alimentaires pesées, ajustez les quantités et comparez les chiffres qui vous intéressent.",
+    "detail": "40 aliments. Des poids préparés explicites. Vos propres prix.",
+    "features": [
+      [
+        "Comparez des portions concrètes",
+        "Trouvez des associations d’un ou deux aliments proches de la quantité de protéines saisie. Consultez ensemble protéines, énergie, glucides et lipides."
+      ],
+      [
+        "Composez à votre façon",
+        "Ajustez les grammes, verrouillez une portion et rééquilibrez. Filtrez les choix végétariens ou végétaliens, excluez des aliments et utilisez vos ingrédients disponibles."
+      ],
+      [
+        "Lisez une étiquette, vérifiez les valeurs",
+        "Choisissez une photo pour reconnaître son texte sur l’appareil. Confirmez les protéines, l’énergie et la base par portion ou pour 100 g avant de les appliquer."
+      ],
+      [
+        "Comparez vos propres coûts",
+        "Saisissez le prix du paquet et son poids préparé. Le coût d’une portion apparaît lorsque tous les prix nécessaires et les devises sont compatibles."
+      ],
+      [
+        "Gardez ce qui vous sert",
+        "Retrouvez vos favoris. Enregistrez explicitement ce que vous avez mangé, conservez les entrées datées et comparez les protéines enregistrées aujourd’hui à un objectif facultatif choisi par vous."
+      ]
+    ],
+    "availability": "Conçue pour iPhone et iPad, sous iOS 17 ou version ultérieure. Interface et descriptions alimentaires en français, anglais et espagnol. Le lien App Store sera ajouté dès que la fiche sera disponible.",
+    "limits": "Un outil de comparaison pratique, sans prescription alimentaire. Les valeurs nutritionnelles sont des estimations de référence qui varient selon les produits et leur préparation. Les entrées enregistrées ne représentent pas toute votre alimentation. L’app ne détermine pas vos besoins en protéines.",
+    "privacy_title": "Vous gardez le contrôle de vos données.",
+    "privacy_intro": "Protein Swap traite les comparaisons et les images d’étiquettes sélectionnées sur votre appareil. Aucun compte n’est requis. L’app n’intègre aucun SDK publicitaire ou analytique.",
+    "privacy_sections": [
+      [
+        "Données conservées par l’app",
+        "Les aliments disponibles ou exclus, les prix saisis, les favoris, les portions et valeurs nutritionnelles explicitement enregistrées ainsi que l’objectif facultatif sont conservés dans le stockage local protégé de l’app. Un compteur de comparaisons et des dates de demande d’avis limitent la fréquence du dialogue natif d’Apple."
+      ],
+      [
+        "Photos d’étiquettes",
+        "Vous sélectionnez une photo avec le sélecteur Apple. La reconnaissance s’effectue localement avec Apple Vision. L’aperçu et le texte reconnu restent uniquement dans la session d’importation : l’app ne les envoie pas et ne conserve pas sa propre copie de la photo. Le système peut télécharger une photo iCloud sélectionnée et gérer des fichiers temporaires. L’original reste dans votre photothèque."
+      ],
+      [
+        "Sans suivi ni accès étendu",
+        "L’app ne demande pas d’accès à la caméra, au microphone, à la localisation, aux contacts, à HealthKit ou à l’ensemble de la photothèque. Elle n’envoie pas vos entrées à un serveur de l’éditeur. Elle ne synchronise pas les données dans le cloud."
+      ],
+      [
+        "Conservation, sauvegardes et suppression",
+        "Les données locales restent jusqu’à leur suppression. Dans À propos, choisissez « Effacer toutes mes données » puis confirmez pour supprimer les données enregistrées, les brouillons et les annulations de l’app. Le catalogue intégré reste disponible. Les sauvegardes de l’appareil peuvent inclure ces données selon vos réglages Apple. L’effacement ne supprime pas séparément les anciennes sauvegardes système, les photos originales ou les e-mails d’assistance."
+      ],
+      [
+        "Assistance et liens externes",
+        "Si vous écrivez à Devotellix, votre service de messagerie nous transmet votre adresse, votre message et vos pièces jointes pour vous répondre. Évitez les dossiers médicaux et les informations personnelles inutiles. Vous pouvez demander la suppression des échanges, sous réserve des obligations applicables. Les sites de référence et services de messagerie appliquent leurs propres politiques."
+      ],
+      [
+        "Éditeur et contact",
+        "Protein Swap est proposée par Devotellix. Pour toute question ou demande concernant vos données : contact.devotellix@gmail.com. Date d’effet : 8 septembre 2026."
+      ]
+    ],
+    "support_title": "Une réponse plus claire, comparaison après comparaison.",
+    "support_intro": "Pour obtenir de l’aide, signaler un problème ou proposer une amélioration, contactez Devotellix. Indiquez la version de l’app, votre appareil, la version d’iOS et les étapes du problème. Évitez les données nutritionnelles personnelles inutiles.",
+    "contact": "Contacter l’assistance",
+    "help": [
+      [
+        "Comment commencer ?",
+        "Saisissez les grammes de protéines indiqués pour la portion à comparer, puis lancez la comparaison. Ajoutez l’énergie ou une limite d’énergie uniquement si cela vous est utile. Les résultats indiquent des poids d’aliments préparés, pas des poids d’achat."
+      ],
+      [
+        "Pourquoi aucun résultat ?",
+        "Vérifiez les protéines saisies, la limite d’énergie, les filtres alimentaires et les aliments disponibles. Assouplissez un critère ou ajoutez des aliments disponibles. Certaines combinaisons dépassent les limites pratiques de portions du catalogue."
+      ],
+      [
+        "Pourquoi un coût reste-t-il inconnu ?",
+        "Saisissez un prix de paquet et son poids comestible préparé pour chaque aliment de l’association. Les devises doivent être identiques. Un prix de produit cru ne correspond pas directement à un poids préparé."
+      ],
+      [
+        "Et si la lecture de l’étiquette est incorrecte ?",
+        "Corrigez les valeurs à la main. Choisissez la base par portion ou pour 100 g et, dans ce dernier cas, saisissez le poids de la portion. Vérifiez les valeurs avant de les appliquer. Une photo uniquement dans iCloud peut nécessiter une connexion pour son téléchargement."
+      ],
+      [
+        "Un favori enregistre-t-il un repas ?",
+        "Non. Un favori est réutilisable. Enregistrez explicitement une consommation pour créer une entrée datée. La comparaison quotidienne tient compte uniquement des entrées enregistrées et n’estime pas les autres aliments."
+      ],
+      [
+        "Comment supprimer mes données ?",
+        "Supprimez les favoris ou les entrées depuis Enregistrés. La suppression d’une entrée propose une annulation. Pour tout effacer, ouvrez À propos, choisissez Effacer toutes mes données et confirmez. Cet effacement complet est définitif."
+      ],
+      [
+        "L’app peut-elle choisir un objectif nutritionnel ?",
+        "Non. Vous saisissez vous-même l’objectif quotidien facultatif. L’app compare des valeurs alimentaires de référence et vos entrées ; elle ne pose pas de diagnostic et ne détermine pas vos besoins."
+      ]
+    ]
+  },
+  "es": {
+    "nav": [
+      "La app",
+      "Privacidad",
+      "Ayuda"
+    ],
+    "tag": "PROTEIN SWAP · IPHONE Y IPAD",
+    "title": "De gramos de proteína a alimentos en tu plato.",
+    "intro": "Introduce la proteína de una porción. Explora alternativas de alimentos con cantidades concretas, ajusta las porciones y compara los datos que te interesan.",
+    "detail": "40 alimentos. Pesos preparados claros. Tus propios precios.",
+    "features": [
+      [
+        "Compara porciones reales",
+        "Encuentra combinaciones de uno o dos alimentos cercanas a la cantidad de proteína introducida. Consulta proteínas, energía, carbohidratos y grasas."
+      ],
+      [
+        "Crea tu combinación",
+        "Ajusta los gramos, fija una porción y vuelve a equilibrar. Filtra opciones vegetarianas o veganas, excluye alimentos y usa los ingredientes disponibles."
+      ],
+      [
+        "Lee una etiqueta y revisa los valores",
+        "Selecciona una foto para reconocer su texto en el dispositivo. Confirma la proteína, la energía y la base por porción o por 100 g antes de aplicarlas."
+      ],
+      [
+        "Compara tus costes",
+        "Introduce el precio del paquete y su peso preparado. El coste aparece cuando todos los precios necesarios y las monedas son compatibles."
+      ],
+      [
+        "Guarda lo que te sirve",
+        "Conserva favoritos. Registra explícitamente lo que comiste, guarda entradas con fecha y compara la proteína registrada hoy con un objetivo opcional elegido por ti."
+      ]
+    ],
+    "availability": "Para iPhone y iPad con iOS 17 o posterior. Interfaz y descripciones en español, inglés y francés. El enlace al App Store se añadirá cuando la ficha esté disponible.",
+    "limits": "Una herramienta práctica de comparación, sin prescripciones dietéticas. Los valores nutricionales son estimaciones de referencia y varían según el producto y la preparación. Las entradas registradas no representan toda tu alimentación. La app no determina tus necesidades de proteína.",
+    "privacy_title": "Tú controlas tus datos.",
+    "privacy_intro": "Protein Swap procesa las comparaciones y las imágenes de etiquetas seleccionadas en tu dispositivo. No requiere cuenta ni incluye SDK de publicidad o análisis.",
+    "privacy_sections": [
+      [
+        "Qué guarda la app",
+        "Las selecciones y exclusiones de alimentos, precios, favoritos, porciones y valores nutricionales registrados explícitamente y el objetivo opcional se guardan en el almacenamiento local protegido. Un contador de comparaciones y las fechas de solicitudes de reseña limitan el diálogo nativo de Apple."
+      ],
+      [
+        "Fotos de etiquetas",
+        "Seleccionas una foto con el selector de Apple. El reconocimiento se realiza localmente con Apple Vision. La vista previa y el texto solo permanecen durante la sesión de importación; la app no los envía ni conserva una copia propia de la foto. El sistema puede descargar una foto de iCloud seleccionada y gestionar archivos temporales. El original permanece en tu fototeca."
+      ],
+      [
+        "Sin seguimiento ni permisos amplios",
+        "La app no solicita acceso a cámara, micrófono, ubicación, contactos, HealthKit o toda la fototeca. No envía tus entradas a un servidor del desarrollador ni sincroniza datos en la nube."
+      ],
+      [
+        "Conservación, copias de seguridad y eliminación",
+        "Los registros locales permanecen hasta que los borras. En Acerca de, elige « Borrar todos mis datos » y confirma para eliminar datos guardados, borradores y acciones de deshacer. El catálogo integrado permanece. Las copias del dispositivo pueden incluir datos según tus ajustes de Apple. El borrado no elimina por separado copias antiguas del sistema, fotos originales o correos de ayuda."
+      ],
+      [
+        "Ayuda y enlaces externos",
+        "Si escribes a Devotellix, tu proveedor de correo nos envía tu dirección, mensaje y archivos adjuntos para responderte. Evita enviar historiales médicos o información personal innecesaria. Puedes solicitar la eliminación de los mensajes, sujeta a las obligaciones aplicables. Los sitios de referencia y proveedores de correo tienen sus propias políticas."
+      ],
+      [
+        "Responsable y contacto",
+        "Devotellix ofrece Protein Swap. Para preguntas o solicitudes sobre privacidad: contact.devotellix@gmail.com. Fecha de entrada en vigor: 8 de septiembre de 2026."
+      ]
+    ],
+    "support_title": "Respuestas más claras, comparación a comparación.",
+    "support_intro": "Para ayuda, errores o sugerencias, escribe a Devotellix. Incluye la versión de la app, el dispositivo, la versión de iOS y los pasos del problema. Evita enviar registros nutricionales personales innecesarios.",
+    "contact": "Contactar con ayuda",
+    "help": [
+      [
+        "¿Cómo empiezo?",
+        "Introduce los gramos de proteína de la porción que quieres comparar y pulsa Comparar. Añade energía o un límite de energía solo si te resulta útil. Los resultados muestran pesos de alimentos preparados, no pesos de compra."
+      ],
+      [
+        "¿Por qué no hay resultados?",
+        "Revisa la proteína, el límite de energía, los filtros y los alimentos disponibles. Flexibiliza una condición o añade ingredientes disponibles. Algunas combinaciones no encajan en los límites prácticos de porción del catálogo."
+      ],
+      [
+        "¿Por qué falta un coste?",
+        "Introduce el precio del paquete y su peso comestible preparado para cada alimento. Todos los precios deben usar la misma moneda. El precio de un producto crudo no corresponde directamente a su peso preparado."
+      ],
+      [
+        "¿Y si se lee mal la etiqueta?",
+        "Corrige los valores manualmente. Elige la base por porción o por 100 g; en este último caso, introduce el peso de la porción. Confirma los valores antes de aplicarlos. Una foto solo en iCloud puede necesitar conexión para descargarse."
+      ],
+      [
+        "¿Un favorito registra una comida?",
+        "No. El favorito se puede reutilizar. Registra el consumo explícitamente para crear una entrada con fecha. La comparación diaria solo incluye lo que has registrado y no estima otros alimentos."
+      ],
+      [
+        "¿Cómo borro mis datos?",
+        "Borra favoritos o entradas en Guardados. Puedes deshacer la eliminación de una entrada. Para borrar todo, abre Acerca de, elige Borrar todos mis datos y confirma. Este borrado completo no se puede deshacer."
+      ],
+      [
+        "¿La app elige un objetivo nutricional?",
+        "No. Introduces tú el objetivo diario opcional. La app compara valores alimentarios de referencia y entradas registradas; no diagnostica ni determina tus necesidades dietéticas."
+      ]
+    ]
+  }
+}
