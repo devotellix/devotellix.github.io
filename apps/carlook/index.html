@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarLook Studio | Ultra HD Tuning Visualizer</title>
-    <meta name="description" content="Transform your car with studio-quality mods. Preview widebody kits, custom wheels, and carbon fiber parts in cinematic Ultra HD before you build.">
-    <meta name="keywords" content="CarLook, Car Tuning, 3D Car Visualizer, Widebody Preview, Custom Rims, Car Wrapping App">
+    <title>CarLook Studio | AI Car Photo Previews</title>
+    <meta name="description" content="Preview wheels, wraps, paint, and bodywork on your own car photo. One app purchase, no subscription, and up to 10 AI renders per month on each device.">
+    <meta name="keywords" content="CarLook, Car Tuning, AI Car Photo Editor, Wheel Preview, Car Wrap Preview">
     <meta name="author" content="Devotellix">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://devotellix.github.io/apps/carlook/">
@@ -13,29 +13,25 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://devotellix.github.io/apps/carlook/">
-    <meta property="og:title" content="CarLook Studio | Ultra HD Tuning Visualizer">
-    <meta property="og:description" content="Transform your car with studio-quality mods. Preview widebody kits, custom wheels, and carbon fiber parts in cinematic Ultra HD before you build.">
+    <meta property="og:title" content="CarLook Studio | AI Car Photo Previews">
+    <meta property="og:description" content="Preview wheels, wraps, paint, and bodywork on your own car photo. One app purchase, no subscription, and up to 10 AI renders per month on each device.">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "CarLook Studio",
-      "operatingSystem": "iOS",
-      "applicationCategory": "DesignApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "author": {
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CarLook Studio",
+    "operatingSystem": "iOS 26.0 or later",
+    "applicationCategory": "DesignApplication",
+    "author": {
         "@type": "Organization",
         "name": "Devotellix"
-      },
-      "description": "Transform your car with studio-quality mods. Preview widebody kits, custom wheels, and carbon fiber parts in cinematic Ultra HD.",
-      "url": "https://devotellix.github.io/apps/carlook/"
-    }
+    },
+    "description": "Preview wheels, wraps, paint, and bodywork on your own car photo. One app purchase, no subscription, and up to 10 AI renders per month on each device.",
+    "url": "https://devotellix.github.io/apps/carlook/",
+    "isAccessibleForFree": false
+}
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -53,7 +49,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
@@ -152,7 +148,7 @@
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
             gap: 24px;
             padding: 80px 0;
         }
@@ -193,6 +189,23 @@
         footer a:hover {
             color: var(--accent);
         }
+        a { color: var(--accent); }
+        a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+        p, li { overflow-wrap: break-word; }
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+        }
+        .hero .purchase-note { font-size: 14px; margin: 24px auto 0; max-width: 680px; }
+        @media (max-width: 600px) {
+            header { flex-direction: column; gap: 20px; padding: 28px 0; }
+            nav { display: flex; gap: 24px; }
+            nav a { margin-left: 0; }
+            .hero { padding: 64px 0; }
+            .hero h1 { font-size: 42px; letter-spacing: -1px; }
+            .hero p { font-size: 18px; }
+            .feature-card { padding: 28px; }
+            .features { padding: 48px 0; }
+        }
     </style>
 </head>
 <body>
@@ -206,24 +219,25 @@
         </header>
 
         <section class="hero">
-            <div class="badge">Professional Tuning Visualizer</div>
-            <h1>Your Car.<br>Studio Quality Mods.</h1>
-            <p>Upload a photo of your ride and visualize widebody kits, custom wheels, and carbon fiber parts in cinematic Ultra HD.</p>
-            <a href="https://apps.apple.com/app/carlook-studio" class="cta-btn">Download on the App Store</a>
+            <div class="badge">AI previews from your own photo</div>
+            <h1>Your Car.<br>A New Look to Explore.</h1>
+            <p>Try wheels, paint, wraps, and bodywork on a photo of your car. Compare the original and your AI preview, then save or share your idea.</p>
+            <a href="https://apps.apple.com/app/id6770281376" class="cta-btn">View on the App Store</a>
+            <p class="purchase-note">One purchase. No subscription or in-app purchases. Up to 10 completed renders per UTC calendar month on each device, with no carryover. Internet required. See the App Store for your local price.</p>
         </section>
 
         <section class="features">
             <div class="feature-card">
-                <h3>For Enthusiasts</h3>
-                <p>Over 200 authentic modifications. Lowered suspensions, custom rims, vinyl wraps, and aggressive aero parts rendered flawlessly on your actual vehicle.</p>
+                <h3>72 Modification Options</h3>
+                <p>Explore wheel styles, paint and wraps, bodywork, lighting, exterior details, interior styles, and backgrounds. Combine compatible options to build your look.</p>
             </div>
             <div class="feature-card">
-                <h3>For Tuning Shops</h3>
-                <p>The ultimate B2B sales tool. Preview color changes and body kits on your client's car instantly. Export high-res comparisons for your proposals.</p>
+                <h3>Compare Your Ideas</h3>
+                <p>Use the before/after view to compare your photo with the generated result. Save the image to Photos or share it from your phone.</p>
             </div>
             <div class="feature-card">
-                <h3>Cinematic Ultra HD</h3>
-                <p>No generic 3D models. We modify your real photo using advanced rendering to deliver a 3072 x 2048 photorealistic result.</p>
+                <h3>Visual Concepts, Made for Mobile</h3>
+                <p>Your chosen photo and edits are sent directly from your device to OpenAI. AI details may vary; previews do not guarantee real-world part fit or appearance.</p>
             </div>
         </section>
 

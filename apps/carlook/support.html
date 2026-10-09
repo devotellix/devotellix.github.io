@@ -14,7 +14,7 @@
             --border: rgba(255, 255, 255, 0.1);
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
         .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
         
@@ -32,6 +32,12 @@
         
         .contact-box { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 32px; border-radius: 12px; margin-top: 40px; }
         .contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        a { color: var(--accent); }
+        a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+        p, li { overflow-wrap: break-word; }
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+        }
     </style>
 </head>
 <body>
@@ -44,30 +50,50 @@
         <p>We're here to help you get the most out of CarLook Studio. Check our frequently asked questions below or contact our support team.</p>
 
         <h2>Frequently Asked Questions</h2>
-        
+
         <div class="faq-item">
-            <h3>How do I get the best results?</h3>
-            <p>For the most realistic renders, ensure your car is photographed in good lighting (daylight or well-lit garage) and the entire vehicle is visible within the frame. Avoid blurry or heavily filtered images.</p>
+            <h3>What does the app purchase include?</h3>
+            <p>CarLook is a one-time paid download with no subscription or in-app purchases. It includes 72 modification options and up to 10 completed renders per UTC calendar month, on each device. The monthly allowance is stored locally and is not shared between devices. See the App Store for the price in your region.</p>
         </div>
 
         <div class="faq-item">
-            <h3>What happens when my 25 Premium Images run out?</h3>
-            <p>CarLook Studio includes 25 Ultra HD renders. Once depleted, you can subscribe to our "Extra Images" plan to receive 10 additional renders every month.</p>
+            <h3>When does my allowance reset?</h3>
+            <p>The allowance resets at the start of the first day of each month in UTC. Unused renders do not carry over. The allowance is stored on this device in the iOS Keychain, without iCloud synchronization. Reinstalling the app does not guarantee a fresh allowance. The app shows your remaining renders and reset information.</p>
         </div>
 
         <div class="faq-item">
-            <h3>How do I manage or cancel my subscription?</h3>
-            <p>Subscriptions are managed directly through Apple. Go to the Settings app on your iPhone > [Your Name] > Subscriptions > CarLook Studio to manage or cancel your plan.</p>
+            <h3>How do I get useful previews?</h3>
+            <p>Choose a clear photo in good light, with the area you want to change visible. For exterior changes, keep the car in the frame; use an interior photo for interior ideas. Start with a few compatible modifications. AI can change details unexpectedly, and a preview does not prove that real parts will fit or look the same.</p>
         </div>
 
         <div class="faq-item">
-            <h3>Can I use this for my tuning shop?</h3>
-            <p>Yes! CarLook Studio is designed as a B2B sales tool for wrapping studios, wheel dealers, and body shops. You can freely export the Ultra HD before/after renders to use in your client proposals.</p>
+            <h3>What if a render is interrupted?</h3>
+            <p>Keep the app open and use a stable connection while the image is generated. The app sends the request directly to OpenAI and cannot recover a lost response from a CarLook server. If the outcome is uncertain, the request keeps a place in the current month’s allowance; a confirmed rejected request releases it. The app does not automatically submit another generation after a connection failure.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why should I save the result?</h3>
+            <p>Save a finished image to Photos or share it before leaving the result screen. CarLook does not provide an online gallery or later retrieval service. A completed render still counts toward the monthly allowance even if you do not save it.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do I need a login or a ChatGPT subscription?</h3>
+            <p>No CarLook or OpenAI account is needed, and a ChatGPT subscription is not required. Rendering needs an internet connection to OpenAI. If the service is unavailable, check your connection and the message shown in the app; contact support if the problem continues.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How are my photos handled?</h3>
+            <p>The app asks for your confirmation, then sends your chosen photo and edits directly from your device to OpenAI for image processing. The app does not upload your entire library. Read our <a href="privacy.html">Privacy Policy</a> for local storage and provider retention details.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why can't I save to Photos or use the camera?</h3>
+            <p>Check the permissions for CarLook in iOS Settings. Camera access is needed only when taking a new photo; you can use the photo picker instead. Saving a result requires permission to add images to Photos. You can still use the share sheet if you prefer another destination.</p>
         </div>
 
         <div class="contact-box">
             <h2>Still need help?</h2>
-            <p>If you have any other questions, bug reports, or feature requests, please reach out to our development team at Devotellix.</p>
+            <p>For a problem report, include your iPhone model, iOS version, app version, approximate time, and the error message. Do not include payment card details, passwords, or private photos in your initial message.</p>
             <p>Email us: <a href="mailto:contact.devotellix@gmail.com">contact.devotellix@gmail.com</a></p>
         </div>
     </div>

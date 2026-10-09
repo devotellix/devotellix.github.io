@@ -14,7 +14,7 @@
             --border: rgba(255, 255, 255, 0.1);
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
         .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
         
@@ -27,6 +27,12 @@
         h2 { font-size: 20px; margin: 32px 0 16px; color: white; border-bottom: 1px solid var(--border); padding-bottom: 8px;}
         p, ul { color: var(--text-muted); margin-bottom: 16px; }
         ul { padding-left: 24px; }
+        a { color: var(--accent); }
+        a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+        p, li { overflow-wrap: break-word; }
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+        }
     </style>
 </head>
 <body>
@@ -36,38 +42,34 @@
         </header>
 
         <h1>Privacy Policy</h1>
-        <div class="date">Last updated: May 2026</div>
+        <div class="date">Last updated: October 9, 2026</div>
 
-        <p>At Devotellix, we prioritize your privacy. This Privacy Policy outlines our practices regarding data collection and usage for the CarLook Studio iOS application.</p>
+        <p>This policy explains how Devotellix handles information when you use CarLook Studio and this website. CarLook is a paid photo-editing app with no subscription or in-app purchases. No CarLook account registration is required.</p>
 
-        <h2>1. Image Processing & AI Rendering</h2>
-        <p>CarLook Studio requires access to your Photo Library or Camera to function. The photos you select are processed securely by our AI rendering engine to generate the modified vehicle images.</p>
-        <ul>
-            <li>Images are temporarily uploaded to our secure servers solely for the purpose of processing the AI render.</li>
-            <li>We do not train generalized public AI models on your personal car photos.</li>
-            <li>Once the Ultra HD render is generated and delivered to your device, the source image and result are deleted from our active processing servers.</li>
-        </ul>
+        <h2>1. Photos and AI processing</h2>
+        <p>Before a render is sent, the app explains the transfer and asks you to confirm. Your chosen photo and selected modification instructions are then sent directly from your device to the OpenAI Images API to create the preview. Canceling the confirmation does not send the photo. The app does not upload your entire photo library.</p>
+        <p>CarLook does not route the request through a Devotellix rendering server or maintain an online photo gallery. The generated image is returned directly to the app. Save the result to Photos if you want to keep it. A result lost during a network interruption cannot be retrieved later from a CarLook server.</p>
+        <p>A photo can contain information that identifies you or someone else, even when the app does not send a name or account identifier. The photo and edit instructions are processed off your device by OpenAI. Ordinary connection information, including your IP address, is also visible to the provider when your device connects.</p>
+        <p>OpenAI applies its own API data controls. Its published policy says API data is not used for model training by default unless the customer opts in. Default abuse-monitoring retention can be up to 30 days, with exceptions described in its policy. CarLook does not promise immediate deletion from the provider's systems or zero retention. See <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a>.</p>
 
-        <h2>2. Data Collection</h2>
-        <p>We believe in minimal data collection. We do NOT use third-party tracking SDKs, analytics, or advertising frameworks (such as Firebase Analytics, Facebook SDK, or AdMob).</p>
-        <p>The only data we collect is strictly related to providing the service:</p>
-        <ul>
-            <li><strong>Purchase History:</strong> Managed entirely by Apple via StoreKit to track your "Extra Images" subscription status and premium credits.</li>
-            <li><strong>Crash Logs:</strong> Anonymous crash reports provided by Apple (if you have opted-in via your iOS settings) to help us fix bugs.</li>
-        </ul>
+        <h2>2. Local monthly allowance</h2>
+        <p>The app permits up to 10 completed renders per UTC calendar month on each device. Its monthly usage counter and request reservations are stored locally in the iOS Keychain. This allowance is not synchronized through iCloud or shared between devices. It is not tied to a CarLook account or an Apple acquisition identifier sent to a developer server.</p>
+        <p>The counter rolls over at the start of a new UTC calendar month; unused renders do not carry over. A request with an uncertain outcome can keep a place reserved for the current month. Removing the app does not guarantee that the local Keychain allowance record is removed.</p>
+        <p>Apple handles the one-time app purchase. We do not receive payment card details. CarLook does not offer subscriptions or in-app purchases.</p>
 
-        <h2>3. Data Sharing</h2>
-        <p>We do not sell, rent, or trade your personal information or photos to any third parties under any circumstances.</p>
+        <h2>3. Device storage and permissions</h2>
+        <p>The app stores preferences, onboarding progress, and notification settings locally. It does not maintain a developer-hosted history of your photos or renders. Images you save to Photos remain there until you delete them; sharing an image sends it to the destination you choose.</p>
+        <p>Camera access is optional and needed only to take a photo. The system photo picker lets you choose an existing image. Saving a generated image requires permission to add to Photos. Notification permission is optional. You can change app permissions in iOS Settings.</p>
 
-        <h2>4. In-App Purchases</h2>
-        <p>All transactions, including the "Extra Images" subscription, are processed securely through Apple's App Store infrastructure. We do not have access to your credit card information or billing details.</p>
+        <h2>4. Third parties and tracking</h2>
+        <p>OpenAI processes the photo and instructions needed for your requested image edit. Its handling of processing and security records is described in the API data-controls policy linked above. CarLook does not include advertising, cross-app tracking, or a developer-operated analytics service. We do not sell user photos or use them for targeted advertising.</p>
+        <p>This website is hosted on GitHub Pages and loads its typeface from Google Fonts. Visiting it makes ordinary web requests to those services, which can receive connection information such as your IP address. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a> and <a href="https://policies.google.com/privacy">Google privacy policy</a> for those website services.</p>
 
-        <h2>5. Your Rights</h2>
-        <p>Because we do not store your personal data or maintain user accounts, you have complete control over your data. You can revoke Camera and Photo Library permissions at any time via your iOS Settings.</p>
-
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-        <p>Email: contact.devotellix@gmail.com</p>
+        <h2>5. Your choices and contact</h2>
+        <p>You can cancel a render before the photo transfer, revoke camera or photo permissions in Settings, and delete saved images from Photos. There is no CarLook online account to delete. Deleting the app does not delete provider-held processing records or guarantee removal of the local Keychain allowance counter.</p>
+        <p>For privacy questions or access/deletion requests, contact us. We will explain what information we hold and what is handled by the provider; we cannot promise to retrieve a lost render or erase records we do not control. If you contact support by email, we receive the information you choose to send. Please do not include payment card details, passwords, or private photos in an initial message.</p>
+        <p>Devotellix: <a href="mailto:contact.devotellix@gmail.com">contact.devotellix@gmail.com</a></p>
+        <p><a href="support.html">Support and FAQ</a></p>
     </div>
 </body>
 </html>
